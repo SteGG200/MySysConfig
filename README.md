@@ -1,2 +1,2 @@
-# cmderConfig
-This is config of cmder terminal
+# Terminal Config
+This is config of terminal
