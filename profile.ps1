@@ -1,7 +1,6 @@
 # Using command powershell -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -File [directory]/profile.ps1
 
 function prompt(){
-	$curDir = $pwd.ProviderPath
 	$leaf = Split-Path -leaf -path (Get-Location)
 	$user = $env:UserName
 	
@@ -9,9 +8,19 @@ function prompt(){
 	$host.UI.RawUI.WindowTitle = ".\" + $leaf
 	$host.UI.RawUI.ForegroundColor = "White"
 
-	Write-Host -NoNewLine $user -ForegroundColor Magenta
+
+	$identity = [Security.Principal.WindowsIdentity]::GetCurrent()
+    $principal = [Security.Principal.WindowsPrincipal] $identity
+    $adminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
+
+	if ($principal.IsInRole($adminRole)) {
+		Write-Host -NoNewLine $user -ForegroundColor Red
+	}else{
+		Write-Host -NoNewLine $user -ForegroundColor Magenta
+	}
+	
 	Write-Host -NoNewLine "@\" 
-	Write-Host -NoNewLine $curDir -ForegroundColor Yellow
+	Write-Host -NoNewLine $leaf -ForegroundColor Yellow
 
 	if(Test-Path .git){
 		git branch | ForEach-Object{
@@ -24,7 +33,7 @@ function prompt(){
 	}else{
 		Write-Host -NoNewLine " - PS -" -ForegroundColor Blue
 	}
-	'>'
+	'> '
 }
 
 Set-PSReadLineOption -Colors @{
@@ -32,4 +41,5 @@ Set-PSReadLineOption -Colors @{
 	String = '#FE8E6B'
 	Variable = '#5CF8FF'
 	Comment = '#19B600'
+
 }
