@@ -49,6 +49,7 @@ Set-PSReadLineOption -Colors @{
 
 }
 
-function abcxyz(){
-
+function get{
+	Param($file)
+	cat $file | clip
 }
