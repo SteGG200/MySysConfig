@@ -23,12 +23,17 @@ function prompt(){
 	Write-Host -NoNewLine $leaf -ForegroundColor Yellow
 
 	if(Test-Path .git){
+		$size = 0
 		git branch | ForEach-Object{
 			if($_ -match "^\*(.*)"){
+				$size = $size + 1
 				$branch = $matches[1] + " - "
 				Write-Host -NoNewLine " - " -ForegroundColor DarkGreen
 				Write-Host -NoNewLine $branch -ForegroundColor DarkGreen
 			}
+		}
+		if($size -eq 0){
+			Write-Host -NoNewLine " - git - " -ForegroundColor DarkGreen
 		}
 	}else{
 		Write-Host -NoNewLine " - PS -" -ForegroundColor Blue
@@ -41,5 +46,9 @@ Set-PSReadLineOption -Colors @{
 	String = '#FE8E6B'
 	Variable = '#5CF8FF'
 	Comment = '#19B600'
+
+}
+
+function abcxyz(){
 
 }
