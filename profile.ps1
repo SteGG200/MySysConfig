@@ -5,7 +5,7 @@ function prompt(){
 	$user = $env:UserName
 	
 	#set up title
-	$host.UI.RawUI.WindowTitle = ".\" + $leaf
+	$host.UI.RawUI.WindowTitle = $leaf
 	$host.UI.RawUI.ForegroundColor = "White"
 
 
