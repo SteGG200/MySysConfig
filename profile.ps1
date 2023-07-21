@@ -1,4 +1,4 @@
-# Using command powershell -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -File [directory]/profile.ps1
+# Using command copy profile.ps1 $PROFILE
 
 function prompt(){
 	$leaf = Split-Path -leaf -path (Get-Location)
@@ -22,7 +22,7 @@ function prompt(){
 	Write-Host -NoNewLine "@\" 
 	Write-Host -NoNewLine $leaf -ForegroundColor Yellow
 
-	if(Test-Path .git){
+	if(git rev-parse --git-dir){
 		$size = 0
 		git branch | ForEach-Object{
 			if($_ -match "^\*(.*)"){
@@ -33,7 +33,7 @@ function prompt(){
 			}
 		}
 		if($size -eq 0){
-			Write-Host -NoNewLine " - git - " -ForegroundColor DarkGreen
+			Write-Host -NoNewLine " - unknow branch - " -ForegroundColor DarkGreen
 		}
 	}else{
 		Write-Host -NoNewLine " - PS -" -ForegroundColor Blue
