@@ -38,7 +38,22 @@ function prompt(){
 	}else{
 		Write-Host -NoNewLine " - PS -" -ForegroundColor Blue
 	}
-	'> '
+	Write-Output '> '
+
+	$time = (Get-Date -Format "HH:mm")
+
+	$message = $time
+
+	$startposx = $Host.UI.RawUI.CursorPosition.X;
+	$startposy = $Host.UI.RawUI.CursorPosition.Y;
+
+	# Set right aligned text
+	$rightx = $Host.UI.RawUI.windowsize.width - $message.length
+	$righty = $Host.UI.RawUI.CursorPosition.Y
+	$Host.UI.RawUI.CursorPosition = New-Object System.Management.Automation.Host.Coordinates $rightx,$righty
+	Write-Host -NoNewLine $message -ForegroundColor DarkGray
+	
+	$Host.UI.RawUI.CursorPosition = New-Object System.Management.Automation.Host.Coordinates $startposx, $startposy
 }
 
 Set-PSReadLineOption -Colors @{
