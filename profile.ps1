@@ -68,3 +68,8 @@ function get{
 	Param($file)
 	cat $file | clip
 }
+
+function pull{
+	Param($file)
+	Get-Clipboard > $file
+}
