@@ -69,3 +69,10 @@ function get{
 	cat $file | clip
 }
 
+function clsd{ # Clean all children of a folder.
+	Param($Path)
+	$itemFolders = Get-ChildItem -Path $Path -Force
+	$itemFolders | Foreach-Object {
+		Remove-item -Force $_.FullName
+	}
+}
