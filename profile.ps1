@@ -1,7 +1,11 @@
 # Using command copy profile.ps1 $PROFILE
 
 function prompt(){
-	$leaf = Split-Path -leaf -path (Get-Location)
+	if((Get-Location).Path -eq $env:USERPROFILE){
+		$leaf = "~"
+	}else{
+		$leaf = Split-Path -leaf -path (Get-Location)
+	}
 	$user = $env:UserName
 	
 	#set up title
@@ -19,8 +23,9 @@ function prompt(){
 		Write-Host -NoNewLine $user -ForegroundColor Magenta
 	}
 	
-	Write-Host -NoNewLine "@\" 
-	Write-Host -NoNewLine $leaf -ForegroundColor Yellow
+	Write-Host -NoNewLine "@"
+	Write-Host -NoNewLine "$(hostname) " -ForegroundColor Yellow
+	Write-Host -NoNewLine $leaf -ForegroundColor Cyan
 
 	if(git rev-parse --git-dir){
 		$size = 0
