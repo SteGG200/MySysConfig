@@ -41,7 +41,7 @@ function prompt(){
 			Write-Host -NoNewLine " - unknow branch - " -ForegroundColor DarkGreen
 		}
 	}else{
-		Write-Host -NoNewLine " - PS -" -ForegroundColor Blue
+		Write-Host -NoNewLine " - PS - " -ForegroundColor Blue
 	}
 	Write-Output '> '
 
@@ -79,5 +79,15 @@ function clsd{ # Clean all children of a folder.
 	$itemFolders = Get-ChildItem -Path $Path -Force
 	$itemFolders | Foreach-Object {
 		Remove-item -Force $_.FullName
+	}
+}
+
+function GetChildrenSize{
+	Param($Path)
+	ls $Path -Force | ForEach-Object {
+		echo "$($_.Name):"
+		$Size = (ls $_.Name -Recurse -Force | Measure-Object -Property Length -Sum).Sum
+		echo "   To GB: $($Size / 1GB) GB"
+		echo "   To MB: $($Size / 1MB) MB"
 	}
 }
