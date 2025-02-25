@@ -61,6 +61,7 @@ function prompt(){
 	$Host.UI.RawUI.CursorPosition = New-Object System.Management.Automation.Host.Coordinates $startposx, $startposy
 }
 
+# Color Setting
 Set-PSReadLineOption -Colors @{
 	Number = '#9EFD8F'
 	String = '#FE8E6B'
@@ -68,6 +69,9 @@ Set-PSReadLineOption -Colors @{
 	Comment = '#19B600'
 
 }
+
+#Set Alias
+Set-Alias -Name touch -Value New-Item
 
 function get{
 	Param($file)
