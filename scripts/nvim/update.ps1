@@ -1,0 +1,1 @@
+Copy-Item -Path .\nvim\ -Destination $env:LOCALAPPDATA\nvim\ -Recurse -Force

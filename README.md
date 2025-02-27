@@ -1,2 +1,2 @@
 # Terminal Config
-This is config of terminal
+This is my configuration of terminal and tools
