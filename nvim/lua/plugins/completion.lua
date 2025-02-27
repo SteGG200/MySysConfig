@@ -7,9 +7,17 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 	},
-	-- Completion
+	-- Code Completion
 	{
 		"hrsh7th/cmp-nvim-lsp",
+	},
+	-- Cmdline Completion
+	{
+		"hrsh7th/cmp-cmdline",
+	},
+	-- Path Completion
+	{
+		"hrsh7th/cmp-path",
 	},
 	-- nvim-cmp setup
 	{
