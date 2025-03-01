@@ -99,7 +99,7 @@
 | `Shift+k` | Show documentation of object under cursor |
 | `gd` | Go to definition |
 | `gr` | Show references |
-| `Ctr+i` | Formatting current file |
+| `Leader+i` | Formatting current file |
 | `Leader+ca` | Open code action popup |
 | `gcc` | Comment current line |
 | `gc(k/j)` | Comment current line and the line before/after |
