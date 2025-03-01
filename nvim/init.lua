@@ -20,4 +20,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-vim.keymap.set("n", "<C-X>", ":Lazy<cr>", {})
+vim.keymap.set("n", "<C-X>", "<cmd>Lazy<cr>", { silent = true })
