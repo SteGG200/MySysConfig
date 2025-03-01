@@ -44,6 +44,26 @@ Update script:
 
 ## Neovim
 
+**Requirement**:
+- Neovim 0.10 or later
+- tar and curl in your path (or alternatively git >= **2.19.0**)
+- A C compiler in your path and libstdc++ installed ([Windows users please read this!](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support))
+- A patched font (see [Nerd fonts](https://github.com/ryanoasis/nerd-fonts))
+- GNU tar
+- ripgrep
+- For Unix systems:
+	- curl or wget
+	- unzip
+	- gzip
+- For Windows systems:
+	- pwsh or powershell
+	- One of the following:
+		- 7zip
+		- peazip
+		- archiver
+		- winzip
+		- WinRAR
+
 Destination directory:
 
 - Windows Powershell: `$env:LOCALAPPDATA\nvim\`
@@ -72,4 +92,3 @@ bash ./scripts/nvim/update.bash
 
 Make sure you added mason bin inside `nvim-data` directory to `PATH`
 
-For Windows User, check if you had `cl.exe` or `clang-cl.exe` before. If not, please install one of them by install `MinGW` or `LLVM`.
