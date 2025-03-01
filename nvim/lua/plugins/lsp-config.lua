@@ -22,26 +22,28 @@ return {
 						runtime = {
 							-- Tell the language server which version of Lua you're using
 							-- (most likely LuaJIT in the case of Neovim)
-							version = 'LuaJIT',
+							version = "LuaJIT",
 						},
 						diagnostics = {
 							-- Get the language server to recognize the `vim` global
 							globals = {
-								'vim',
-								'require',
+								"vim",
+								"require",
 							},
 						},
 						workspace = {
-							 -- Make the server aware of Neovim runtime files
+							-- Make the server aware of Neovim runtime files
 							library = vim.api.nvim_get_runtime_file("", true),
 						},
 						telemetry = {
 							-- Do not send telemetry data containing a randomized but unique identifier
 							enable = false,
 						},
-					}
+					},
 				},
 			})
+
+			lspconfig.clangd.setup({})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
