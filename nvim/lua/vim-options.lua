@@ -16,6 +16,9 @@ o.expandtab = false
 -- Set number row
 o.number = true
 
+-- Set mouse events
+o.mousemoveevent = true
+
 -- Set no highlight
 vim.keymap.set("n", "<leader>nh", ":noh<CR>", { silent = true })
 
@@ -29,6 +32,6 @@ vim.keymap.set("n", "<C-H>", "<cmd>wincmd h<cr>", { silent = true })
 vim.keymap.set("n", "<C-L>", "<cmd>wincmd l<cr>", { silent = true })
 
 -- Navigate tabpages
-vim.keymap.set("n", "tn", "<cmd>tabnext<cr>", { silent = true })
-vim.keymap.set("n", "tp", "<cmd>tabprevious<cr>", { silent = true })
-vim.keymap.set("n", "tc", "<cmd>tabclose<cr>", { silent = true })
+vim.keymap.set("n", "tn", "<cmd>bnext<cr>", { silent = true })
+vim.keymap.set("n", "tp", "<cmd>bprevious<cr>", { silent = true })
+vim.keymap.set("n", "tc", "<cmd>bdelete!<cr>", { silent = true })
