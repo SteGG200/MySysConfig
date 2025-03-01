@@ -47,7 +47,7 @@ Update script:
 **Requirement**:
 - Neovim 0.10 or later
 - tar and curl in your path (or alternatively git >= **2.19.0**)
-- A C compiler in your path and libstdc++ installed ([Windows users please read this!](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support))
+- A C compiler in your path and libstdc++ installed (for treesitter package) ([Windows users please read this!](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support))
 - A patched font (see [Nerd fonts](https://github.com/ryanoasis/nerd-fonts))
 - GNU tar
 - ripgrep
@@ -91,4 +91,7 @@ bash ./scripts/nvim/update.bash
 ```
 
 Make sure you added mason bin inside `nvim-data` directory to `PATH`
+
+There are several language servers that you should install manually instead of using mason:
+- clangd
 
