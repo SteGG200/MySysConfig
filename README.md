@@ -69,3 +69,7 @@ Update script:
 ```bash
 bash ./scripts/nvim/update.bash
 ```
+
+Make sure you added mason bin inside `nvim-data` directory to `PATH`
+
+For Windows User, check if you had `cl.exe` or `clang-cl.exe` before. If not, please install one of them by install `MinGW` or `LLVM`.
