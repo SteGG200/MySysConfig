@@ -28,3 +28,7 @@ vim.keymap.set("n", "<C-J>", "<cmd>wincmd j<cr>", {})
 vim.keymap.set("n", "<C-H>", "<cmd>wincmd h<cr>", {})
 vim.keymap.set("n", "<C-L>", "<cmd>wincmd l<cr>", {})
 
+-- Navigate tabpages
+vim.keymap.set("n", "tn", "<cmd>tabnext<cr>", {})
+vim.keymap.set("n", "tp", "<cmd>tabprevious<cr>", {})
+vim.keymap.set("n", "tc", "<cmd>tabclose<cr>", {})
