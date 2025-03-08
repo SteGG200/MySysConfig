@@ -4,9 +4,6 @@ local o = vim.o
 g.mapleader = " "
 g.localmapleader = " "
 
--- Set default language
-vim.cmd("language en_US")
-
 -- Set default indentation
 local TAB_WIDTH = 2
 o.tabstop = TAB_WIDTH
