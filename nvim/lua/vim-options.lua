@@ -22,6 +22,9 @@ vim.keymap.set("n", "<leader>nh", ":noh<CR>", { silent = true })
 -- Don't show the mode, since it's already in the status line
 o.showmode = false
 
+-- Set no swapfile
+o.swapfile = false
+
 -- Navigate vim panels better
 vim.keymap.set("n", "<C-K>", "<cmd>wincmd k<cr>", { silent = true })
 vim.keymap.set("n", "<C-J>", "<cmd>wincmd j<cr>", { silent = true })
