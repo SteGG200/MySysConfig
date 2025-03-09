@@ -95,3 +95,4 @@ Make sure you added mason bin inside `nvim-data` directory to `PATH`
 There are several language servers that you should install manually instead of using mason:
 - clangd
 
+[About all shortcuts in neovim](nvim/shortcuts.md)
