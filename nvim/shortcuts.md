@@ -14,6 +14,14 @@
 | `Ctrl+e` | Scroll up |
 | `Ctrl+y` | Scroll down |
 
+### Tab (buffer) navigation
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `tp` | Move to previous tab |
+| `tn` | Move to next tab |
+| `tc` | Close a tab |
+
 ### Enter insert mode:
 
 | Keybinding | Command |
