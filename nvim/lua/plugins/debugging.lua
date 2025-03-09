@@ -24,7 +24,7 @@ return {
 				dap.adapters.cppdbg = {
 					id = 'cppdbg',
 					type = 'executable',
-					command = vim.fn.stdpath('data') .. '\\OpenDebugAD7.cmd',
+					command = vim.fn.stdpath('data') .. '\\mason\\bin\\OpenDebugAD7.cmd',
 					options = {
 						detached = false,
 					},
@@ -36,7 +36,7 @@ return {
 						type = "cppdbg",
 						request = "launch",
 						program = function ()
-							vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '\\', "file")
+							return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '\\', "file")
 						end,
 						cwd = '${workspaceFolder}',
 						stopAtEntry = true,
@@ -47,7 +47,7 @@ return {
 				dap.adapters.cppdbg = {
 					id = 'cppdbg',
 					type = 'executable',
-					command = vim.fn.stdpath('data') .. '/OpenDebugAD7',
+					command = vim.fn.stdpath('data') .. '/mason/bin/OpenDebugAD7',
 				}
 
 				dap.configurations.c = {
@@ -56,7 +56,7 @@ return {
 						type = "cppdbg",
 						request = "launch",
 						program = function ()
-							vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '/', "file")
+							return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '/', "file")
 						end,
 						cwd = '${workspaceFolder}',
 						stopAtEntry = true,
