@@ -3,7 +3,9 @@ return {
 		"jay-babu/mason-nvim-dap.nvim",
 		config = function()
 			require("mason-nvim-dap").setup({
-				ensured_installed = {},
+				ensured_installed = {
+					"cpptools",
+				},
 			})
 		end,
 	},
@@ -15,26 +17,52 @@ return {
 		},
 		config = function()
 			local dap = require("dap")
+			local user_functions = require("user-functions")
 
-			dap.adapters.cppdbg = {
-				id = 'cppdbg',
-				type = 'executable',
-				command = 'C:\\Users\\ADMIN\\AppData\\Local\\nvim-data\\mason\\bin\\OpenDebugAD7.cmd',
-				options = {
-					detached = false,
-				},
-			}
-
-			dap.configurations.c = {
-				{
-					name = "Launch file",
-					type = "cppdbg",
-					request = "launch",
-					program = '${fileDirname}/${fileBasenameNoExtension}.exe',
-					cwd = '${workspaceFolder}',
-					stopAtEntry = true,
+			if user_functions.get_OS() == "Windows" then
+				-- Configurations for Windows
+				dap.adapters.cppdbg = {
+					id = 'cppdbg',
+					type = 'executable',
+					command = vim.fn.stdpath('data') .. '\\OpenDebugAD7.cmd',
+					options = {
+						detached = false,
+					},
 				}
-			}
+
+				dap.configurations.c = {
+					{
+						name = "Launch file",
+						type = "cppdbg",
+						request = "launch",
+						program = function ()
+							vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '\\', "file")
+						end,
+						cwd = '${workspaceFolder}',
+						stopAtEntry = true,
+					}
+				}
+			else
+				-- Configurations for Unix OS
+				dap.adapters.cppdbg = {
+					id = 'cppdbg',
+					type = 'executable',
+					command = vim.fn.stdpath('data') .. '/OpenDebugAD7',
+				}
+
+				dap.configurations.c = {
+					{
+						name = "Launch file",
+						type = "cppdbg",
+						request = "launch",
+						program = function ()
+							vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '/', "file")
+						end,
+						cwd = '${workspaceFolder}',
+						stopAtEntry = true,
+					}
+				}
+			end
 
 			dap.configurations.cpp = dap.configurations.c
 

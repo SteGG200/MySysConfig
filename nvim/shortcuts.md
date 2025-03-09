@@ -111,6 +111,10 @@
 | ---------- | ------- |
 | `F5` | Start or continue debugging |
 | `F9` | Set breakpoint at current line |
+| `F10` | Step over |
+| `F11` | Step into |
+| `F12` | Escape debugging |
+| `Ctrl+d` | Toggle debugging windows |
 
 ## Insert mode:
 
