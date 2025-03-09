@@ -2,9 +2,9 @@ $Source = ".\nvim\"
 $Destination = "$($env:LOCALAPPDATA)\nvim\"
 
 if (Test-Path -Path $Destination){
-	$children = Get-ChildItem -Path $Path -Force
+	$children = Get-ChildItem -Path $Destination -Force
 	$children | Foreach-Object {
-		Remove-item -Force $_.FullName
+		Remove-item -Confirm -Force $_.FullName
 	}
 }else {
 	mkdir $Destination
