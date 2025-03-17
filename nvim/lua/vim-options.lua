@@ -17,7 +17,7 @@ o.number = true
 o.mousemoveevent = true
 
 -- Set no highlight
-vim.keymap.set("n", "<leader>nh", ":noh<CR>", { silent = true })
+vim.keymap.set("n", "<leader>nh", ":noh<CR>", { silent = true, desc = "Set no highlight" })
 
 -- Don't show the mode, since it's already in the status line
 o.showmode = false
@@ -26,12 +26,12 @@ o.showmode = false
 o.swapfile = false
 
 -- Navigate vim panels better
-vim.keymap.set("n", "<C-K>", "<cmd>wincmd k<cr>", { silent = true })
-vim.keymap.set("n", "<C-J>", "<cmd>wincmd j<cr>", { silent = true })
-vim.keymap.set("n", "<C-H>", "<cmd>wincmd h<cr>", { silent = true })
-vim.keymap.set("n", "<C-L>", "<cmd>wincmd l<cr>", { silent = true })
+vim.keymap.set("n", "<C-K>", "<cmd>wincmd k<cr>", { silent = true, desc = "Go to the top panel" })
+vim.keymap.set("n", "<C-J>", "<cmd>wincmd j<cr>", { silent = true, desc = "Go to the bottom panel"  })
+vim.keymap.set("n", "<C-H>", "<cmd>wincmd h<cr>", { silent = true, desc = "Go to the left panel"  })
+vim.keymap.set("n", "<C-L>", "<cmd>wincmd l<cr>", { silent = true, desc = "Go to the right panel"  })
 
 -- Navigate tabpages
-vim.keymap.set("n", "tn", "<cmd>bnext<cr>", { silent = true })
-vim.keymap.set("n", "tp", "<cmd>bprevious<cr>", { silent = true })
-vim.keymap.set("n", "tc", "<cmd>bdelete!<cr>", { silent = true })
+vim.keymap.set("n", "tl", "<cmd>bnext<cr>", { silent = true, desc = "Go to next buffer" })
+vim.keymap.set("n", "th", "<cmd>bprevious<cr>", { silent = true, desc = "Go to previous buffer" })
+vim.keymap.set("n", "tc", "<cmd>bdelete<cr>", { silent = true, desc = "Close the buffer" })

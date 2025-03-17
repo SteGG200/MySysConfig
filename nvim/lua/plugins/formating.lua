@@ -20,7 +20,7 @@ return {
 				},
 			})
 
-			vim.keymap.set("n", "<Leader>i", vim.lsp.buf.format, {})
+			vim.keymap.set("n", "<Leader>i", vim.lsp.buf.format, { desc = "Format current file" })
 		end,
 	},
 }
