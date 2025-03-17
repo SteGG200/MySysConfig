@@ -14,6 +14,14 @@
 | `Ctrl+e` | Scroll up |
 | `Ctrl+y` | Scroll down |
 
+### Tab (buffer) navigation
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `tp` | Move to previous tab |
+| `tn` | Move to next tab |
+| `tc` | Close a tab |
+
 ### Enter insert mode:
 
 | Keybinding | Command |
@@ -58,7 +66,14 @@
 
 | Keybinding | Command |
 | ---------- | ------- |
-| `Ctrl+h/j/k/l` | Move to left/down/top/right panel |
+| `Ctrl+h/j/k/l` | Move cursor to left/down/top/right panel |
+| `Ctrl+w H/J/K/L` | Move a panel to the left/down/top/right |
+| `Ctrl+w q/c` | Close a panel |
+| `Ctrl+w \|` | Zoom into current vertical panel |
+| `Ctrl+w </>` | Decrease/Increase size of current vertical panel |
+| `Ctrl+w _` | Zoom to current horizontal panel |
+| `Ctrl+w -/+` | Decrease/Increase size of current horizontal panel |
+| `Ctrl+w =` | Set all panel size equally |
 
 ### Package manager:
 
