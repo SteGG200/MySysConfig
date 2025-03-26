@@ -82,15 +82,15 @@ return {
 				dapui.close()
 			end
 
-			vim.keymap.set("n", "<F9>", dap.toggle_breakpoint, {})
-			vim.keymap.set("n", "<F5>", dap.continue, {})
-			vim.keymap.set("n", "<F10>", dap.step_over, {})
-			vim.keymap.set("n", "<F11>", dap.step_into, {})
+			vim.keymap.set("n", "<F9>", dap.toggle_breakpoint, { desc = "Set breakpoint" })
+			vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/continue debugging"})
+			vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Step over" })
+			vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step into" })
 			vim.keymap.set("n", "<F12>", function ()
 				dap.terminate()
 				dapui.close()
-			end, {})
-			vim.keymap.set("n", "<C-D>", dapui.toggle, {})
+			end, { desc = "Stop debugging" })
+			vim.keymap.set("n", "<C-D>", dapui.toggle, { desc = "Toggle debugging ui" })
 
 			-- Format breakpoint symbol
 			vim.api.nvim_set_hl(0, "red", { fg = "#f8312f" })

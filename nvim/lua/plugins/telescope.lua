@@ -5,8 +5,9 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			local telescope_builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<C-p>", telescope_builtin.find_files, {})
-			vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, {})
+			vim.keymap.set("n", "<C-p>", telescope_builtin.find_files, { desc = "Search files" })
+			vim.keymap.set("n", "<leader>sk", telescope_builtin.keymaps, { desc = "[S]earch [K]eymap in vim" })
+			vim.keymap.set("n", "<leader>sw", telescope_builtin.live_grep, { desc = "[S]earch key[W]ord in current root" })
 		end,
 	},
 	{
