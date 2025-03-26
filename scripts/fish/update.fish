@@ -1,3 +1,4 @@
 #!/usr/bin/fish
 
-cp -rT ./fish/ ~/.config/fish/functions/
+cp ./fish/fish_variables ~/.config/fish/
+cp ./fish/*.fish ~/.config/fish/functions/
