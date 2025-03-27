@@ -17,13 +17,34 @@ o.number = true
 o.mousemoveevent = true
 
 -- Set no highlight
-vim.keymap.set("n", "<leader>nh", ":noh<CR>", { silent = true, desc = "Set no highlight" })
+vim.keymap.set("n", "<leader>nh", ":noh<CR>", { silent = true, desc = "Set [N]o [H]ighlight" })
 
 -- Don't show the mode, since it's already in the status line
 o.showmode = false
 
 -- Set no swapfile
 o.swapfile = false
+
+-- Enable break indent
+vim.opt.breakindent = true
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = '| ', trail = '·', nbsp = '␣' }
+
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- Show which line your cursor is on
+vim.opt.cursorline = true
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.opt.confirm = true
 
 -- Navigate vim panels better
 vim.keymap.set("n", "<C-K>", "<cmd>wincmd k<cr>", { silent = true, desc = "Go to the top panel" })
