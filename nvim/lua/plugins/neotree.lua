@@ -20,9 +20,13 @@ return {
 				},
 			},
 		})
-		vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left reveal_force_cwd<CR>", { silent = true, desc = "Open neotree directory" })
+		vim.keymap.set(
+			"n",
+			"<leader>e",
+			":Neotree filesystem reveal left reveal_force_cwd<CR>",
+			{ silent = true, desc = "Open neotree directory" }
+		)
 		vim.keymap.set("n", "<leader>b", ":Neotree close<CR>", { silent = true, desc = "Close neotree" })
-		-- vim.keymap.set("n", "<F12>", ":Neotree float reveal_file=<cfile> reveal_force_cwd<cr>", {})
 		vim.keymap.set("n", "<leader>g", ":Neotree float git_status<cr>", { silent = true, desc = "Open neotree git" })
 	end,
 }

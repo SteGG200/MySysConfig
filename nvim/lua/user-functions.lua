@@ -5,8 +5,8 @@ function Functions.get_OS()
 	if is_windows then
 		return "Windows"
 	else
-		local uname_output = vim.fn.system('uname')
-		return string.gsub(uname_output, '\n', '')
+		local uname_output = vim.fn.system("uname")
+		return string.gsub(uname_output, "\n", "")
 	end
 end
 

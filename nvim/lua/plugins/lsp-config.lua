@@ -46,9 +46,9 @@ return {
 			lspconfig.clangd.setup({})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show document" })
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-			vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "List all references" })
-			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]o to [D]efinition" })
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "List all [R]eferences" })
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
 		end,
 	},
 }

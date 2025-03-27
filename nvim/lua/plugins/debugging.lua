@@ -22,9 +22,9 @@ return {
 			if user_functions.get_OS() == "Windows" then
 				-- Configurations for Windows
 				dap.adapters.cppdbg = {
-					id = 'cppdbg',
-					type = 'executable',
-					command = vim.fn.stdpath('data') .. '\\mason\\bin\\OpenDebugAD7.cmd',
+					id = "cppdbg",
+					type = "executable",
+					command = vim.fn.stdpath("data") .. "\\mason\\bin\\OpenDebugAD7.cmd",
 					options = {
 						detached = false,
 					},
@@ -35,19 +35,19 @@ return {
 						name = "Launch file",
 						type = "cppdbg",
 						request = "launch",
-						program = function ()
-							return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '\\', "file")
+						program = function()
+							return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "\\", "file")
 						end,
-						cwd = '${workspaceFolder}',
+						cwd = "${workspaceFolder}",
 						stopAtEntry = true,
-					}
+					},
 				}
 			else
 				-- Configurations for Unix OS
 				dap.adapters.cppdbg = {
-					id = 'cppdbg',
-					type = 'executable',
-					command = vim.fn.stdpath('data') .. '/mason/bin/OpenDebugAD7',
+					id = "cppdbg",
+					type = "executable",
+					command = vim.fn.stdpath("data") .. "/mason/bin/OpenDebugAD7",
 				}
 
 				dap.configurations.c = {
@@ -55,12 +55,12 @@ return {
 						name = "Launch file",
 						type = "cppdbg",
 						request = "launch",
-						program = function ()
-							return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '/', "file")
+						program = function()
+							return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 						end,
-						cwd = '${workspaceFolder}',
+						cwd = "${workspaceFolder}",
 						stopAtEntry = true,
-					}
+					},
 				}
 			end
 
@@ -83,10 +83,10 @@ return {
 			end
 
 			vim.keymap.set("n", "<F9>", dap.toggle_breakpoint, { desc = "Set breakpoint" })
-			vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/continue debugging"})
+			vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/continue debugging" })
 			vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Step over" })
 			vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step into" })
-			vim.keymap.set("n", "<F12>", function ()
+			vim.keymap.set("n", "<F12>", function()
 				dap.terminate()
 				dapui.close()
 			end, { desc = "Stop debugging" })

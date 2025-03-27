@@ -1,8 +1,8 @@
 return {
-	'lukas-reineke/indent-blankline.nvim',
-	main = 'ibl',
+	"lukas-reineke/indent-blankline.nvim",
+	main = "ibl",
 	config = function()
-		require('ibl').setup({
+		require("ibl").setup({
 			whitespace = {
 				remove_blankline_trail = false,
 			},
