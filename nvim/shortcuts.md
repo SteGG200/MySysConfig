@@ -18,9 +18,9 @@
 
 | Keybinding | Command |
 | ---------- | ------- |
-| `tp` | Move to previous tab |
-| `tn` | Move to next tab |
-| `tc` | Close a tab |
+| `th` | Move to previous tab |
+| `tl` | Move to next tab |
+| `tl` | Close a tab |
 
 ### Enter insert mode:
 
@@ -173,4 +173,4 @@
 
 | Keybinding | Command |
 | ---------- | ------- |
-| `Ctrl+\ Ctrl+n` | Escape terminal mode |
+| `<Esc><Esc>` | Escape terminal mode |
