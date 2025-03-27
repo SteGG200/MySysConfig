@@ -49,6 +49,7 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]o to [D]efinition" })
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "List all [R]eferences" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
+			vim.keymap.set("n", "<leader>cn", vim.lsp.buf.rename, { desc = "[C]hange [N]ame" })
 		end,
 	},
 }

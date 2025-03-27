@@ -20,13 +20,16 @@ return {
 			local surround = require("nvim-surround")
 			surround.setup({
 				keymaps = {
+					-- [S]urround
 					normal = "s",
 					normal_cur = "ss",
 					normal_line = "S",
 					normal_cur_line = "SS",
 					visual = "S",
 					visual_line = "gS",
+					-- [D]elete [S]urround
 					delete = "ds",
+					-- [C]hange [S]urround
 					change = "cs",
 					change_line = "cS",
 				},
