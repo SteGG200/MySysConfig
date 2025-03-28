@@ -46,6 +46,12 @@ vim.opt.cursorline = true
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+-- Navigate in insert mode
+vim.keymap.set("i", "<C-K>", "<C-O>k", { silent = true, desc = "Top" })
+vim.keymap.set("i", "<C-J>", "<C-O>j", { silent = true, desc = "Bottom" })
+vim.keymap.set("i", "<C-H>", "<C-O>h", { silent = true, desc = "Left" })
+vim.keymap.set("i", "<C-L>", "<C-O>l", { silent = true, desc = "Right" })
+
 -- Navigate vim panels better
 vim.keymap.set("n", "<C-K>", "<cmd>wincmd k<cr>", { silent = true, desc = "Go to the top panel" })
 vim.keymap.set("n", "<C-J>", "<cmd>wincmd j<cr>", { silent = true, desc = "Go to the bottom panel" })
@@ -56,6 +62,16 @@ vim.keymap.set("n", "<C-L>", "<cmd>wincmd l<cr>", { silent = true, desc = "Go to
 vim.keymap.set("n", "tl", "<cmd>bnext<cr>", { silent = true, desc = "Go to next buffer" })
 vim.keymap.set("n", "th", "<cmd>bprevious<cr>", { silent = true, desc = "Go to previous buffer" })
 vim.keymap.set("n", "tc", "<cmd>bdelete<cr>", { silent = true, desc = "Close the buffer" })
+vim.keymap.set("n", "tac","<cmd>%bdelete<cr>", { silent = true, desc = "Close all buffers" })
 
 -- Terminal
-vim.keymap.set("n", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+local user_functions = require("user-functions")
+
+if user_functions.get_OS() == "Windows" then
+	o.shell = ((vim.fn.executable("pwsh") == 1) and "pwsh" or "powershell")
+else
+	o.shell = ((vim.fn.executable("fish") == 1) and "fish" or "bash")
+end
+
+vim.keymap.set("n", "<leader>t", "<cmd>terminal<cr>", { silent = true, desc = "Open [T]erminal" })
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
