@@ -25,8 +25,8 @@ return {
 					normal_cur = "ss",
 					normal_line = "S",
 					normal_cur_line = "SS",
-					visual = "S",
-					visual_line = "gS",
+					visual = "s",
+					visual_line = "gs",
 					-- [D]elete [S]urround
 					delete = "ds",
 					-- [C]hange [S]urround
