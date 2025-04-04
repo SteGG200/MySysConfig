@@ -74,6 +74,10 @@ Set-PSReadLineOption -Colors @{
 Set-Alias -Name touch -Value New-Item
 Set-Alias -Name which -Value Get-Command
 
+function reboot {
+	shutdown.exe /r /t 0
+}
+
 function get{
 	Param($file)
 	cat $file | clip
