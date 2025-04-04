@@ -72,6 +72,7 @@ Set-PSReadLineOption -Colors @{
 
 #Set Alias
 Set-Alias -Name touch -Value New-Item
+Set-Alias -Name which -Value Get-Command
 
 function get{
 	Param($file)
