@@ -86,13 +86,3 @@ for buffer_index = 1, 9 do
 		{ silent = true, desc = ("Go to " .. buffer_index .. "th buffer") }
 	)
 end
-
--- Terminal
-if user_functions.get_OS() == "Windows" then
-	o.shell = ((vim.fn.executable("pwsh") == 1) and "pwsh" or "powershell")
-else
-	o.shell = ((vim.fn.executable("fish") == 1) and "fish" or "bash")
-end
-
-vim.keymap.set("n", "<leader>t", "<cmd>terminal<cr>", { silent = true, desc = "Open [T]erminal" })
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
