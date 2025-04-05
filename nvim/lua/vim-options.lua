@@ -57,10 +57,10 @@ vim.opt.scrolloff = 5
 vim.opt.confirm = true
 
 -- Navigate in insert mode
-vim.keymap.set("i", "<C-K>", "<C-O>k", { silent = true, desc = "Top" })
-vim.keymap.set("i", "<C-J>", "<C-O>j", { silent = true, desc = "Bottom" })
-vim.keymap.set("i", "<C-H>", "<C-O>h", { silent = true, desc = "Left" })
-vim.keymap.set("i", "<C-L>", "<C-O>l", { silent = true, desc = "Right" })
+vim.keymap.set("i", "<C-K>", "<Up>", { silent = true, desc = "Top" })
+vim.keymap.set("i", "<C-J>", "<Down>", { silent = true, desc = "Bottom" })
+vim.keymap.set("i", "<C-H>", "<Left>", { silent = true, desc = "Left" })
+vim.keymap.set("i", "<C-L>", "<Right>", { silent = true, desc = "Right" })
 
 -- Navigate vim panels better
 vim.keymap.set("n", "<C-K>", "<cmd>wincmd k<cr>", { silent = true, desc = "Go to the top panel" })
