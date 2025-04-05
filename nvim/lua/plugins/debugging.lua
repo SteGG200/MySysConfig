@@ -3,9 +3,10 @@ return {
 		"jay-babu/mason-nvim-dap.nvim",
 		config = function()
 			require("mason-nvim-dap").setup({
-				ensured_installed = {
+				ensure_installed = {
 					"cpptools",
 				},
+				automatic_installation = false,
 			})
 		end,
 	},
