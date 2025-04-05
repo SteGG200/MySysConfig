@@ -10,4 +10,18 @@ function Functions.get_OS()
 	end
 end
 
+function Functions.replaceAll()
+	local origin = vim.fn.input("Enter origin text: ")
+	local replacement = vim.fn.input("Enter replacement: ")
+	local flags = vim.fn.input("Enter flags: ", "g")
+	vim.cmd("%s/" .. origin .. "/" .. replacement .. "/" .. flags)
+end
+
+function Functions.replaceScope()
+	local origin = vim.fn.input("Enter origin text: ")
+	local replacement = vim.fn.input("Enter replacement: ")
+	local flags = vim.fn.input("Enter flags: ", "g")
+	vim.cmd("'<,'>s/" .. origin .. "/" .. replacement .. "/" .. flags)
+end
+
 return Functions

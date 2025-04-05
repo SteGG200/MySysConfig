@@ -1,3 +1,4 @@
+local user_functions = require("user-functions")
 local g = vim.g
 local o = vim.o
 -- Set <Space> as the leader key
@@ -56,6 +57,10 @@ vim.opt.scrolloff = 5
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+-- Replace word
+vim.keymap.set("n", "<leader>h", user_functions.replaceAll, { desc = "Replace all words in current window" })
+vim.keymap.set("v", "<leader>h", user_functions.replaceScope, { desc = "Replace all words in visual scope" })
+
 -- Navigate in insert mode
 vim.keymap.set("i", "<C-K>", "<Up>", { silent = true, desc = "Top" })
 vim.keymap.set("i", "<C-J>", "<Down>", { silent = true, desc = "Bottom" })
@@ -75,8 +80,6 @@ vim.keymap.set("n", "tc", "<cmd>bdelete<cr>", { silent = true, desc = "Close the
 vim.keymap.set("n", "tac","<cmd>%bdelete<cr>", { silent = true, desc = "Close all buffers" })
 
 -- Terminal
-local user_functions = require("user-functions")
-
 if user_functions.get_OS() == "Windows" then
 	o.shell = ((vim.fn.executable("pwsh") == 1) and "pwsh" or "powershell")
 else

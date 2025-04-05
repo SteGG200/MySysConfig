@@ -88,7 +88,8 @@
 | ---------- | ------- |
 | `/<text>` | Search `<text>` in current window |
 | `*` | Search word under cursor in current window |
-| `[range]s/<text>/<text-to-replace>/[flags]` | Replace all `<text>` to `<text-to-replace>` in current window
+| `[range]s/<text>/<text-to-replace>/[flags]` | Replace all `<text>` to `<text-to-replace>` in current window |
+| `<leader>h` | Replace all input words in current window |
 | `Ctrl+p` | Search a file |
 | `Leader+fg` | Search a text in current directory |
 | `Leader+nh` | Stop highlighting |
@@ -174,6 +175,8 @@
 | ---------- | ------- |
 | `(Visual Block) Shift+i` | Edit multi-line where is selected by visual block (Escape to apply) |
 | `gc` | Comment selected code |
+| `*` | Search selected character in current window |
+| `<leader>h` | Replace all input words in selected scope |
 
 ## Terminal mode:
 
