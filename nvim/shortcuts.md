@@ -53,7 +53,7 @@
 | `Shift+y` | Copy current line |
 | `x` | Cut the character under cursor |
 | `d` | Enter delete mode |
-| `Shift+d` | Delete all text in current line |
+| `Shift+d` | Delete all text to the right of cursor |
 | `p` | Paste copied text after block cursor |
 | `Shift+p` | Paste copied text before block cursor |
 
@@ -143,6 +143,14 @@
 | `Ctrl+b` | Scroll up
 | `Enter` | Choose the suggestion |
 | `Ctrl+e` | Close autocompletion menu |
+
+### Coding Support:
+| Keybinding | Command |
+| ---------- | ------- |
+| `Ctrl+w` | Delete word to the left of cursor |
+| `Ctrl+u` | Delete all text to the left of cursor |
+| `Ctrl+t` | Indent current line |
+| `Ctrl+d` | Un-indent current line | 
 
 ## Visual mode:
 
