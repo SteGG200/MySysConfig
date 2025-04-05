@@ -34,7 +34,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -77,7 +77,15 @@ vim.keymap.set("n", "<C-L>", "<cmd>wincmd l<cr>", { silent = true, desc = "Go to
 vim.keymap.set("n", "tl", "<cmd>bnext<cr>", { silent = true, desc = "Go to next buffer" })
 vim.keymap.set("n", "th", "<cmd>bprevious<cr>", { silent = true, desc = "Go to previous buffer" })
 vim.keymap.set("n", "tc", "<cmd>bdelete<cr>", { silent = true, desc = "Close the buffer" })
-vim.keymap.set("n", "tac","<cmd>%bdelete<cr>", { silent = true, desc = "Close all buffers" })
+vim.keymap.set("n", "tac", "<cmd>%bdelete<cr>", { silent = true, desc = "Close all buffers" })
+for buffer_index = 1, 9 do
+	vim.keymap.set(
+		"n",
+		"t" .. buffer_index,
+		"<cmd>lua require'bufferline'.go_to_buffer(" .. buffer_index .. ")<cr>",
+		{ silent = true, desc = ("Go to " .. buffer_index .. "th buffer") }
+	)
+end
 
 -- Terminal
 if user_functions.get_OS() == "Windows" then

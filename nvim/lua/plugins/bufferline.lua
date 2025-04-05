@@ -5,6 +5,7 @@ return {
 	config = function()
 		vim.opt.termguicolors = true
 		local bufferline = require("bufferline")
+
 		bufferline.setup({
 			options = {
 				separator_style = "slant",
@@ -18,5 +19,6 @@ return {
 				},
 			},
 		})
+
 	end,
 }
