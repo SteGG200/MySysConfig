@@ -20,7 +20,8 @@
 | ---------- | ------- |
 | `th` | Move to previous tab |
 | `tl` | Move to next tab |
-| `tl` | Close a tab |
+| `tc` | Close a tab |
+| `tac` | Close all tabs |
 
 ### Enter insert mode:
 
@@ -30,8 +31,8 @@
 | `a` | Edit after the block cursor |
 | `Shitf+i` | Edit at the beginning of current line |
 | `Shitf+a` | Edit at the end of current line |
-| `s` | Replace selected text |
-| `Shift+c` / `cc` | Replace all text in current line |
+| `cc` | Replace all text in current line |
+| `Shift+c` | Replace all text to the left of cursor |
 | `c(j/k)` | Replace all text in current line and the line after/before |
 
 ### Enter visual mode:
@@ -161,7 +162,7 @@
 | ---------- | ------- |
 | `iw` | Select the word under the cursor |
 | `ip` | Select all code block that the cursor is currently in |
-| `s` | Replace selected text |
+| `c` | Replace selected text |
 | `y` | Copy selected text |
 | `x` | Cut selected text |
 | `d` | Delete selected text |
