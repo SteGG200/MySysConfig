@@ -6,7 +6,7 @@ return {
 			-- your configuration comes here
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
-			delay = 0,
+			delay = 200,
 			icons = {
 				mappings = true,
 				keys = {
@@ -39,6 +39,10 @@ return {
 					F11 = "<F11>",
 					F12 = "<F12>",
 				},
+			},
+			spec = {
+				{ '<leader>t', group = '[T]erminal' },
+				{ '<leader>s', group = '[S]earch' },
 			},
 		},
 		keys = {
