@@ -46,10 +46,14 @@ return {
 			})
 
 			-- C++
-			lspconfig.clangd.setup({})
+			lspconfig.clangd.setup({
+				capabilities = capabilities,
+			})
 
 			-- Python
-			lspconfig.pyright.setup({})
+			lspconfig.pyright.setup({
+				capabilities = capabilities,
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show document" })
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]o to [D]efinition" })
