@@ -11,8 +11,6 @@ return {
 				vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
 				vim.o.shellquote = ""
 				vim.o.shellxquote = ""
-			-- else
-			-- 	vim.o.shell = ((vim.fn.executable("fish") == 1) and "fish" or "bash")
 			end
 
 			local terminal = require("toggleterm")

@@ -4,7 +4,7 @@ return {
 		config = function()
 			require("mason-nvim-dap").setup({
 				ensure_installed = {
-					"cpptools",
+					"cppdbg",
 				},
 				automatic_installation = false,
 			})
