@@ -23,6 +23,7 @@ return {
 			vim.keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { silent = true, desc = "Open [F]loat terminal" })
 			vim.keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical size=70<cr>", { silent = true, desc = "Open [V]ertical terminal" })
 			vim.keymap.set("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", { silent = true, desc = "Open [H]orizontal terminal" })
+			vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { silent = true, desc = "[T]oggle terminal" })
 			vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 		end,
 	},
