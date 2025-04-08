@@ -1,0 +1,10 @@
+discord
+
+fish
+
+neovim
+
+hyprland
+waybar
+hyprpaper
+xdg-desktop-portal-hyprland
