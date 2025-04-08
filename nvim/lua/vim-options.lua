@@ -86,3 +86,9 @@ for buffer_index = 1, 9 do
 		{ silent = true, desc = ("Go to " .. buffer_index .. "th buffer") }
 	)
 end
+vim.keymap.set(
+	"n",
+	"t10",
+	"<cmd>lua require'bufferline'.go_to_buffer(10)<cr>",
+	{ silent = true, desc = "Go to 10th buffer" }
+)
