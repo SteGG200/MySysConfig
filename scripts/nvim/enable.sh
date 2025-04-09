@@ -5,7 +5,7 @@ NVIM_DESTINATION=~/.config/nvim
 NVIM_BACKUP=~/.config/nvim_backup
 
 # Backup
-if [ -d "$NVIM_DESTINATION" ]; then
+if [ -d "$NVIM_DESTINATION" ] && [ ! -L "$NVIM_DESTINATION" ]; then
 	echo "Creating backup directory for nvim..."
 	mv $NVIM_DESTINATION $NVIM_BACKUP
 fi
