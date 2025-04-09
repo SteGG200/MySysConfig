@@ -3,7 +3,7 @@ $PWSH_DESTINATION = $PROFILE
 $TEMP = (Get-Item $PROFILE)
 $PWSH_BACKUP = "$($TEMP.Directory)\$($TEMP.BaseName).bak"
 
-if(Test-Path -Path $PWSH_DESTINATION -PathType Leaf){
+if( (Test-Path -Path $PWSH_DESTINATION -PathType Leaf) -and ((Get-Item $PWSH_DESTINATION).LinkType -eq $null) ){
 	echo "Creating backup directory for powershell profile..."
 	Move-Item -Path $PWSH_DESTINATION -Destination $PWSH_BACKUP
 }
