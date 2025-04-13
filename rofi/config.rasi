@@ -1,0 +1,30 @@
+configuration {
+	modes: "drun,window,run";
+	icon-theme: "Papirus";
+	show-icons: true;
+	font: "JetBrainsMono Nerd Font 12";
+	terminal: "kitty";
+	location: 0;
+	disable-history: false;
+	sidebar-mode: false;
+	matching: "regex";
+
+	drun-categories: "";
+	display-drun: "Application";
+
+	display-window: "Window";
+
+	run,drun {
+		fallback-icon: "application-x-addon";
+	}
+
+	click-to-exit: false;
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+}
+
+// @theme "claudeai"
+@theme "theme"

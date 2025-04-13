@@ -96,3 +96,5 @@ There are several language servers that you should install manually instead of u
 - clangd
 
 [About all shortcuts in neovim](nvim/shortcuts.md)
+
+

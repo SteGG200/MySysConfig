@@ -17,3 +17,5 @@ if [ $? -ne 0 ]; then
 else
 	echo "Yay is installed"
 fi
+
+yay -Sy --needed - < ./tools/arch/yay_packages.txt

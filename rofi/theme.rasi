@@ -1,0 +1,134 @@
+/**
+ * Tokyo Night theme for Rofi
+ * Based on tokyonight.nvim color scheme
+ */
+
+* {
+	/* Tokyo Night Colors */
+	bg-dark: #1a1b26;
+	bg: #24283b;
+	fg: #c0caf5;
+	fg-alt: #565f89;
+	blue: #7aa2f7;
+	blue-alt: #3d59a1;
+	green: #9ece6a;
+	red: #f7768e;
+	purple: #bb9af7;
+	yellow: #e0af68;
+	orange: #ff9e64;
+	cyan: #7dcfff;
+
+	/* Global Properties */
+	background-color: @bg-dark;
+	text-color: @fg;
+
+	margin: 0;
+	padding: 0;
+	spacing: 0;
+}
+
+window {
+	background-color: @bg-dark;
+	border: 2px;
+	border-color: @blue;
+	border-radius: 10px;
+	padding: 20px;
+	width: 40%;
+	transparency: "real";
+}
+
+mainbox {
+	background-color: transparent;
+	children: [inputbar, message, listview];
+	spacing: 10px;
+	padding: 10px 0;
+}
+
+inputbar {
+	background-color: @bg;
+	border-radius: 12px;
+	border: 0;
+	padding: 0;
+	spacing: 0;
+	children: [prompt, entry];
+}
+
+prompt {
+	background-color: @blue;
+	text-color: @bg-dark;
+	padding: 8px 16px;
+	border-radius: 12px 0 0 12px;
+	font: "JetBrainsMono Nerd Font Medium 12";
+}
+
+entry {
+	background-color: @bg;
+	text-color: @fg;
+	placeholder: "Search...";
+	placeholder-color: @fg-alt;
+	padding: 8px 16px;
+	border-radius: 0 12px 12px 0;
+}
+
+message {
+	background-color: transparent;
+	margin: 0 0 6px 0;
+}
+
+listview {
+	background-color: transparent;
+	lines: 8;
+	columns: 1;
+	fixed-height: true;
+	dynamic: true;
+	spacing: 6px;
+	scrollbar: true;
+}
+
+scrollbar {
+	background-color: @bg;
+	handle-color: @blue;
+	handle-width: 4px;
+	border-radius: 6px;
+	margin: 0 2px;
+}
+
+element {
+	background-color: transparent;
+	border-radius: 8px;
+	padding: 8px 12px;
+	spacing: 8px;
+}
+
+element normal.normal, element alternate.normal {
+	background-color: @bg;
+	text-color: @fg;
+}
+
+element selected.normal {
+	background-color: @blue-alt;
+	text-color: @fg;
+}
+
+element-icon {
+	background-color: transparent;
+	size: 24px;
+}
+
+element-text {
+	background-color: transparent;
+	vertical-align: 0.5;
+}
+
+/* Button styling */
+button {
+	background-color: @bg;
+	text-color: @fg-alt;
+	border-radius: 8px;
+	padding: 6px;
+}
+
+button selected {
+	background-color: @blue;
+	text-color: @bg-dark;
+}
