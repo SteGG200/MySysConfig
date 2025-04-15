@@ -8,6 +8,7 @@ configuration {
 	disable-history: false;
 	sidebar-mode: false;
 	matching: "regex";
+	steal-focus: true;
 
 	drun-categories: "";
 	display-drun: "Application";

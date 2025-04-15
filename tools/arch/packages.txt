@@ -1,5 +1,6 @@
 wmctrl
 wl-clipboard
+cliphist
 swww
 brightnessctl
 power-profiles-daemon
