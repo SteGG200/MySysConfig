@@ -14,13 +14,16 @@ clang
 
 hyprland
 kitty
-rofi
 ranger
 hyprpaper
 hyprlock
 hypridle
 xdg-desktop-portal-hyprland
 hyprsunset
+
+rofi
+rofi-emoji
+wtype
 
 fcitx5
 fcitx5-configtool
