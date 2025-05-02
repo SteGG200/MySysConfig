@@ -3,6 +3,7 @@ $SCOOP_BUCKETS = @(
 	'main'
 	'extras'
 	'nerd-fonts'
+	'versions'
 )
 
 # System utilities
@@ -17,6 +18,7 @@ $SYSTEM_UTILS = @(
 # Development tools
 $DEV_TOOLS = @(
 	'neovim'
+	'mingw-winlibs-llvm'
 )
 
 # Fonts
