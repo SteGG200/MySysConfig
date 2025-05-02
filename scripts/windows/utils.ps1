@@ -33,7 +33,9 @@ function install_packages {
 	
 	if ($to_install -ne 0) {
 		Write-Host "Installing: $to_install"
-		scoop install "$to_install"
+		foreach($pkg in $to_install) {
+			scoop install $pkg
+		}
 	}
 }
 
@@ -50,6 +52,6 @@ function link_config {
 	}
 
 	if (!(Test-Path -Path $destination)) {
-		gsudo New-Item -Path $destination -ItemType SymbolicLink -Value $source
+		gsudo New-Item -Path $destination -ItemType SymbolicLink -Value $source -Force
 	}
 }
