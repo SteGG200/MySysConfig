@@ -68,6 +68,9 @@ Write-Host "Linking neovim configuration..."
 link_config "$pwd\nvim" "$($env:LOCALAPPDATA)\nvim" "$($env:LOCALAPPDATA)\nvim_backup"
 
 Write-Host "Linking powershell profile..."
-$TEMP = (Get-Item $PROFILE)
-link_config "$pwd\powershell\profile.ps1" $PROFILE "$($TEMP.Directory)\$($TEMP.BaseName).bak"
-
+if (Test-Path -Path $PROFILE){
+	$TEMP = (Get-Item $PROFILE)
+	link_config "$pwd\powershell\profile.ps1" $PROFILE "$($TEMP.Directory)\$($TEMP.BaseName).bak"
+}else {
+	link_config "$pwd\powershell\profile.ps1" $PROFILE ""
+}
