@@ -61,6 +61,9 @@ function prompt(){
 	$Host.UI.RawUI.CursorPosition = New-Object System.Management.Automation.Host.Coordinates $startposx, $startposy
 }
 
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$PSDefaultParameterValues['*:Encoding'] = 'utf8'
+
 # Color Setting
 Set-PSReadLineOption -Colors @{
 	Number = '#9EFD8F'
