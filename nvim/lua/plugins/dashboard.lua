@@ -3,9 +3,15 @@ return {
 	event = "VimEnter",
 	config = function()
 		local logo = [[
+███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 		]]
 
-		logo = string.rep("\n", 8) .. logo .. "\n\n"
+		logo = string.rep("\n", 5) .. logo .. "\n"
 
 		require("dashboard").setup({
 			-- config
@@ -14,6 +20,7 @@ return {
 				statusline = false,
 			},
 			config = {
+				header = vim.split(logo, "\n"),
 				shortcut = {
 					{ desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
 					{
