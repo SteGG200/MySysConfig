@@ -73,14 +73,7 @@ Set-PSReadLineOption -Colors @{
 #Set Alias
 Set-Alias -Name touch -Value New-Item
 Set-Alias -Name which -Value Get-Command
-
-function sudo {
-	param(
-		[string]$Script
-	)
-
-	Start-Process -Verb RunAs powershell.exe -Args "-executionpolicy bypass -command Set-Location \`"$PWD\`"; $Script"
-}
+Set-Alias -Name sudo -Value gsudo
 
 function reboot {
 	shutdown.exe /r /t 0
