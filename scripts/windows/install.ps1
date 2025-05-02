@@ -31,6 +31,12 @@ if (Get-Command scoop -ErrorAction SilentlyContinue) {
 # Import package list
 . $pwd\scripts\windows\packages.ps1
 
+# Install git if not present
+if (! (Get-Command git -ErrorAction SilentlyContinue)) {
+	Write-Host "Installing git..."
+	scoop install main/git
+}
+
 # Add needed buckets
 Write-Host "Adding important buckets..."
 add_buckets $SCOOP_BUCKETS
@@ -47,11 +53,13 @@ install_packages $FONTS
 
 # Install windows terminal if not present
 if (! (Get-Command wt -ErrorAction SilentlyContinue)) {
+	Write-Host "Installing windows terminal..."
 	scoop install extras/windows-terminal
 }
 
 # Install gsudo if not present
 if (! ( Get-Command gsudo -ErrorAction SilentlyContinue )) {
+	Write-Host "Installing gsudo..."
 	scoop install main/gsudo
 }
 
