@@ -32,3 +32,6 @@ setup hyprpanel
 
 # rofi/
 setup rofi
+
+# lf/
+setup lf

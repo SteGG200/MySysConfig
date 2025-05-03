@@ -15,12 +15,14 @@ clang
 
 hyprland
 kitty
-ranger
 hyprpaper
 hyprlock
 hypridle
 xdg-desktop-portal-hyprland
 hyprsunset
+
+lf
+trash-cli
 
 rofi
 rofi-emoji
