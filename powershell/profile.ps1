@@ -14,8 +14,8 @@ function prompt(){
 
 
 	$identity = [Security.Principal.WindowsIdentity]::GetCurrent()
-    $principal = [Security.Principal.WindowsPrincipal] $identity
-    $adminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
+	$principal = [Security.Principal.WindowsPrincipal] $identity
+	$adminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
 
 	if ($principal.IsInRole($adminRole)) {
 		Write-Host -NoNewLine $user -ForegroundColor Red
