@@ -40,7 +40,7 @@ vim.opt.signcolumn = "yes"
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = "| ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "▏ ", lead = "·", nbsp = "␣" }
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
