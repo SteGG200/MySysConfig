@@ -1,12 +1,14 @@
 return {
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
+		version = "*",
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
 					"pyright",
 				},
+				automatic_enable = false,
 			})
 		end,
 	},
