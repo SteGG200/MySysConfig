@@ -74,21 +74,21 @@ vim.keymap.set("n", "<C-H>", "<cmd>wincmd h<cr>", { silent = true, desc = "Go to
 vim.keymap.set("n", "<C-L>", "<cmd>wincmd l<cr>", { silent = true, desc = "Go to the right panel" })
 
 -- Navigate tabpages
-vim.keymap.set("n", "bl", "<cmd>bnext<cr>", { silent = true, desc = "Go to next buffer" })
-vim.keymap.set("n", "bh", "<cmd>bprevious<cr>", { silent = true, desc = "Go to previous buffer" })
-vim.keymap.set("n", "bc", "<cmd>bdelete<cr>", { silent = true, desc = "Close the buffer" })
-vim.keymap.set("n", "bac", "<cmd>%bdelete<cr>", { silent = true, desc = "Close all buffers" })
+vim.keymap.set("n", "fl", "<cmd>bnext<cr>", { silent = true, desc = "Go to next buffer" })
+vim.keymap.set("n", "fh", "<cmd>bprevious<cr>", { silent = true, desc = "Go to previous buffer" })
+vim.keymap.set("n", "fc", "<cmd>bdelete<cr>", { silent = true, desc = "Close the buffer" })
+vim.keymap.set("n", "fac", "<cmd>%bdelete<cr>", { silent = true, desc = "Close all buffers" })
 for buffer_index = 1, 9 do
 	vim.keymap.set(
 		"n",
-		"b" .. buffer_index,
+		"<M-" .. buffer_index .. ">",
 		"<cmd>lua require'bufferline'.go_to_buffer(" .. buffer_index .. ")<cr>",
 		{ silent = true, desc = ("Go to " .. buffer_index .. "th buffer") }
 	)
 end
 vim.keymap.set(
 	"n",
-	"b0",
+	"<M-0>",
 	"<cmd>lua require'bufferline'.go_to_buffer(10)<cr>",
 	{ silent = true, desc = "Go to 10th buffer" }
 )
