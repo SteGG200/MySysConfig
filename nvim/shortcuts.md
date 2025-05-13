@@ -1,10 +1,12 @@
 # Preferences: All keyboard shortcuts
 
-**Note**: `Leader` key is currently set to `Space`
+**Note**: 
+- `Leader` key is currently set to `Space`
+- About surrounding, visit [nvim-surround](https://github.com/kylechui/nvim-surround) for details
 
-## Normal mode:
+## Normal mode
 
-### Navigation: 
+### Navigation 
 
 | Keybinding | Command |
 | ---------- | ------- |
@@ -18,12 +20,14 @@
 
 | Keybinding | Command |
 | ---------- | ------- |
-| `th` | Move to previous tab |
-| `tl` | Move to next tab |
-| `tc` | Close a tab |
-| `tac` | Close all tabs |
+| `fh` | Move to previous tab |
+| `fl` | Move to next tab |
+| `fc` | Close a tab |
+| `fac` | Close all tabs |
+| `Alt+[1 - 9]` | Open the [1 - 9]th tab |
+| `Alt+0` | Open the 10th tab |
 
-### Enter insert mode:
+### Enter insert mode
 
 | Keybinding | Command |
 | ---------- | ------- |
@@ -35,7 +39,7 @@
 | `Shift+c` | Replace all text to the left of cursor |
 | `c(j/k)` | Replace all text in current line and the line after/before |
 
-### Enter visual mode:
+### Enter visual mode
 
 | Keybinding | Command |
 | ---------- | ------- |
@@ -47,23 +51,25 @@
 | `x` | Cut selected text |
 | `d` | Delete selected text |
 
-### Enter Op-pending mode:
+### Enter Op-pending mode
 | Keybinding | Command |
 | ---------- | ------- |
 | `y` | Enter copy mode |
-| `Shift+y` | Copy current line |
+| `Shift+y` | Copy all text to the right of cursor |
 | `x` | Cut the character under cursor |
 | `d` | Enter delete mode |
 | `Shift+d` | Delete all text to the right of cursor |
 | `p` | Paste copied text after block cursor |
 | `Shift+p` | Paste copied text before block cursor |
+| `ds(surrounder)` | Delete the nearest surrounder |
+| `cs(old surrounder)(new surrounder)` | Replace the nearest surrounder to the new one |
 
-### Enter Cmdline mode:
+### Enter Cmdline mode
 | Keybinding | Command |
 | ---------- | ------- |
 | `:` | Enter Cmdline mode |
 
-### Navigate between panels:
+### Navigate between panels
 
 | Keybinding | Command |
 | ---------- | ------- |
@@ -76,7 +82,7 @@
 | `Ctrl+w -/+` | Decrease/Increase size of current horizontal panel |
 | `Ctrl+w =` | Set all panel size equally |
 
-### Package manager:
+### Package manager
 
 | Keybinding | Command |
 | ---------- | ------- |
@@ -92,24 +98,56 @@
 | `[range]s/<text>/<text-to-replace>/[flags]` | Replace all `<text>` to `<text-to-replace>` in current window |
 | `<leader>h` | Replace all input words in current window |
 | `Ctrl+p` | Search a file |
-| `Leader+fg` | Search a text in current directory |
+| `Leader+sw` | Search a text in current directory |
+| `Leader+sk` | Search a key binding |
 | `Leader+nh` | Stop highlighting |
 
-### Neotree:
+### Neotree
 
 | Keybinding | Command |
 | ---------- | ------- |
 | `Leader+e` | Open neotree with source is filesystem |
 | `Leader+b` | Close neotree |
 
-### Git:
+### Task manager (Overseer)
 
 | Keybinding | Command |
 | ---------- | ------- |
-| `Leader+g` | Open git status |
+| `Leader+or` | Open Overseer task runners |
+| `Leader+oa` | Open Overseer task actions |
+
+### Git
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `Leader+g` | Open Neotree git-status |
+| `ga` | Git add in Neotree |
+| `gc` | Git commit in Neotree |
+| `gp` | Git push in Neotree |
 | `gph` | Show change diff |
 
-### Coding Support:
+#### Git conflict resolver
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `co` | Choose ours |
+| `ct` | Choose theirs |
+| `cb` | Choose both |
+| `c0` | Choose none |
+| `]x` | Move to previous conflict |
+| `[x` | Move to next conflict |
+
+### Terminal
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `tf` | Open float terminal |
+| `tv` | Open vertical terminal |
+| `th` | Open horizontal terminal |
+| `tt` | Toggle terminal |
+| `<Esc><Esc>` | Escape terminal mode |
+
+### Coding Support
 
 | Keybinding | Command |
 | ---------- | ------- |
@@ -118,11 +156,14 @@
 | `gr` | Show references |
 | `Leader+i` | Formatting current file |
 | `Leader+ca` | Open code action popup |
+| `Leader+cd` | Show code diagnostics |
+| `Leader+rn` | Rename a variable/function/class/... name |
 | `gcc` | Comment current line |
 | `gc(k/j)` | Comment current line and the line before/after |
 | `gx` | Access file / url under the cursor |
+| `~` | Toggle case of character under the cursor |
 
-### Debugging:
+### Debugging
 
 | Keybinding | Command |
 | ---------- | ------- |
@@ -133,9 +174,9 @@
 | `F12` | Escape debugging |
 | `Ctrl+d` | Toggle debugging windows |
 
-## Insert mode:
+## Insert mode
 
-### Coding suggestion:
+### Coding suggestion
 
 | Keybinding | Command |
 | ---------- | ------- |
@@ -146,7 +187,8 @@
 | `Enter` | Choose the suggestion |
 | `Ctrl+e` | Close autocompletion menu |
 
-### Coding Support:
+### Coding Support
+
 | Keybinding | Command |
 | ---------- | ------- |
 | `Ctrl+w` | Delete word to the left of cursor |
@@ -154,7 +196,13 @@
 | `Ctrl+t` | Indent current line |
 | `Ctrl+d` | Un-indent current line | 
 
-## Visual mode:
+### Navigation
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `Ctrl+h/j/k/l` | Move cursor to the left/bottom/top/right |
+
+## Visual mode
 
 ### Basic:
 
@@ -169,6 +217,7 @@
 | `u` | Set all selected characters to lowercase |
 | `U` | Set all selected characters to uppercase |
 | `v` | Toggle visual mode |
+| `s(surrounder)` | Surround all selected characters with input surrounder |
 
 ### Coding Support:
 
@@ -179,10 +228,3 @@
 | `*` | Search selected character in current window |
 | `<leader>h` | Replace all input words in selected scope |
 
-## Terminal mode:
-
-### Basic:
-
-| Keybinding | Command |
-| ---------- | ------- |
-| `<Esc><Esc>` | Escape terminal mode |
