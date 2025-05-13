@@ -59,7 +59,7 @@ return {
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show document" })
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]o to [D]efinition" })
-			vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "List all [R]eferences" })
+			vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { silent = true, desc = "List all [R]eferences" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
 			vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show [C]ode [D]iagnostics" })
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]ename [N]ame" })
