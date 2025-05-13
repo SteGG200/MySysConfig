@@ -41,7 +41,6 @@ return {
 				},
 			},
 			spec = {
-				{ '<leader>t', group = '[T]erminal' },
 				{ '<leader>s', group = '[S]earch' },
 			},
 		},
