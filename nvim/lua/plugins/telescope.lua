@@ -28,4 +28,20 @@ return {
 			require("telescope").load_extension("ui-select")
 		end,
 	},
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		config = function()
+			require("telescope").setup({
+				extensions = {
+					file_browser = {
+						hijack_netrw = true,
+					},
+				},
+			})
+
+			require("telescope").load_extension("file_browser")
+			vim.keymap.set("n", "<leader>sf", "<cmd>Telescope file_browser<cr>", { silent = true ,desc = "[S]earch global [F]ile" })
+		end,
+	},
 }
