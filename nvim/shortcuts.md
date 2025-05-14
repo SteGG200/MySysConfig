@@ -98,6 +98,7 @@
 | `[range]s/<text>/<text-to-replace>/[flags]` | Replace all `<text>` to `<text-to-replace>` in current window |
 | `<leader>h` | Replace all input words in current window |
 | `Ctrl+p` | Search a file |
+| `Leader+sf` | Search a file globally |
 | `Leader+sw` | Search a text in current directory |
 | `Leader+sk` | Search a key binding |
 | `Leader+nh` | Stop highlighting |
