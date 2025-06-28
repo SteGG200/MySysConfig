@@ -76,3 +76,7 @@ if (Test-Path -Path $PROFILE){
 }else {
 	link_config "$pwd\powershell\profile.ps1" $PROFILE ""
 }
+
+# Run winutils
+Write-Host "Starting winutils..."
+gsudo -n -w { irm "https://christitus.com/win" | iex }

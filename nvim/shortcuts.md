@@ -15,6 +15,7 @@
 | `Shift+g` | Go to the bottom of file |
 | `Ctrl+e` | Scroll up |
 | `Ctrl+y` | Scroll down |
+| `zz` | Move current line to center of screen |
 
 ### Tab (buffer) navigation
 
@@ -31,8 +32,8 @@
 
 | Keybinding | Command |
 | ---------- | ------- |
-| `i` | Edit before block cursor |
-| `a` | Edit after the block cursor |
+| `i` | Edit before cursor |
+| `a` | Edit after the cursor |
 | `Shitf+i` | Edit at the beginning of current line |
 | `Shitf+a` | Edit at the end of current line |
 | `cc` | Replace all text in current line |
@@ -59,8 +60,8 @@
 | `x` | Cut the character under cursor |
 | `d` | Enter delete mode |
 | `Shift+d` | Delete all text to the right of cursor |
-| `p` | Paste copied text after block cursor |
-| `Shift+p` | Paste copied text before block cursor |
+| `p` | Paste copied text after cursor |
+| `Shift+p` | Paste copied text before cursor |
 | `ds(surrounder)` | Delete the nearest surrounder |
 | `cs(old surrounder)(new surrounder)` | Replace the nearest surrounder to the new one |
 
@@ -102,6 +103,22 @@
 | `Leader+sw` | Search a text in current directory |
 | `Leader+sk` | Search a key binding |
 | `Leader+nh` | Stop highlighting |
+
+### Folding
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `za` | Toggle fold under cursor |
+| `zA` | Toggle all folds under cursor |
+| `zc` | Close fold under cursor | 
+| `zC` | Close all folds under cursor |
+| `zo` | Open fold under cursor | 
+| `zO` | Open all fold under cursor |
+| `zd` | Delete fold under cursor |
+| `zD` | Delete all folds under cursor |
+| `zM` | Close all folds in file |
+| `zR` | Open all folds in file |
+| `zE` | Delete all folds in file |
 
 ### Neotree
 
@@ -227,5 +244,6 @@
 | `(Visual Block) Shift+i` | Edit multi-line where is selected by visual block (Escape to apply) |
 | `gc` | Comment selected code |
 | `*` | Search selected character in current window |
-| `<leader>h` | Replace all input words in selected scope |
+| `zf` | Fold the selected block |
+<!--| `<leader>h` | Replace all input words in selected scope |-->
 
