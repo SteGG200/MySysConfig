@@ -1,5 +1,5 @@
 configuration {
-	modes: "drun,window,run,emoji";
+	modes: "drun,window,run,emoji,power-menu";
 	icon-theme: "Papirus";
 	show-icons: true;
 	font: "JetBrainsMono Nerd Font 12";
@@ -23,10 +23,10 @@ configuration {
 
 	click-to-exit: false;
 
-  timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
+	timeout {
+		action: "kb-cancel";
+		delay:  0;
+	}
 }
 
 // @theme "claudeai"

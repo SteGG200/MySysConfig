@@ -75,5 +75,9 @@ for config in "${DOT_CONFIGS[@]}"; do
 	des=~/.config/$config
 	bak=~/.config/${config}_backup
 
+	echo "Linking $config configuration..."
 	link_config $src $des $bak
 done
+
+echo "Linking local bin..."
+link_config $PWD/bin ~/.local/bin ~/.local/bin_backup
