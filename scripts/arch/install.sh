@@ -44,6 +44,8 @@ source $PWD/scripts/arch/utils.sh
 source $PWD/scripts/arch/packages.conf
 source $PWD/scripts/arch/aur_packages.conf
 
+# Import essential configurations
+source $PWD/scripts/arch/configurations.conf
 
 # Install packages by category
 echo "Installing system utilities..."
@@ -67,3 +69,11 @@ install_packages "${COMMON_APPS[@]}"
 echo "Installing fonts..."
 install_packages "${FONTS[@]}"
 
+# Link configuration files
+for config in "${DOT_CONFIGS[@]}"; do
+	src=$PWD/$config
+	des=~/.config/$config
+	bak=~/.config/${config}_backup
+
+	link_config $src $des $bak
+done

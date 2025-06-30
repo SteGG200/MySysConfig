@@ -42,3 +42,18 @@ install_aur_packages() {
 		yay -S --noconfirm "${to_install[@]}"
 	fi
 }
+
+link_config() {
+	local src="$1"
+	local des="$2"
+	local bak="$3"
+
+	if [ -d $des ] && [ ! -L $des ]; then
+		echo "Creating backup for $des..."
+		mv $des $bak
+	fi
+
+	if [ ! -d $des ]; then
+		ln -s $src $des
+	fi
+}
