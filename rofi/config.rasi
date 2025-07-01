@@ -1,5 +1,5 @@
 configuration {
-	modes: "drun,window,run,emoji,power-menu";
+	modes: "drun,window,run,emoji";
 	icon-theme: "Papirus";
 	show-icons: true;
 	font: "JetBrainsMono Nerd Font 12";
