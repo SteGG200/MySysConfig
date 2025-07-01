@@ -58,6 +58,7 @@ install_aur_packages "${AUR_HYPRLAND_UTILS[@]}"
 
 echo "Installing development tools..."
 install_packages "${DEV_TOOLS[@]}"
+install_aur_packages "${AUR_DEV_TOOLS[@]}"
 
 echo "Installing input method..."
 install_packages "${INPUT_METHOD[@]}"
