@@ -25,7 +25,7 @@
 | `fl` | Move to next tab |
 | `fc` | Close a tab |
 | `fac` | Close all tabs |
-| `Alt+[1 - 9]` | Open the [1 - 9]th tab |
+| `Alt+[1 - 9]` | Open the 1 - 9 th tab |
 | `Alt+0` | Open the 10th tab |
 
 ### Enter insert mode
@@ -53,6 +53,7 @@
 | `d` | Delete selected text |
 
 ### Enter Op-pending mode
+
 | Keybinding | Command |
 | ---------- | ------- |
 | `y` | Enter copy mode |
@@ -66,6 +67,7 @@
 | `cs(old surrounder)(new surrounder)` | Replace the nearest surrounder to the new one |
 
 ### Enter Cmdline mode
+
 | Keybinding | Command |
 | ---------- | ------- |
 | `:` | Enter Cmdline mode |
