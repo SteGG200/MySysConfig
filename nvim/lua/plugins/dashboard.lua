@@ -2,6 +2,7 @@ return {
 	"nvimdev/dashboard-nvim",
 	event = "VimEnter",
 	config = function()
+		-- Font ANSI Shadow
 		local logo = [[
 ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
 ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
@@ -26,7 +27,7 @@ return {
 					{
 						desc = " Open file",
 						group = "Label",
-						action = "Telescope find_files",
+						action = "Telescope file_browser",
 						key = "f",
 					},
 					{
