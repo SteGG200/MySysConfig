@@ -11,7 +11,7 @@ return {
 					which_key = true,
 					indent_blankline = {
 						enabled = true,
-						scope_color = "lavender",
+						scope_color = "sky",
 					}
 				}
 			})
