@@ -7,6 +7,7 @@ return {
 			require("catppuccin").setup({
 				no_italic = true,
 				integrations = {
+					neotree = true,
 					mason = true,
 					which_key = true,
 					indent_blankline = {

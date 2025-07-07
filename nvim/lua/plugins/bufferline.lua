@@ -15,6 +15,12 @@ return {
 				styles = {},
 				custom = {
 					mocha = {
+						buffer_selected = {
+							fg = mocha.sky,
+						},
+						duplicate_selected = {
+							fg = mocha.sapphire
+						},
 						close_button_selected = {
 							fg = mocha.sky,
 						}
