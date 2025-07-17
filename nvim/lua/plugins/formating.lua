@@ -7,6 +7,7 @@ return {
 				ensure_installed = {
 					"stylua",
 					"black",
+					"prettier",
 				},
 			})
 		end,
@@ -19,6 +20,7 @@ return {
 				sources = {
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.black,
+					null_ls.builtins.formatting.prettier,
 				},
 			})
 
