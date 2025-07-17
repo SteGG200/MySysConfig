@@ -13,11 +13,16 @@ return {
 				"css",
 				"javascript",
 				"python",
+				"go",
+				"gomod",
+				"gosum",
 				"markdown",
 			},
 			sync_install = false,
 			auto_install = false,
-			hightlight = { enable = true },
+			highlight = {
+				enable = true,
+			},
 			indent = { enable = true },
 		})
 	end,
