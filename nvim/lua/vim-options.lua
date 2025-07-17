@@ -11,6 +11,9 @@ o.tabstop = TAB_WIDTH
 o.shiftwidth = TAB_WIDTH
 o.expandtab = false
 
+-- Turn off python_recommended_style from vim
+g.python_recommended_style = 0
+
 -- Set number row
 o.number = true
 
