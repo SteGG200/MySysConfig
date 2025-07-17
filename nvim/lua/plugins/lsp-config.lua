@@ -7,6 +7,10 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"pyright",
+					"ts_ls",
+					"html",
+					"cssls",
+					"tailwindcss",
 				},
 				automatic_enable = false,
 			})
@@ -54,6 +58,30 @@ return {
 
 			-- Python
 			lspconfig.pyright.setup({
+				capabilities = capabilities,
+			})
+			
+			-- Golang
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+			})
+
+			-- JavaScript/TypeScript
+			lspconfig.ts_ls.setup({
+				capabilities = capabilities,
+			})
+
+			-- HTML
+			lspconfig.html.setup({
+				capabilities = capabilities,
+			})
+
+			-- CSS
+			lspconfig.cssls.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
 			})
 
