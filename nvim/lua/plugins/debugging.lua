@@ -1,6 +1,7 @@
 return {
 	{
 		"jay-babu/mason-nvim-dap.nvim",
+		version = "*",
 		config = function()
 			require("mason-nvim-dap").setup({
 				ensure_installed = {
