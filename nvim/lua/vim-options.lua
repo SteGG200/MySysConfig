@@ -1,4 +1,3 @@
-local user_functions = require("user-functions")
 local g = vim.g
 local o = vim.o
 -- Set <Space> as the leader key
@@ -64,6 +63,12 @@ vim.opt.confirm = true
 -- Replace word
 -- vim.keymap.set("n", "<leader>h", user_functions.replaceAll, { desc = "Replace all words in current window" })
 -- vim.keymap.set("v", "<leader>h", user_functions.replaceScope, { desc = "Replace all words in visual scope" })
+
+-- Folding
+o.foldmethod = 'expr'
+o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+o.foldenable = false
+o.foldlevel = 20
 
 -- Navigate in insert mode
 vim.keymap.set("i", "<C-K>", "<Up>", { silent = true, desc = "Top" })
