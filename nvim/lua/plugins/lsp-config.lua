@@ -60,7 +60,7 @@ return {
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
 			})
-			
+
 			-- Golang
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
@@ -86,7 +86,7 @@ return {
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show document" })
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]o to [D]efinition" })
+			vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", { silent = true, desc = "[G]o to [D]efinition" })
 			vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { silent = true, desc = "List all [R]eferences" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
 			vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show [C]ode [D]iagnostics" })
