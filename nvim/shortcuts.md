@@ -92,19 +92,29 @@
 | `Ctrl+x` | Open LazyVim package manager |
 | `Ctrl+a` | Open Mason package manager |
 
-### Search and Replace
+### Searching
 
 | Keybinding | Command |
 | ---------- | ------- |
 | `/<text>` | Search `<text>` in current window |
 | `*` | Search word under cursor in current window |
-| `[range]s/<text>/<text-to-replace>/[flags]` | Replace all `<text>` to `<text-to-replace>` in current window |
-| `<leader>h` | Replace all input words in current window |
 | `Ctrl+p` | Search a file |
 | `Leader+sf` | Search a file globally |
 | `Leader+sw` | Search a text in current directory |
 | `Leader+sk` | Search a key binding |
 | `Leader+nh` | Stop highlighting |
+
+#### Search and replace 
+
+- Search and replace in current buffer: `:[range]s/<string-to-find>/<string-to-replace>/[flags]`
+	- If you want to replace a word in entire buffer, range = `%`
+	- If you want to replace a word from line 1 to line 3, range = `1,3`
+	- In `Visual Mode`, range is set automatically
+	- Here is all flags:
+		- `g` is global
+		- `c` is confirmation
+		- `i` is toggling case insensitive
+- Search and replace in current workspace: Open `Telescope live_grep`, press `<C-q>` to enter `qflist` and use command `:cdo [range]s/<string-to-find>/<string-to-replace>/[flags]`
 
 ### Folding
 

@@ -11,8 +11,9 @@ o.tabstop = TAB_WIDTH
 o.shiftwidth = TAB_WIDTH
 o.expandtab = false
 
--- Turn off python_recommended_style from vim
+-- Turn off recommended style of vim
 g.python_recommended_style = 0
+g.markdown_recommended_style = 0
 
 -- Set number row
 o.number = true
@@ -61,8 +62,8 @@ vim.opt.scrolloff = 5
 vim.opt.confirm = true
 
 -- Replace word
-vim.keymap.set("n", "<leader>h", user_functions.replaceAll, { desc = "Replace all words in current window" })
-vim.keymap.set("v", "<leader>h", user_functions.replaceScope, { desc = "Replace all words in visual scope" })
+-- vim.keymap.set("n", "<leader>h", user_functions.replaceAll, { desc = "Replace all words in current window" })
+-- vim.keymap.set("v", "<leader>h", user_functions.replaceScope, { desc = "Replace all words in visual scope" })
 
 -- Navigate in insert mode
 vim.keymap.set("i", "<C-K>", "<Up>", { silent = true, desc = "Top" })
