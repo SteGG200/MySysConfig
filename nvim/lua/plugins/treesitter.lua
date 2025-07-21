@@ -12,6 +12,8 @@ return {
 				"html",
 				"css",
 				"javascript",
+				"typescript",
+				"tsx",
 				"python",
 				"go",
 				"gomod",
