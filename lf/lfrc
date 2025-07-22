@@ -23,17 +23,11 @@ set scrolloff 5
 # Use the `dim` attribute instead of underline for the cursor in the preview pane
 set cursorpreviewfmt "\033[7;2m"
 
+# use icons
 set icons true
 
-# use enter for shell commands
-map <enter> shell
-
-# show the result of execution of previous commands
-map ` !true
-
-# execute current file (must be executable)
-map x $$f
-map X !$f
+# show hidden files and folders
+set hidden true
 
 # dedicated keys for file opener actions
 map o &mimeopen $f
@@ -43,16 +37,30 @@ map O $mimeopen --ask $f
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
 # text files and a file opener for the rest.
-cmd open &{{
-    case $(file --mime-type -Lb $f) in
-        text/*) lf -remote "send $id \$$EDITOR \$fx";;
-        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
-    esac
+# cmd open ${{
+# 	case $(file --mime-type -Lb $f) in
+# 		text/*) lf -remote "send $id \$$EDITOR \$fx";;
+# 		*) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+# 	esac
+# }}
+
+cmd open ${{
+	for file in $fx; do
+		xdg-open $file
+	done
 }}
 
 # mkdir command. See wiki if you want it to select created dir
-map a :push %mkdir<space>
-
+cmd mkdir %{{
+	printf "Folder Name: "
+	read foldername
+	mkdir $foldername
+}}
+cmd mkfile %{{
+	printf "File Name: "
+	read filename
+	touch $filename
+}}
 # define a custom 'rename' command without prompt for overwrite
 # cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 # map r push :rename<space>
@@ -62,7 +70,26 @@ map a :push %mkdir<space>
 
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)
-cmd trash %set -f; mv -t ~/.trash $fx
+cmd trash %{{
+	echo "$fx"
+	printf "Delete?[y/N] "
+	read confirm
+	if [ "$confirm" = "y" ] || [ "$confirm" = "Y" ]; then
+		trash-put $fx
+		echo "Moved to trash successfully"
+	fi
+}}
+
+cmd trash_restore $trash-restore
+
+cmd trash_empty %{{
+	printf "Confirm Empty Trash?[y/N] "
+	read confirm
+	if [ "$confirm" = "y" ] || [ "$confirm" = "Y" ]; then
+		trash-empty
+		echo "Empty trash successfully"
+	fi
+}}
 
 # define a custom 'delete' command
 # cmd delete ${{
@@ -80,31 +107,95 @@ cmd trash %set -f; mv -t ~/.trash $fx
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
 cmd extract ${{
-    set -f
-    case $f in
-        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
-        *.tar.gz|*.tgz) tar xzvf $f;;
-        *.tar.xz|*.txz) tar xJvf $f;;
-        *.zip) unzip $f;;
-        *.rar) unrar x $f;;
-        *.7z) 7z x $f;;
-    esac
+	set -f
+	case $f in
+		*.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+		*.tar.gz|*.tgz) tar xzvf $f;;
+		*.tar.xz|*.txz) tar xJvf $f;;
+		*.tar) tar -xvf "$f" ;;
+		*.zip) unzip $f;;
+		*.rar) unrar x $f;;
+		*.7z) 7z x $f;;
+		*) echo "Unsupported format";;
+	esac
 }}
+
+# compres current file or selected files
+# cmd compress %{{
+# 	set -f
+# 	printf "Compressed File Name: "
+# 	read filename
+# 	printf "Method Compress: "
+# 	read method
+# 
+# 	if [ ! -e $filename ]; then
+# 		mkdir $filename
+# 		cp -r $fx $filename
+# 	fi
+# 
+# 	case $method in
+# 		tar) tar -cf $filename.tar $filename;;
+# 		zip) zip -r $filename.zip $filename;;
+# 		rar) rar a $filename.rar $filename;;
+# 		7z) 7z a $filename.7z $filename;;
+# 		*) echo "Unsupported method";;
+# 	esac
+# 	if [ ! -e $filename ]; then
+# 		rm -rf $filename
+# 	fi
+# }}
 
 # compress current file or selected files with tar and gunzip
-cmd tar ${{
-    set -f
-    mkdir $1
-    cp -r $fx $1
-    tar czf $1.tar.gz $1
-    rm -rf $1
-}}
-
+# cmd tar ${{
+# 	set -f
+# 	mkdir $1
+# 	cp -r $fx $1
+# 	tar czf $1.tar $1
+# 	rm -rf $1 }}
+# 
 # compress current file or selected files with zip
-cmd zip ${{
-    set -f
-    mkdir $1
-    cp -r $fx $1
-    zip -r $1.zip $1
-    rm -rf $1
-}}
+# cmd zip ${{
+# 	set -f
+# 	mkdir $1
+# 	cp -r $fx $1
+# 	zip -r $1.zip $1
+# 	rm -rf $1
+# }}
+
+# Previewer
+set previewer ~/.config/lf/previewer.sh
+set cleaner ~/.config/lf/cleaner.sh
+
+# Bindings
+map d
+
+map a mkfile
+map A mkdir
+
+map <delete> trash
+map dd trash
+map dr trash_restore
+map de trash_empty
+
+map p paste
+map x cut
+map y copy
+map R reload
+map <enter> open
+map x extract
+nmap v visual
+vmap v visual-accept
+map V invert
+
+# Navigation
+map gd cd ~/Documents
+map gD cd ~/Downloads
+map gp cd ~/Pictures
+map gv cd ~/Videos
+map gt cd ~/.local/share/Trash/files
+
+# show the result of execution of previous commands
+map ` !true
+
+# execute current file (must be executable)
+map X !$f
