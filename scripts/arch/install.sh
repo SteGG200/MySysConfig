@@ -85,5 +85,8 @@ for config in "${DOT_CONFIGS[@]}"; do
 	link_config $src $des $bak
 done
 
+echo "Linking mimeapps"
+link_config $PWD/mimeapps.list ~/.config/mimeapps.list ~/.config/mimeapps.list.bak
+
 echo "Linking local bin..."
 link_config $PWD/bin ~/.local/bin ~/.local/bin_backup

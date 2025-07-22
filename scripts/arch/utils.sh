@@ -48,12 +48,12 @@ link_config() {
 	local des="$2"
 	local bak="$3"
 
-	if [ -d $des ] && [ ! -L $des ]; then
+	if [ -e $des ] && [ ! -L $des ]; then
 		echo "Creating backup for $des..."
 		mv $des $bak
 	fi
 
-	if [ ! -d $des ]; then
+	if [ ! -e $des ]; then
 		ln -s $src $des
 	fi
 }
