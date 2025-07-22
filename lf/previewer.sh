@@ -18,9 +18,9 @@ case "$(file -Lb --mime-type "$file")" in
 		exit 1
 		;;
 	video/*)
-		thumbnail="$TEMPDIR/thumbnail.png"
-		ffmpeg -y -i "$file" -vframes 1 "$thumbnail"
-		preview "$thumbnail"
+		thumbnail="$TEMPDIR/thumbnail.jpg"
+		ffmpegthumbnailer -i "$file" -o "$thumbnail" -s 720 -q 10 -f
+		draw "$thumbnail"
 		exit 1
 		;;
 esac
