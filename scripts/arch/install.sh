@@ -72,7 +72,6 @@ install_packages "${FONTS[@]}"
 
 # Start custom services
 echo "Starting installed services..."
-systemctl --user enable --now hyprpolkitagent.service
 sudo systemctl enable --now tailscaled
 
 # Link configuration files
