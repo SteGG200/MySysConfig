@@ -1,34 +1,60 @@
 /**
- * Tokyo Night theme for Rofi
- * Based on tokyonight.nvim color scheme
+ * Catppuccin Mocha Blue Accent theme for Rofi
+ * Same UI layout as first version with Catppuccin colors
  */
 
+configuration {
+	display-drun: "Application";
+	display-window: "Window";
+	display-combi: "";
+	drun-display-format: "{icon} {name}";
+	font: "JetBrainsMono Nerd Font Medium 12";
+	modi: "window,run,drun";
+	show-icons: true;
+	icon-theme: "Papirus-Dark";
+}
+
 * {
-	/* Tokyo Night Colors */
-	bg-dark: #1a1b26;
-	bg: #24283b;
-	fg: #c0caf5;
-	fg-alt: #565f89;
-	blue: #7aa2f7;
-	blue-alt: #3d59a1;
-	green: #9ece6a;
-	red: #f7768e;
-	purple: #bb9af7;
-	yellow: #e0af68;
-	orange: #ff9e64;
-	cyan: #7dcfff;
-
+	/* Catppuccin Mocha Colors */
+	base: #1e1e2e;
+	mantle: #181825;
+	crust: #11111b;
+	text: #cdd6f4;
+	subtext0: #a6adc8;
+	subtext1: #bac2de;
+	surface0: #313244;
+	surface1: #45475a;
+	surface2: #585b70;
+	overlay0: #6c7086;
+	overlay1: #7f849c;
+	overlay2: #9399b2;
+	blue: #89b4fa;
+	blue-alt: #6c7ec7;
+	lavender: #b4befe;
+	sapphire: #74c7ec;
+	sky: #89dceb;
+	teal: #94e2d5;
+	green: #a6e3a1;
+	yellow: #f9e2af;
+	peach: #fab387;
+	maroon: #eba0ac;
+	red: #f38ba8;
+	mauve: #cba6f7;
+	pink: #f5c2e7;
+	flamingo: #f2cdcd;
+	rosewater: #f5e0dc;
+	
 	/* Global Properties */
-	background-color: @bg-dark;
-	text-color: @fg;
-
+	background-color: @base;
+	text-color: @text;
+	
 	margin: 0;
 	padding: 0;
 	spacing: 0;
 }
 
 window {
-	background-color: @bg-dark;
+	background-color: @base;
 	border: 2px;
 	border-color: @blue;
 	border-radius: 10px;
@@ -45,7 +71,7 @@ mainbox {
 }
 
 inputbar {
-	background-color: @bg;
+	background-color: @surface0;
 	border-radius: 12px;
 	border: 0;
 	padding: 0;
@@ -55,17 +81,17 @@ inputbar {
 
 prompt {
 	background-color: @blue;
-	text-color: @bg-dark;
+	text-color: @base;
 	padding: 8px 16px;
 	border-radius: 12px 0 0 12px;
-	font: "JetBrainsMono Nerd Font Medium 12";
+	font: "JetBrainsMono Nerd Font Bold 12";
 }
 
 entry {
-	background-color: @bg;
-	text-color: @fg;
+	background-color: @surface0;
+	text-color: @text;
 	placeholder: "Search...";
-	placeholder-color: @fg-alt;
+	placeholder-color: @subtext0;
 	padding: 8px 16px;
 	border-radius: 0 12px 12px 0;
 }
@@ -86,7 +112,7 @@ listview {
 }
 
 scrollbar {
-	background-color: @bg;
+	background-color: @surface0;
 	handle-color: @blue;
 	handle-width: 4px;
 	border-radius: 6px;
@@ -101,13 +127,13 @@ element {
 }
 
 element normal.normal, element alternate.normal {
-	background-color: @bg;
-	text-color: @fg;
+	background-color: @surface0;
+	text-color: @text;
 }
 
 element selected.normal {
 	background-color: @blue-alt;
-	text-color: @fg;
+	text-color: @text;
 }
 
 element-icon {
@@ -122,13 +148,13 @@ element-text {
 
 /* Button styling */
 button {
-	background-color: @bg;
-	text-color: @fg-alt;
+	background-color: @surface0;
+	text-color: @subtext0;
 	border-radius: 8px;
 	padding: 6px;
 }
 
 button selected {
 	background-color: @blue;
-	text-color: @bg-dark;
+	text-color: @base;
 }
