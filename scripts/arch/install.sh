@@ -26,7 +26,7 @@ sudo pacman -Syu
 if ! command -v yay &> /dev/null; then
 	echo "Not found yay AUR helper"
 	echo "Installing yay AUR helper..."
-	sudo pacman -S --needed git base-devel --no-comfirm
+	sudo pacman -S --needed git base-devel --noconfirm
 	git clone https://aur.archlinux.org/yay.git
 	cd yay
 	echo "Building yay..."
