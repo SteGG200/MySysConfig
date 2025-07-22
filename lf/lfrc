@@ -193,6 +193,7 @@ map gD cd ~/Downloads
 map gp cd ~/Pictures
 map gv cd ~/Videos
 map gt cd ~/.local/share/Trash/files
+map gm cd /run/media
 
 # show the result of execution of previous commands
 map ` !true
