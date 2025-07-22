@@ -19,7 +19,7 @@ case "$(file -Lb --mime-type "$file")" in
 		;;
 	video/*)
 		thumbnail="$TEMPDIR/thumbnail.jpg"
-		ffmpegthumbnailer -i "$file" -o "$thumbnail" -s 720 -q 10 -f
+		ffmpegthumbnailer -i "$file" -o "$thumbnail" -s 720 -q 10 -f -t "20%"
 		draw "$thumbnail"
 		exit 1
 		;;
