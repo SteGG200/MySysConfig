@@ -33,5 +33,6 @@
   "menus.dashboard.shortcuts.left.shortcut1.icon": "󰈹",
   "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Firefox",
   "menus.dashboard.shortcuts.left.shortcut1.command": "firefox",
-  "menus.dashboard.shortcuts.right.shortcut3.command": "hyprshot -z -m region"
+  "menus.dashboard.shortcuts.right.shortcut3.command": "hyprshot -z -m region",
+  "menus.clock.weather.enabled": false
 }
