@@ -30,8 +30,8 @@ set icons true
 set hidden true
 
 # dedicated keys for file opener actions
-map o &mimeopen $f
-map O $mimeopen --ask $f
+# map o &mimeopen $f
+# map O $mimeopen --ask $f
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
@@ -48,6 +48,18 @@ cmd open ${{
 	for file in $fx; do
 		xdg-open $file
 	done
+}}
+
+cmd open_terminal ${{
+	kitty -d $PWD --detach
+}}
+
+cmd open_neovim ${{
+	nvim $PWD
+}}
+
+cmd open_vscode ${{
+	code $PWD
 }}
 
 # mkdir command. See wiki if you want it to select created dir
@@ -71,7 +83,6 @@ cmd mkfile %{{
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)
 cmd trash %{{
-	echo "$fx"
 	printf "Delete?[y/N] "
 	read confirm
 	if [ "$confirm" = "y" ] || [ "$confirm" = "Y" ]; then
@@ -168,6 +179,8 @@ set cleaner ~/.config/lf/cleaner.sh
 
 # Bindings
 map d
+map x
+map o
 
 map a mkfile
 map A mkdir
@@ -178,11 +191,11 @@ map dr trash_restore
 map de trash_empty
 
 map p paste
-map x cut
+map xx cut
 map y copy
 map R reload
 map <enter> open
-map x extract
+map xt extract
 nmap v visual
 vmap v visual-accept
 map V invert
@@ -200,3 +213,8 @@ map ` !true
 
 # execute current file (must be executable)
 map X !$f
+
+# Opener
+map ot open_terminal
+map on open_neovim
+map oc open_vscode
