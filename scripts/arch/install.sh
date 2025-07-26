@@ -52,6 +52,25 @@ echo "Installing system utilities..."
 install_packages "${SYSTEM_UTILS[@]}"
 install_aur_packages "${AUR_SYSTEM_UTILS[@]}"
 
+PS3="Choose what DE you are using: "
+options=("GNOME", "Others")
+select choice in "${options[@]}"; do
+	case $choice in
+		"GNOME")
+			echo "Installing GNOME utilities..."
+			install_packages "${GNOME_UTILS[@]}"
+			install_aur_packages "${AUR_GNOME_UTILS[@]}"
+			break
+			;;
+		"Others")
+			echo "Nothing to install!"
+			break
+			;;
+		*)
+			echo "Invalid option. Please try again."
+			;;
+done
+
 echo "Installing hyprland utilities..."
 install_packages "${HYPRLAND_UTILS[@]}"
 install_aur_packages "${AUR_HYPRLAND_UTILS[@]}"
