@@ -1,100 +1,41 @@
-# My Configuration
-This is my configuration of terminal and tools
+# My System Configuration
 
-## Table of Contents
-- [Note before starting](#note-before-starting)
-- [Fish Shell](#fish-shell)
-- [Powershell](#powershell)
-- [Neovim](#neovim)
+This is my configuration about system and other related tools.
 
-## Note before starting
+My conguration is available for:
+- Windows
+- Arch Linux
 
-You have to make sure that destination directory was created before running update scripts
+## Windows
 
-For Windows Powershell users, run the following command in powershell with administration privileges to ensure that you can run .ps1 files
+Before installing, execute the following command with administration privileges.
+
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
 
-## Fish Shell
+And run installer script:
 
-Destination directory: `~/.config/fish/functions/`
-
-Configuration structure:
-```yaml
-fish:
-  - fish_prompt # config main fish prompt
-  - fish_prompt_right # config right fish prompt
-```
-Update script:
-```bash
-fish ./scripts/fish/update.fish
-```
-
-## Powershell
-
-Destination directory: `$PROFILE`
-
-File configuration: `./powershell/profile.ps1`
-
-Update script:
 ```powershell
-.\scripts\powershell\update.ps1
+./scripts/windows/install.ps1
 ```
 
-## Neovim
+## Arch Linux
 
-**Requirement**:
-- Neovim 0.10 or later
-- tar and curl in your path (or alternatively git >= **2.19.0**)
-- A C compiler in your path and libstdc++ installed (for treesitter package) ([Windows users please read this!](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support))
-- A patched font (see [Nerd fonts](https://github.com/ryanoasis/nerd-fonts))
-- GNU tar
-- ripgrep
-- For Unix systems:
-	- curl or wget
-	- unzip
-	- gzip
-- For Windows systems:
-	- pwsh or powershell
-	- One of the following:
-		- 7zip
-		- peazip
-		- archiver
-		- winzip
-		- WinRAR
+Installer script:
 
-Destination directory:
-
-- Windows Powershell: `$env:LOCALAPPDATA\nvim\`
-- Other OS: `~/.config/nvim/`
-
-Folder structure:
-```yaml
-nvim:
-  lua:
-    - plugins/ # Containing all plugins
-    - vim-options.lua # Configuration for all neovim options
-  - init.lua # Init file for neovim
-  - lazy-lock.json
-```
-
-Update script:
-
-- Windows Powershell:
-```powershell
-.\scripts\nvim\update.ps1
-```
-- Linux:
 ```bash
-bash ./scripts/nvim/update.bash
+./scripts/arch/install.sh
 ```
 
-Make sure you added mason bin inside `nvim-data` directory to `PATH`
+To set `fish` as default shell
+```bash
+chsh -s $(which fish)
+```
 
-There are several language servers that you should install manually instead of using mason:
-- clangd
+To use Vietnamese input method on GNOME, install ibus-bamboo by following [this guide](https://software.opensuse.org//download.html?project=home%3Alamlng&package=ibus-bamboo)
 
-[About all shortcuts in neovim](nvim/shortcuts.md)
+## Other instructions
 
-
+[All custom shortcuts in neovim](./nvim/shortcuts.md)
+[All custom shortcuts in lf](./lf/shortcuts.md)
