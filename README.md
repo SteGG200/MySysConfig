@@ -38,4 +38,5 @@ To use Vietnamese input method on GNOME, install ibus-bamboo by following [this 
 ## Other instructions
 
 [All custom shortcuts in neovim](./nvim/shortcuts.md)
+
 [All custom shortcuts in lf](./lf/shortcuts.md)
