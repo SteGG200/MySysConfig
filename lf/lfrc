@@ -55,7 +55,7 @@ cmd open_terminal ${{
 }}
 
 cmd open_neovim ${{
-	nvim $PWD
+	kitty -e nvim $PWD
 }}
 
 cmd open_vscode ${{
