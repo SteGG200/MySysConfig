@@ -53,7 +53,7 @@ install_packages "${SYSTEM_UTILS[@]}"
 install_aur_packages "${AUR_SYSTEM_UTILS[@]}"
 
 PS3="Choose what DE you are using: "
-options=("GNOME", "Others")
+options=("GNOME" "Others")
 select choice in "${options[@]}"; do
 	case $choice in
 		"GNOME")
@@ -69,6 +69,7 @@ select choice in "${options[@]}"; do
 		*)
 			echo "Invalid option. Please try again."
 			;;
+	esac
 done
 
 echo "Installing hyprland utilities..."
