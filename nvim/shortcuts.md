@@ -64,7 +64,10 @@
 | `p` | Paste copied text after cursor |
 | `Shift+p` | Paste copied text before cursor |
 | `ds(surrounder)` | Delete the nearest surrounder |
-| `cs(old surrounder)(new surrounder)` | Replace the nearest surrounder to the new one |
+| `da(surrounder)` | Delete and cut all characters inside surrounder |
+| `cs(old surrounder)(new surrounder)` | Change the nearest surrounder to the new one |
+| `ci(surrounder)` | Change all characters inside surrounder |
+| `ciw` | Change whole word |
 
 ### Enter Cmdline mode
 
