@@ -23,7 +23,7 @@ return {
 		vim.keymap.set(
 			"n",
 			"<leader>e",
-			":Neotree filesystem reveal left reveal_force_cwd<CR>",
+			":Neotree filesystem left<CR>",
 			{ silent = true, desc = "Open neotree directory" }
 		)
 		vim.keymap.set("n", "<leader>b", ":Neotree close<CR>", { silent = true, desc = "Close neotree" })
