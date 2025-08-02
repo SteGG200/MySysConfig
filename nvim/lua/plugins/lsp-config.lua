@@ -20,11 +20,11 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			-- Lua
-			lspconfig.lua_ls.setup({
+			vim.lsp.enable('lua_ls')
+			vim.lsp.config['lua_ls'] = {
 				capabilities = capabilities,
 				settings = {
 					Lua = {
@@ -50,41 +50,48 @@ return {
 						},
 					},
 				},
-			})
+			}
 
 			-- C++
-			lspconfig.clangd.setup({
+			vim.lsp.enable('clangd')
+			vim.lsp.config['clangd'] = {
 				capabilities = capabilities,
-			})
+			}
 
 			-- Python
-			lspconfig.pyright.setup({
+			vim.lsp.enable('pyright')
+			vim.lsp.config['pyright'] = {
 				capabilities = capabilities,
-			})
+			}
 
 			-- Golang
-			lspconfig.gopls.setup({
+			vim.lsp.enable('gopls')
+			vim.lsp.config['gopls'] = {
 				capabilities = capabilities,
-			})
+			}
 
 			-- JavaScript/TypeScript
-			lspconfig.ts_ls.setup({
+			vim.lsp.enable('ts_ls')
+			vim.lsp.config['ts_ls'] = {
 				capabilities = capabilities,
-			})
+			}
 
 			-- HTML
-			lspconfig.html.setup({
+			vim.lsp.enable('html')
+			vim.lsp.config['html'] = {
 				capabilities = capabilities,
-			})
+			}
 
 			-- CSS
-			lspconfig.cssls.setup({
+			vim.lsp.enable('cssls')
+			vim.lsp.config['cssls'] = {
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.tailwindcss.setup({
+			vim.lsp.enable('tailwindcss')
+			vim.lsp.config['tailwindcss'] = {
 				capabilities = capabilities,
-			})
+			}
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show document" })
 			vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", { silent = true, desc = "[G]o to [D]efinition" })
