@@ -13,7 +13,11 @@ return {
 					indent_blankline = {
 						enabled = true,
 						scope_color = "sky",
-					}
+					},
+					dropbar = {
+						enabled = true,
+						color_mode = true,
+					},
 				}
 			})
 
