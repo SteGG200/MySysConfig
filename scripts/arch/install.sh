@@ -89,6 +89,7 @@ install_packages "${COMMON_APPS[@]}"
 
 echo "Installing fonts..."
 install_packages "${FONTS[@]}"
+install_aur_packages "${AUR_FONTS[@]}"
 
 # Start custom services
 echo "Starting installed services..."
@@ -104,5 +105,8 @@ for config in "${DOT_CONFIGS[@]}"; do
 	link_config $src $des $bak
 done
 
-echo "Linking mimeapps"
-link_config $PWD/mimeapps.list ~/.config/mimeapps.list ~/.config/mimeapps.list.bak
+echo "Linking typst packages..."
+link_config $PWD/typst ~/.local/share/typst ~/.local/share/typst_bak
+
+# echo "Linking mimeapps"
+# link_config $PWD/mimeapps.list ~/.config/mimeapps.list ~/.config/mimeapps.list.bak
