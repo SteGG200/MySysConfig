@@ -1,0 +1,6 @@
+[package]
+name = "notebook"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["SteGG200"]
+description = "Setup for using notebook"

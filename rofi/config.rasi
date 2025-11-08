@@ -1,8 +1,8 @@
 configuration {
-	modes: "drun,window,run,emoji";
-	icon-theme: "Papirus";
+	modes: "drun,window,run,emoji,power-menu:~/.config/hypr/rofi-power-menu.sh";
+	icon-theme: "Papirus-Dark";
 	show-icons: true;
-	font: "JetBrainsMono Nerd Font 12";
+	font: "JetBrainsMono Nerd Font Medium 12";
 	terminal: "kitty";
 	location: 0;
 	disable-history: false;
@@ -12,6 +12,7 @@ configuration {
 
 	drun-categories: "";
 	display-drun: "Application";
+	drun-display-format: "{icon} {name}";
 
 	display-window: "Window";
 

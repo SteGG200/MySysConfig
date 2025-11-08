@@ -3,17 +3,6 @@
  * Same UI layout as first version with Catppuccin colors
  */
 
-configuration {
-	display-drun: "Application";
-	display-window: "Window";
-	display-combi: "";
-	drun-display-format: "{icon} {name}";
-	font: "JetBrainsMono Nerd Font Medium 12";
-	modi: "window,run,drun";
-	show-icons: true;
-	icon-theme: "Papirus-Dark";
-}
-
 * {
 	/* Catppuccin Mocha Colors */
 	base: #1e1e2e;

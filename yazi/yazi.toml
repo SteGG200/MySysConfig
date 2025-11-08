@@ -1,0 +1,23 @@
+[mgr]
+sort_by="btime"
+sort_reverse=true
+sort_dir_first=true
+show_hidden=true
+
+[opener]
+play = [
+	{ run = 'mpv "$@"', orphan = true, for = "unix" },
+	{ run = '"C:\Program Files\mpv.exe" %*', orphan = true, for = "windows" }
+]
+edit = [
+	{ run = '$EDITOR "$@"', block = true, for = "unix" },
+	{ run = "%EDITOR% %*",  block = true, for = "windows" },
+]
+open = [
+	{ run = 'xdg-open "$@"', desc = "Open" },
+]
+
+[open]
+append_rules = [
+	{ mime = "video/*", use = "play" },
+]
