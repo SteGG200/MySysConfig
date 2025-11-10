@@ -195,6 +195,7 @@
 | `gc(k/j)` | Comment current line and the line before/after |
 | `gx` | Access file / url under the cursor |
 | `~` | Toggle case of character under the cursor |
+| `.` | Repeat the previous action |
 
 ### Debugging
 
