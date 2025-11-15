@@ -6,7 +6,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"pyright",
+					"basedpyright",
 					"gopls",
 					"ts_ls",
 					"html",
@@ -59,8 +59,8 @@ return {
 			}
 
 			-- Python
-			vim.lsp.enable('pyright')
-			vim.lsp.config['pyright'] = {
+			vim.lsp.enable('basedpyright')
+			vim.lsp.config['basedpyright'] = {
 				capabilities = capabilities,
 			}
 
