@@ -117,7 +117,7 @@
 		- `g` is global
 		- `c` is confirmation
 		- `i` is toggling case insensitive
-- Search and replace in current workspace: Open `Telescope live_grep`, press `<C-q>` to enter `qflist` and use command `:cdo [range]s/<string-to-find>/<string-to-replace>/[flags]`
+- Search and replace in current workspace: Open `Telescope live_grep`, press `<C-q>` to enter `qflist` and use command `:cfdo [range]s/<string-to-find>/<string-to-replace>/[flags]`
 
 ### Folding
 
