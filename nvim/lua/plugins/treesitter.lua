@@ -14,6 +14,7 @@ return {
 				"javascript",
 				"typescript",
 				"tsx",
+				"svelte",
 				"python",
 				"go",
 				"gomod",

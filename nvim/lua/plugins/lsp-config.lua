@@ -9,6 +9,7 @@ return {
 					"basedpyright",
 					"gopls",
 					"ts_ls",
+					"svelte",
 					"html",
 					"cssls",
 					"tailwindcss",
@@ -73,6 +74,11 @@ return {
 			-- JavaScript/TypeScript
 			vim.lsp.enable('ts_ls')
 			vim.lsp.config['ts_ls'] = {
+				capabilities = capabilities,
+			}
+
+			vim.lsp.enable('svelte')
+			vim.lsp.config['svelte'] = {
 				capabilities = capabilities,
 			}
 
