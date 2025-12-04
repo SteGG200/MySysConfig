@@ -5,7 +5,7 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"lua_ls",
+					-- "lua_ls",
 					"basedpyright",
 					"rust_analyzer",
 					"gopls",
@@ -70,6 +70,27 @@ return {
 			vim.lsp.enable('rust_analyzer')
 			vim.lsp.config['rust_analyzer'] = {
 				capabilities = capabilities,
+				on_attach = function (_, bufnr)
+					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+				end,
+				settings = {
+					["rust-analyzer"] = {
+						imports = {
+							granularity = {
+								group = "module",
+							},
+							prefix = "self",
+						},
+						cargo = {
+							buildScripts = {
+								enable = true,
+							},
+						},
+						procMacro = {
+							enable = true
+						},
+					}
+				}
 			}
 
 			-- Golang
