@@ -7,6 +7,7 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"basedpyright",
+					"rust_analyzer",
 					"gopls",
 					"ts_ls",
 					"svelte",
@@ -62,6 +63,12 @@ return {
 			-- Python
 			vim.lsp.enable('basedpyright')
 			vim.lsp.config['basedpyright'] = {
+				capabilities = capabilities,
+			}
+
+			-- Rust
+			vim.lsp.enable('rust_analyzer')
+			vim.lsp.config['rust_analyzer'] = {
 				capabilities = capabilities,
 			}
 

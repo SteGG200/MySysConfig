@@ -16,6 +16,7 @@ return {
 				"tsx",
 				"svelte",
 				"python",
+				"rust",
 				"go",
 				"gomod",
 				"gosum",
