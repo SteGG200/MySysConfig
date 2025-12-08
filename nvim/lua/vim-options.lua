@@ -17,6 +17,7 @@ g.rust_recommended_style = 0
 
 -- Set number row
 o.number = true
+o.relativenumber = true
 
 -- Set mouse events
 o.mousemoveevent = true
