@@ -52,25 +52,44 @@ echo "Installing system utilities..."
 install_packages "${SYSTEM_UTILS[@]}"
 install_aur_packages "${AUR_SYSTEM_UTILS[@]}"
 
-PS3="Choose what DE you are using: "
-options=("GNOME" "Others")
-select choice in "${options[@]}"; do
-	case $choice in
-		"GNOME")
-			echo "Installing GNOME utilities..."
-			install_packages "${GNOME_UTILS[@]}"
-			install_aur_packages "${AUR_GNOME_UTILS[@]}"
-			break
-			;;
-		"Others")
-			echo "Nothing to install!"
-			break
-			;;
-		*)
-			echo "Invalid option. Please try again."
-			;;
-	esac
-done
+# Load cached selections
+cached_selections_file=~/.cache/MySysConfig/selections.conf
+if [ ! -e $cached_selections_file ]; then
+	echo "Not found cached selections file"
+	echo "Creating a new one..."
+	mkdir -p $(dirname $cached_selections_file)
+	touch $cached_selections_file
+else
+	source $cached_selections_file
+fi
+
+if [ ! -v DESKTOP_ENVIRONMENT ]; then
+	PS3="Choose what DE you are using: "
+	options=("GNOME" "Others")
+	select choice in "${options[@]}"; do
+		case $choice in
+			"GNOME"|"Other")
+				DESKTOP_ENVIRONMENT=$choice
+				echo "DESKTOP_ENVIRONMENT=${choice}" >> $cached_selections_file
+				break
+				;;
+			*)
+				echo "Invalid option. Please try again."
+				;;
+		esac
+	done
+fi
+
+case $DESKTOP_ENVIRONMENT in 
+	"GNOME")
+		echo "Installing GNOME utilities..."
+		install_packages "${GNOME_UTILS[@]}"
+		install_aur_packages "${AUR_GNOME_UTILS[@]}"
+		;;
+	"Others")
+		echo "Nothing to install!"
+		;;
+esac
 
 echo "Installing hyprland utilities..."
 install_packages "${HYPRLAND_UTILS[@]}"
