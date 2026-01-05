@@ -7,6 +7,7 @@ return {
 			require("catppuccin").setup({
 				no_italic = true,
 				integrations = {
+					cmp = true,
 					neotree = true,
 					mason = true,
 					which_key = true,

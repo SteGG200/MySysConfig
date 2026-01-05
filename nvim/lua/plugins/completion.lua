@@ -22,6 +22,9 @@ return {
 	-- nvim-cmp setup
 	{
 		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"neovim/nvim-lspconfig"
+		},
 		config = function()
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
