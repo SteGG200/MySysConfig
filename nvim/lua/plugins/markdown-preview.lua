@@ -8,9 +8,9 @@ return {
 		end,
 		ft = { "markdown" },
 	},
-	{
-		"OXY2DEV/markview.nvim",
-		lazy = false,
-		priority = 49,
-	}
+	-- {
+	-- 	"OXY2DEV/markview.nvim",
+	-- 	lazy = false,
+	-- 	priority = 49,
+	-- }
 }
