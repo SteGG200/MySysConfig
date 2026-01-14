@@ -19,3 +19,5 @@
 	
 	doc
 }
+
+#let innerproduct(u, v) = $chevron.l #u, #v chevron.r$
