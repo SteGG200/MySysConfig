@@ -6,7 +6,8 @@ return {
 		"lewis6991/gitsigns.nvim",
 		version = "*",
 		config = function()
-			require("gitsigns").setup()
+			local gs = require("gitsigns")
+			gs.setup()
 
 			vim.keymap.set(
 				"n",
@@ -14,6 +15,9 @@ return {
 				"<cmd>Gitsigns preview_hunk<cr>",
 				{ silent = true, desc = "[P]review [H]unk (git diff)" }
 			)
+
+			vim.keymap.set("n", "[c", "<cmd>Gitsigns prev_hunk<cr>", { desc = "Go to previous change (hunk)" })
+			vim.keymap.set("n", "]c", "<cmd>Gitsigns next_hunk<cr>", { desc = "Go to next change (hunk)" })
 		end,
 	},
 	{
