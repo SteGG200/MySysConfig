@@ -32,7 +32,9 @@ o.showmode = false
 o.swapfile = false
 
 -- Enable break indent
-vim.opt.breakindent = true
+o.breakindent = true
+o.breakindentopt = "shift:2"
+o.showbreak = "↪ "
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
