@@ -92,7 +92,7 @@ return {
 				dap.terminate()
 				dapui.close()
 			end, { desc = "Stop debugging" })
-			vim.keymap.set("n", "<C-D>", dapui.toggle, { desc = "Toggle debugging ui" })
+			vim.keymap.set("n", "<F2>", dapui.toggle, { desc = "Toggle debugging ui" })
 
 			-- Format breakpoint symbol
 			vim.api.nvim_set_hl(0, "red", { fg = "#f8312f" })
