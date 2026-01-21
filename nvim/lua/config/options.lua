@@ -53,6 +53,9 @@ o.listchars = { tab = "  ", lead = "·", nbsp = "␣" }
 o.splitright = true
 o.splitbelow = true
 
+-- Style the window borders
+o.winborder = "rounded"
+
 -- Show which line your cursor is on
 o.cursorline = true
 
