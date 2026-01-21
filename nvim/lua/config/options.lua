@@ -1,5 +1,5 @@
 local g = vim.g
-local o = vim.o
+local o = vim.opt
 -- Set <Space> as the leader key
 g.mapleader = " "
 g.localmapleader = " "
@@ -69,7 +69,14 @@ vim.opt.confirm = true
 -- vim.keymap.set("v", "<leader>h", user_functions.replaceScope, { desc = "Replace all words in visual scope" })
 
 -- Folding
-o.foldmethod = 'expr'
-o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-o.foldenable = false
-o.foldlevel = 20
+o.foldcolumn = "1"
+o.foldlevel = 99
+o.foldlevelstart = 99
+o.foldenable = true
+o.fillchars = {
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+	eob = " ",
+}
