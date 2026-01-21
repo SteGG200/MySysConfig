@@ -191,22 +191,30 @@
 | `Leader+ca` | Open code action popup |
 | `Leader+cd` | Show code diagnostics |
 | `Leader+rn` | Rename a variable/function/class/... name |
-| `gcc` | Comment current line |
+| `Ctrl+/` | Comment current line |
 | `gc(k/j)` | Comment current line and the line before/after |
 | `gx` | Access file / url under the cursor |
 | `~` | Toggle case of character under the cursor |
 | `.` | Repeat the previous action |
 
+### Copilot AI
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `<F3>` | Open Copilot Chat |
+| `Alt+c` | Accept NES and go to |
+| `Alt+Esc` | Dismiss NES |
+
 ### Debugging
 
 | Keybinding | Command |
 | ---------- | ------- |
+| `F2` | Toggle debugging windows |
 | `F5` | Start or continue debugging |
 | `F9` | Set breakpoint at current line |
 | `F10` | Step over |
 | `F11` | Step into |
 | `F12` | Escape debugging |
-| `Ctrl+d` | Toggle debugging windows |
 
 ## Insert mode
 
@@ -236,6 +244,17 @@
 | ---------- | ------- |
 | `Ctrl+h/j/k/l` | Move cursor to the left/bottom/top/right |
 
+### Copilot AI
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `Alt+l` | Accept next word suggestion |
+| `Alt+j` | Accept next line suggestion |
+| `Alt+a` | Accept all suggestions |
+| `Alt+[` | Previous suggestion |
+| `Alt+]` | Next suggestion |
+| `Alt+Backspace` | Dismiss suggestions |
+
 ## Visual mode
 
 ### Basic:
@@ -258,7 +277,7 @@
 | Keybinding | Command |
 | ---------- | ------- |
 | `(Visual Block) Shift+i` | Edit multi-line where is selected by visual block (Escape to apply) |
-| `gc` | Comment selected code |
+| `Ctrl+/` | Comment selected code |
 | `*` | Search selected character in current window |
 | `zf` | Fold the selected block |
 <!--| `<leader>h` | Replace all input words in selected scope |-->
