@@ -83,3 +83,16 @@ o.fillchars = {
 	foldsep = " ",
 	eob = " ",
 }
+
+-- Status column with fold indicator
+local fcs = o.fillchars:get()
+
+-- Stolen from Akinsho. Many Thanks!!!!!!!!!
+_G.get_fold = function ()
+	local lnum = vim.v.lnum
+
+	if vim.fn.foldlevel(lnum) <= vim.fn.foldlevel(lnum - 1) then
+		return " "
+	end
+	return vim.fn.foldclosed(lnum) == -1 and fcs.foldopen or fcs.foldclose
+end
