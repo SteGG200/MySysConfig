@@ -29,3 +29,7 @@ vim.keymap.set(
 	"<cmd>lua require'bufferline'.go_to_buffer(10)<cr>",
 	{ silent = true, desc = "Go to 10th buffer" }
 )
+
+-- Coding support
+vim.keymap.set("n", "<C-/>", "gcc", { remap = true, silent = true, desc = "Toggle comment" })
+vim.keymap.set("x", "<C-/>", "gc", { remap = true, silent = true, desc = "Toggle comment" })
