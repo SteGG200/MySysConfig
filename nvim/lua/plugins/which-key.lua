@@ -42,7 +42,13 @@ return {
 			},
 			spec = {
 				{ '<leader>s', group = '[S]earch' },
+				{ "t", group = "[T]erminal" },
+				{ "f", group = "[F]ile" },
 			},
+			triggers = {
+				{ "t", mode = "n" },
+				{ "f", mode = "n" },
+			}
 		},
 		keys = {
 			{
