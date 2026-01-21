@@ -37,32 +37,32 @@ o.breakindentopt = "shift:2"
 o.showbreak = "↪ "
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+o.ignorecase = true
+o.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = "yes"
+o.signcolumn = "yes"
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = "  ", lead = "·", nbsp = "␣" }
+o.list = true
+o.listchars = { tab = "  ", lead = "·", nbsp = "␣" }
 
 -- Configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+o.splitright = true
+o.splitbelow = true
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 5
+o.scrolloff = 5
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
-vim.opt.confirm = true
+o.confirm = true
 
 -- Replace word
 -- vim.keymap.set("n", "<leader>h", user_functions.replaceAll, { desc = "Replace all words in current window" })
