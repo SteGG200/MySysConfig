@@ -48,6 +48,7 @@ return {
 			triggers = {
 				{ "t", mode = "n" },
 				{ "f", mode = "n" },
+				{ "<leader>", mode = "n" },
 			}
 		},
 		keys = {
