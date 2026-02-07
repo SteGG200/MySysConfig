@@ -202,7 +202,7 @@
 | Keybinding | Command |
 | ---------- | ------- |
 | `<F3>` | Open Copilot Chat |
-| `Alt+c` | Accept NES and go to |
+| `Alt+w` | Accept NES and go to |
 | `Alt+Esc` | Dismiss NES |
 
 ### Debugging

@@ -21,7 +21,7 @@ return {
 					enabled = true,
 					auto_trigger = true,
 					keymap = {
-						accept_and_goto = "<M-c>",
+						accept_and_goto = "<M-w>",
 						dismiss = "<M-Esc>",
 					}
 				}
@@ -35,7 +35,9 @@ return {
 		},
 		build = "make tiktoken",
 		config = function()
-			require("CopilotChat").setup()
+			require("CopilotChat").setup({
+				model = "claude-opus-4.6",
+			})
 			vim.keymap.set("n", "<F3>", "<cmd>CopilotChat<cr>", { silent = true, desc = "Open Copilot Chat" })
 		end,
 	},
