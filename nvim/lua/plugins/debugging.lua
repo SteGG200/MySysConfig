@@ -95,10 +95,9 @@ return {
 			vim.keymap.set("n", "<F2>", dapui.toggle, { desc = "Toggle debugging ui" })
 
 			-- Format breakpoint symbol
-			vim.api.nvim_set_hl(0, "red", { fg = "#f8312f" })
 			vim.fn.sign_define(
 				"DapBreakpoint",
-				{ text = "*", texthl = "red", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+				{ text = "*", texthl = "DapBreakpoint" }
 			)
 		end,
 	},
