@@ -46,9 +46,9 @@ return {
 				{ "f", group = "[F]ile" },
 			},
 			triggers = {
+				{ "<auto>", mode = "nxso" },
 				{ "t", mode = "n" },
 				{ "f", mode = "n" },
-				{ "<leader>", mode = "n" },
 			}
 		},
 		keys = {
