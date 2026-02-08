@@ -11,10 +11,9 @@ vim.keymap.set("n", "<C-H>", "<cmd>wincmd h<cr>", { silent = true, desc = "Go to
 vim.keymap.set("n", "<C-L>", "<cmd>wincmd l<cr>", { silent = true, desc = "Go to the right panel" })
 
 -- Navigate tabpages
-vim.keymap.set("n", "fl", "<cmd>bnext<cr>", { silent = true, desc = "Go to next buffer" })
-vim.keymap.set("n", "fh", "<cmd>bprevious<cr>", { silent = true, desc = "Go to previous buffer" })
-vim.keymap.set("n", "fc", "<cmd>bdelete<cr>", { silent = true, desc = "Close the buffer" })
-vim.keymap.set("n", "fac", "<cmd>%bdelete<cr>", { silent = true, desc = "Close all buffers" })
+vim.keymap.set("n", "<M-l>", "<cmd>bnext<cr>", { silent = true, desc = "Go to next buffer" })
+vim.keymap.set("n", "<M-h>", "<cmd>bprevious<cr>", { silent = true, desc = "Go to previous buffer" })
+vim.keymap.set("n", "<M-c>", "<cmd>bdelete<cr>", { silent = true, desc = "Close the buffer" })
 for buffer_index = 1, 9 do
 	vim.keymap.set(
 		"n",

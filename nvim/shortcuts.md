@@ -21,10 +21,9 @@
 
 | Keybinding | Command |
 | ---------- | ------- |
-| `fh` | Move to previous tab |
-| `fl` | Move to next tab |
-| `fc` | Close a tab |
-| `fac` | Close all tabs |
+| `Alt+h` | Move to previous tab |
+| `Alt+l` | Move to next tab |
+| `Alt+c` | Close a tab |
 | `Alt+[1 - 9]` | Open the 1 - 9 th tab |
 | `Alt+0` | Open the 10th tab |
 
