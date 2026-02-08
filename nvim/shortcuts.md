@@ -11,10 +11,12 @@
 | Keybinding | Command |
 | ---------- | ------- |
 | `h/j/k/l` | Move cursor to the left/bottom/top/right |
+| `_` | Move cursor to the beginning of line (non-whitespace) |
+| `g_` | Move cursor to the end of line (non-whitespace) |
 | `gg` | Go to the top of file |
 | `Shift+g` | Go to the bottom of file |
-| `Ctrl+e` | Scroll up |
-| `Ctrl+y` | Scroll down |
+| `Ctrl+(e/u/b)` | Scroll up (line by line / half a page / entire page) |
+| `Ctrl+(y/d/f)` | Scroll down (line by line / half a page / entire page) |
 | `zz` | Move current line to center of screen |
 
 ### Tab (buffer) navigation
@@ -260,8 +262,10 @@
 
 | Keybinding | Command |
 | ---------- | ------- |
-| `iw` | Select the word under the cursor |
+| `iw` | Select the words under the cursor |
 | `ip` | Select all code block that the cursor is currently in |
+| `i(surrounder)` | Select all the words inside that surrounder |
+| `a(surrounder)`| Select all the words inside that surrounder including itself |
 | `c` | Replace selected text |
 | `y` | Copy selected text |
 | `x` | Cut selected text |
