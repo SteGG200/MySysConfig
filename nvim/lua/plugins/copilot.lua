@@ -29,16 +29,54 @@ return {
 		end,
 	},
 	{
-		"CopilotC-Nvim/CopilotChat.nvim",
+		"olimorris/codecompanion.nvim",
+		version = "*",
 		dependencies = {
-			{ "nvim-lua/plenary.nvim", branch = "master" },
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
 		},
-		build = "make tiktoken",
 		config = function()
-			require("CopilotChat").setup({
-				model = "claude-opus-4.6",
+			require("codecompanion").setup({
+				interactions = {
+					chat = {
+						adapter = "copilot",
+					},
+					inline = {
+						adapter = "copilot",
+					},
+					cmd = {
+						adapter = "copilot",
+					},
+					background = {
+						adapter = "copilot",
+					},
+				},
+
+				adapters = {
+					http = {
+						copilot = function ()
+							return require("codecompanion.adapters").extend("copilot", {
+								schema = {
+									model = {
+										default = "claude-opus-4.6",
+									}
+								}
+							})
+						end
+					}
+				},
+
+				prompt_library = {
+					markdown= {
+						dirs = {
+							vim.fn.getcwd() .. "/.github/prompts",
+							"~/.config/nvim/prompts",
+						}
+					}
+				}
 			})
-			vim.keymap.set("n", "<F3>", "<cmd>CopilotChat<cr>", { silent = true, desc = "Open Copilot Chat" })
+
+			vim.keymap.set("n", "<F3>", "<cmd>CodeCompanionChat Toggle<cr>", { silent = true, desc = "Open Code Companion Chat" })
 		end,
 	},
 }

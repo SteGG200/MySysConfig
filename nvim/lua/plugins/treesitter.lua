@@ -21,6 +21,7 @@ return {
 				"gomod",
 				"gosum",
 				"markdown",
+				"yaml",
 			},
 			sync_install = false,
 			auto_install = false,
