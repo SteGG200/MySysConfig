@@ -54,14 +54,25 @@ return {
 
 				dap.configurations.c = {
 					{
-						name = "Launch file",
+						name = "C/C++: g++ debug active file",
 						type = "cppdbg",
 						request = "launch",
-						program = function()
-							return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-						end,
-						cwd = "${workspaceFolder}",
-						stopAtEntry = true,
+						program = "${fileDirname}/${fileBasenameNoExtension}",
+						cwd = "${fileDirname}",
+						stopAtEntry = false,
+						setupCommands = {
+							{
+								description = "Enable pretty-printing for gdb",
+								text = "-enable-pretty-printing",
+								ignoreFailures = true
+							},
+							{
+								description = "Set Disassembly Flavor to Intel",
+								text = "-gdb-set disassembly-flavor intel",
+								ignoreFailures = true
+							}
+						},
+						preLaunchTask = "C/C++: g++ build active file",
 					},
 				}
 			end
