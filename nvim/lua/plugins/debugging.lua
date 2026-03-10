@@ -97,12 +97,13 @@ return {
 
 			vim.keymap.set("n", "<F9>", dap.toggle_breakpoint, { desc = "Set breakpoint" })
 			vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/continue debugging" })
+			vim.keymap.set("n", "<F17>", dap.terminate, { desc = "Stop debugging" }) -- Shift + F5
 			vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Step over" })
 			vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step into" })
 			vim.keymap.set("n", "<F12>", function()
 				dap.terminate()
 				dapui.close()
-			end, { desc = "Stop debugging" })
+			end, { desc = "Stop debugging and close dapui" })
 			vim.keymap.set("n", "<F2>", dapui.toggle, { desc = "Toggle debugging ui" })
 
 			-- Format breakpoint symbol

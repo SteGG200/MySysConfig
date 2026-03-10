@@ -76,7 +76,7 @@ return {
 				}
 			})
 
-			vim.keymap.set("n", "<F3>", "<cmd>CodeCompanionChat Toggle<cr>", { silent = true, desc = "Open Code Companion Chat" })
+			vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>CodeCompanionChat Toggle<cr>", { silent = true, desc = "Open Code Companion Chat" })
 		end,
 	},
 }
