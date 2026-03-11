@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "git": {
+      "args": [
+        "mcp-server-git",
+        "--repository",
+        "."
+      ],
+      "autoApprove": [],
+      "command": "uvx"
+    }
+  },
+  "nativeMCPServers": {
+    "mcphub": {
+      "autoApprove": []
+    }
+  }
+}
