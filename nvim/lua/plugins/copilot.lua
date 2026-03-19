@@ -58,7 +58,7 @@ return {
 							return require("codecompanion.adapters").extend("copilot", {
 								schema = {
 									model = {
-										default = "claude-opus-4.6",
+										default = "gpt-5.3-codex",
 									}
 								}
 							})
