@@ -99,7 +99,6 @@ install_packages "${DEV_TOOLS[@]}"
 echo "Installing input method..."
 install_packages "${INPUT_METHOD[@]}"
 
-
 echo "Installing common applications..."
 install_packages "${COMMON_APPS[@]}"
 
