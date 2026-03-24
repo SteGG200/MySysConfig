@@ -4,10 +4,11 @@
       "args": [
         "mcp-server-git",
         "--repository",
-        "."
+        "${CWD}"
       ],
       "autoApprove": [],
-      "command": "uvx"
+      "command": "uvx",
+      "disabled": false
     }
   },
   "nativeMCPServers": {
