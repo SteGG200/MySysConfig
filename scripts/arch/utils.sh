@@ -23,22 +23,6 @@ install_packages() {
 
 	if [ ${#to_install[@]} -ne 0 ]; then
 		echo "Packages to install: ${to_install[*]}"
-		sudo pacman -S --noconfirm "${to_install[@]}"
-	fi
-}
-
-install_aur_packages() {
-	local packages=("$@")
-	local to_install=()
-
-	for pkg in "${packages[@]}"; do
-		if ! is_installed "$pkg" && ! is_group_installed "$pkg"; then
-			to_install+=("$pkg")
-		fi
-	done
-
-	if [ ${#to_install[@]} -ne 0 ]; then
-		echo "AUR packages to install: ${to_install[*]}"
 		yay -S --noconfirm "${to_install[@]}"
 	fi
 }

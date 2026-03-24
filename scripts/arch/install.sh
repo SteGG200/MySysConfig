@@ -42,7 +42,6 @@ source $PWD/scripts/arch/utils.sh
 
 # Import package list
 source $PWD/scripts/arch/packages.conf
-source $PWD/scripts/arch/aur_packages.conf
 
 # Import essential configurations
 source $PWD/scripts/arch/configurations.conf
@@ -93,11 +92,9 @@ esac
 
 echo "Installing hyprland utilities..."
 install_packages "${HYPRLAND_UTILS[@]}"
-install_aur_packages "${AUR_HYPRLAND_UTILS[@]}"
 
 echo "Installing development tools..."
 install_packages "${DEV_TOOLS[@]}"
-install_aur_packages "${AUR_DEV_TOOLS[@]}"
 
 echo "Installing input method..."
 install_packages "${INPUT_METHOD[@]}"
@@ -108,7 +105,9 @@ install_packages "${COMMON_APPS[@]}"
 
 echo "Installing fonts..."
 install_packages "${FONTS[@]}"
-install_aur_packages "${AUR_FONTS[@]}"
+
+echo "Installing themes..."
+install_packages "${THEMES[@]}"
 
 # Start custom services
 echo "Starting installed services..."
