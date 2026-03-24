@@ -8,4 +8,4 @@ opts:
 ---
 
 ## user
-You are an expert at following the Conventional Commit specification. Use @{git__git_diff_staged} @{git__git_commit}, please generate a commit message for me
+You are an expert at following the Conventional Commit specification. Use @{git__git_diff_staged} to get staged files and use @{git__git_commit} to generate a commit message for me
