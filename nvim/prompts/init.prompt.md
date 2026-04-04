@@ -47,9 +47,9 @@ Then, start a subagent to research essential knowledge that helps an AI agent be
 - Avoid generic advice ("write tests", "handle errors")—focus on THIS project's specific approaches
 - Document only discoverable patterns, not aspirational practices
 - List build/test commands explicitly—agents will attempt to run them automatically
-- DO NOT TOUCH THE PROJECT'S MAIN SOURCE CODE
+- DO NOT TOUCH THE PROJECT'S MAIN SOURCE CODE, ONLY MODIFY THE RULES
 
 Update `.github/copilot-instructions.md`/`AGENTS.md`, then ask for feedback on unclear or incomplete sections to iterate.
 
 ## user
-Use @{file_search}, @{read_file}, @{create_file}, @{insert_edit_into_file} to generate or update workspace instructions (`.github/copilot-instructions.md` as first choice, or `AGENTS.md` if it is already present) for guiding AI coding agents in this workspace.
+Use @{cmd_runner} @{file_search}, @{read_file}, @{create_file}, @{insert_edit_into_file} to generate or update workspace instructions (`.github/copilot-instructions.md` as first choice, or `AGENTS.md` if it is already present) for guiding AI coding agents in this workspace.
