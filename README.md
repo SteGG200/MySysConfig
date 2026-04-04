@@ -1,42 +1,94 @@
-# My System Configuration
+# Dotfiles & System Setup
 
-This is my configuration about system and other related tools.
+Cross-platform dotfiles and bootstrap scripts for **Arch Linux** and **Windows**.
 
-My conguration is available for:
-- Windows
+This repository manages editor, terminal, shell, and desktop configuration with a symlink-first workflow.
+
+## Supported Platforms
+
 - Arch Linux
+- Windows
 
-## Windows
+## What This Repo Includes
 
-Before installing, execute the following command with administration privileges.
+- Shared Neovim configuration (`nvim/`)
+- Linux installer flow (`scripts/arch/`)
+- Windows installer flow (`scripts/windows/`)
+- Desktop/app configs (Hyprland, Kitty, Yazi, etc.)
 
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-```
+## Installation
 
-And run installer script:
+### Arch Linux
 
-```powershell
-./scripts/windows/install.ps1
-```
-
-## Arch Linux
-
-Installer script:
+Run:
 
 ```bash
 ./scripts/arch/install.sh
 ```
 
-To set `fish` as default shell
+What it does (high-level):
+
+- Installs packages via `pacman` and `yay`
+- Symlinks managed configs into `~/.config`
+- Enables required services (for example `tailscaled`)
+
+Optional post-install:
+
 ```bash
 chsh -s $(which fish)
 ```
 
-To use Vietnamese input method on GNOME, install ibus-bamboo by following [this guide](https://software.opensuse.org//download.html?project=home%3Alamlng&package=ibus-bamboo)
+### Windows
 
-## Other instructions
+Before running the installer, allow script execution in an elevated PowerShell:
 
-[All custom shortcuts in neovim](./nvim/shortcuts.md)
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
 
-[All custom shortcuts in lf](./lf/shortcuts.md)
+Then run:
+
+```powershell
+./scripts/windows/install.ps1
+```
+
+What it does (high-level):
+
+- Installs packages via `scoop`
+- Symlinks configs to targets such as `$env:LOCALAPPDATA\nvim` and `$PROFILE`
+- Uses elevated linking where required
+
+## Repo Structure
+
+- `nvim/` – shared Neovim config (Lazy, Mason, LSP, keymaps, options)
+- `scripts/arch/` – Linux install utilities, package/config manifests
+- `scripts/windows/` – Windows install utilities and package definitions
+- `hypr/`, `kitty/`, `yazi/`, etc. – app-specific dotfiles
+
+## Neovim Notes
+
+- Leader key is `<Space>`
+- Keymaps should include `desc`
+- Plugin versions are pinned in `nvim/lazy-lock.json`
+
+Useful references:
+
+- [Neovim shortcuts](./nvim/shortcuts.md)
+
+## Conventions
+
+- Symlink, do not copy, managed configs
+- Linux managed config list is defined in `scripts/arch/configurations.conf` (`DOT_CONFIGS`)
+- Keep Catppuccin Mocha theme consistency across tools
+- Prefer environment/XDG paths over machine-specific hardcoded paths
+
+## Security Notes
+
+- Windows installer executes external remote script content (`irm ... | iex`) via elevation
+- Review path and linking changes carefully before running installers
+
+## Validation
+
+There is no dedicated automated test suite in this repo.
+Validate changes by running the relevant installer path for your platform.
+
