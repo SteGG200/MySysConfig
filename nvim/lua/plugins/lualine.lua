@@ -7,7 +7,7 @@ return {
 				lualine_x = { "overseer", "encoding", "fileformat", "filetype" },
 			},
 			options = {
-				theme = "catppuccin",
+				theme = "catppuccin-mocha",
 			}
 		})
 	end,
