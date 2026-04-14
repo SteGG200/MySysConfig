@@ -30,7 +30,7 @@ return {
 	},
 	{
 		"olimorris/codecompanion.nvim",
-		version = "*",
+		version = "18.*",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
@@ -105,6 +105,7 @@ return {
 		config = function()
 			require("mcphub").setup({
 				use_bundled_binary = true,  -- Use local `mcp-hub` binary
+				shutdown_delay = 30 * 000,
 			})
 
 			vim.keymap.set({ "n" }, "<F4>", "<cmd>MCPHub<cr>", { silent = true, desc = "Toggle MCP Hub" })
