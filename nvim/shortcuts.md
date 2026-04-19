@@ -1,4 +1,4 @@
-# Preferences: All keyboard shortcuts
+# References: All keyboard shortcuts
 
 **Note**: 
 - `Leader` key is currently set to `Space`
@@ -103,7 +103,6 @@
 | `/<text>` | Search `<text>` in current window |
 | `*` | Search word under cursor in current window |
 | `Ctrl+p` | Search a file |
-| `Leader+sf` | Search a file globally |
 | `Leader+sw` | Search a text in current directory |
 | `Leader+sk` | Search a key binding |
 | `Leader+nh` | Stop highlighting |
@@ -143,6 +142,14 @@
 | `Leader+e` | Open neotree with source is filesystem |
 | `Leader+b` | Close neotree |
 
+### File manager (Yazi)
+| Keybinding | Command |
+| ---------- | ------- |
+| `Leader+f` | Open file manager |
+| `F1` | Open default Yazi help |
+| `Shift+F1` | Toggle Yazi help in Neovim |
+| `q` | Close file manager |
+
 ### Task manager (Overseer)
 
 | Keybinding | Command |
@@ -179,7 +186,7 @@
 | `tv` | Open vertical terminal |
 | `th` | Open horizontal terminal |
 | `tt` | Toggle terminal |
-| `<Esc><Esc>` | Escape terminal mode |
+| `Ctrl+\ Ctrl+\` | Escape terminal mode |
 
 ### Coding Support
 
