@@ -7,6 +7,7 @@
 - intel-ucode / amd-ucode
 - mesa
 - pirewire
+- udisks2
 - networkmanager
 - bluez
 - bluez-utils

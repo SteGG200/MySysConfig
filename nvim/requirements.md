@@ -11,6 +11,7 @@
 - [npm](https://www.npmjs.com/)
 - [uv](https://github.com/astral-sh/uv)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [yazi](https://github.com/sxyazi/yazi)
 - [NerdFont](https://www.nerdfonts.com/)
 - Terminal that supports Graphics Protocol ([kitty](https://github.com/kovidgoyal/kitty) >= 28.0, [Überzug++](https://github.com/ueber-devel/ueberzug), Sixel-supporting terminals)
 
