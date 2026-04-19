@@ -13,6 +13,7 @@
 - bluez-utils
 - sudo
 - git
+- man
 - fastfetch
 - htop
 - fish
