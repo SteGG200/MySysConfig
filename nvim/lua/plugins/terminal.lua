@@ -24,7 +24,7 @@ return {
 			vim.keymap.set("n", "tv", "<cmd>ToggleTerm name=terminal dir=$PWD direction=vertical size=70<cr>", { silent = true, desc = "Open [V]ertical terminal" })
 			vim.keymap.set("n", "th", "<cmd>ToggleTerm name=terminal dir=$PWD direction=horizontal<cr>", { silent = true, desc = "Open [H]orizontal terminal" })
 			vim.keymap.set("n", "tt", "<cmd>ToggleTerm name=terminal<cr>", { silent = true, desc = "[T]oggle terminal" })
-			vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+			vim.keymap.set("t", "<C-\\><C-\\>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 		end,
 	},
 }
