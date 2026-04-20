@@ -20,10 +20,11 @@ return {
 				},
 			})
 
-			vim.keymap.set("n", "tf", "<cmd>ToggleTerm name=terminal dir=$PWD direction=float<cr>", { silent = true, desc = "Open [F]loat terminal" })
-			vim.keymap.set("n", "tv", "<cmd>ToggleTerm name=terminal dir=$PWD direction=vertical size=70<cr>", { silent = true, desc = "Open [V]ertical terminal" })
-			vim.keymap.set("n", "th", "<cmd>ToggleTerm name=terminal dir=$PWD direction=horizontal<cr>", { silent = true, desc = "Open [H]orizontal terminal" })
-			vim.keymap.set("n", "tt", "<cmd>ToggleTerm name=terminal<cr>", { silent = true, desc = "[T]oggle terminal" })
+			vim.keymap.set("n", "tf", "<cmd>exe v:count1 . \"ToggleTerm name=terminal dir=$PWD direction=float\"<cr>", { silent = true, desc = "Open [F]loat terminal" })
+			vim.keymap.set("n", "tv", "<cmd>exe v:count1 . \"ToggleTerm name=terminal dir=$PWD direction=vertical size=70\"<cr>", { silent = true, desc = "Open [V]ertical terminal" })
+			vim.keymap.set("n", "th", "<cmd>exe v:count1 . \"ToggleTerm name=terminal dir=$PWD direction=horizontal\"<cr>", { desc = "Open [H]orizontal terminal" })
+			vim.keymap.set("n", "tt", "<cmd>exe v:count1 . \"ToggleTerm name=terminal\"<cr>", { silent = true, desc = "[T]oggle terminal" })
+			vim.keymap.set("n", "<C-T>", "<cmd>ToggleTermToggleAll<cr>", { silent = true, desc = "[T]oggle all terminals" })
 			vim.keymap.set("t", "<C-\\><C-\\>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 		end,
 	},
