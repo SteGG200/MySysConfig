@@ -21,6 +21,7 @@ return {
 				"gomod",
 				"gosum",
 				"markdown",
+				"typst",
 				"yaml",
 			},
 			sync_install = false,

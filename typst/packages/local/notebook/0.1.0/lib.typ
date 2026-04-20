@@ -21,3 +21,10 @@
 }
 
 #let innerproduct(u, v) = $chevron.l #u, #v chevron.r$
+#let bvec(..args) = {
+  let items = args.pos().map(x => $#x$)
+  let body = items.join($,$)
+  $lr(chevron.l #body chevron.r)$
+}
+#let proj = "proj"
+#let comp = "comp"
