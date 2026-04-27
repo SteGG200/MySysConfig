@@ -1,17 +1,17 @@
 [[plugin.deps]]
 use = "uhs-robert/recycle-bin"
-rev = "8bb6286"
-hash = "f8d05a771c1d18c87f5558cbd4ae27fa"
+rev = "fa68711"
+hash = "8714306b5cac6359edbacbf545fbd691"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "8f1d971"
-hash = "4fccaaf10c36dc2466e2438a386ff017"
+rev = "034efd6"
+hash = "77e20b071404f97c09d3f9afdb9482e0"
 
 [[plugin.deps]]
 use = "KKV9/compress"
-rev = "c264639"
-hash = "e17c11b605d989568a1d1741ca17c584"
+rev = "46a6b9f"
+hash = "771af2becc575a3f43d0542de823969d"
 
 [flavor]
 deps = []
