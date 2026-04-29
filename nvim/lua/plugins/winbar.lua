@@ -11,6 +11,11 @@ return {
 				sources = {
 					terminal = {
 						name = function(buf)
+							local ft = vim.bo[buf].filetype
+							if ft == 'codecompanion_cli' then
+								return 'Code Companion CLI'
+							end
+
 							local name = vim.api.nvim_buf_get_name(buf)
 							-- the second result val is the terminal object
 							local term = select(2, require("toggleterm.terminal").identify(name))
