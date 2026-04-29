@@ -16,7 +16,7 @@ return {
 		},
 		config = function ()
 			require("render-markdown").setup({
-				file_types = { "markdown", "quarto", "codecompanion" },
+				file_types = { "markdown", "quarto" },
 			})
 		end
 	}
