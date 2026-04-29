@@ -1,0 +1,21 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"instructions": [".github/copilot-instructions.md", "docs/guidelines.md", ".cursor/rules/*.md"],
+	"mcp": {
+		"ida": {
+			"enabled": true,
+			"type": "local",
+			"command": ["uvx", "ida-pro-mcp"]
+		},
+		"git": {
+			"enabled": true,
+			"type": "local",
+			"command": ["uvx", "mcp-server-git"]
+		},
+		"context7": {
+			"type": "local",
+			"command": ["npx", "-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"],
+			"enabled": true
+		}
+	}
+}
