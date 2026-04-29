@@ -1,6 +1,10 @@
 {
 	"$schema": "https://opencode.ai/config.json",
 	"instructions": [".github/copilot-instructions.md", "docs/guidelines.md", ".cursor/rules/*.md"],
+	"permission": {
+		"edit": "ask",
+		"bash": "ask"
+	},
 	"mcp": {
 		"ida": {
 			"enabled": true,

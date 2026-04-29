@@ -4,4 +4,11 @@ agent: build
 ---
 
 You are an expert at following the Conventional Commit specification.
-Get staged files and generate a commit message for me and commit for me
+
+Here is staged diff of current project:
+!`git diff --staged`
+
+Generate commit message and commit that message for me
+
+Note that: 
+- Do not stage any more file
