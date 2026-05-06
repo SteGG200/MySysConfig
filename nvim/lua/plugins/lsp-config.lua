@@ -28,10 +28,26 @@ return {
 				lineFoldingOnly = true
 			}
 
-			-- Lua
-			vim.lsp.enable('lua_ls')
-			vim.lsp.config['lua_ls'] = {
+			vim.lsp.enable({
+				'lua_ls',
+				'clangd',
+				'basedpyright',
+				'rust_analyzer',
+				'gopls',
+				'ts_ls',
+				'svelte',
+				'html',
+				'cssls',
+				'tailwindcss',
+			})
+			
+			vim.lsp.config('*', {
 				capabilities = capabilities,
+				root_dir = vim.fn.getcwd(),
+			})
+
+			-- Lua
+			vim.lsp.config('lua_ls', {
 				settings = {
 					Lua = {
 						runtime = {
@@ -56,25 +72,11 @@ return {
 						},
 					},
 				},
-			}
-
-			-- C++
-			vim.lsp.enable('clangd')
-			vim.lsp.config['clangd'] = {
-				capabilities = capabilities,
-				root_dir = vim.fn.getcwd(),
-			}
-
-			-- Python
-			vim.lsp.enable('basedpyright')
-			vim.lsp.config['basedpyright'] = {
-				capabilities = capabilities,
-			}
+			})
 
 			-- Rust
 			vim.lsp.enable('rust_analyzer')
-			vim.lsp.config['rust_analyzer'] = {
-				capabilities = capabilities,
+			vim.lsp.config('rust_analyzer', {
 				on_attach = function (_, bufnr)
 					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 				end,
@@ -96,41 +98,7 @@ return {
 						},
 					}
 				}
-			}
-
-			-- Golang
-			vim.lsp.enable('gopls')
-			vim.lsp.config['gopls'] = {
-				capabilities = capabilities,
-			}
-
-			-- JavaScript/TypeScript
-			vim.lsp.enable('ts_ls')
-			vim.lsp.config['ts_ls'] = {
-				capabilities = capabilities,
-			}
-
-			vim.lsp.enable('svelte')
-			vim.lsp.config['svelte'] = {
-				capabilities = capabilities,
-			}
-
-			-- HTML
-			vim.lsp.enable('html')
-			vim.lsp.config['html'] = {
-				capabilities = capabilities,
-			}
-
-			-- CSS
-			vim.lsp.enable('cssls')
-			vim.lsp.config['cssls'] = {
-				capabilities = capabilities,
-			}
-
-			vim.lsp.enable('tailwindcss')
-			vim.lsp.config['tailwindcss'] = {
-				capabilities = capabilities,
-			}
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show document" })
 			vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", { silent = true, desc = "[G]o to [D]efinition" })
