@@ -40,7 +40,7 @@ return {
 				'cssls',
 				'tailwindcss',
 			})
-			
+
 			vim.lsp.config('*', {
 				capabilities = capabilities,
 				root_dir = vim.fn.getcwd(),
@@ -75,7 +75,6 @@ return {
 			})
 
 			-- Rust
-			vim.lsp.enable('rust_analyzer')
 			vim.lsp.config('rust_analyzer', {
 				on_attach = function (_, bufnr)
 					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
