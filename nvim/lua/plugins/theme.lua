@@ -19,7 +19,7 @@ return {
 						enabled = true,
 						color_mode = true,
 					},
-				}
+				},
 			})
 
 			vim.cmd.colorscheme("catppuccin-mocha")

@@ -11,13 +11,13 @@ return {
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		dependencies = {
-			"nvim-tree/nvim-web-devicons" ,
+			"nvim-tree/nvim-web-devicons",
 			"nvim-treesitter/nvim-treesitter",
 		},
-		config = function ()
+		config = function()
 			require("render-markdown").setup({
 				file_types = { "markdown", "quarto", "codecompanion" },
 			})
-		end
-	}
+		end,
+	},
 }

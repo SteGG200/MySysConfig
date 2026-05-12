@@ -7,5 +7,5 @@ return {
 				processor = "magick_cli",
 			})
 		end,
-	}
+	},
 }

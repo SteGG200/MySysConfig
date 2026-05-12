@@ -87,7 +87,7 @@ o.fillchars = {
 local fcs = o.fillchars:get()
 
 -- Stolen from Akinsho. Many Thanks!!!!!!!!!
-_G.get_fold = function ()
+_G.get_fold = function()
 	local lnum = vim.v.lnum
 
 	if vim.fn.foldlevel(lnum) <= vim.fn.foldlevel(lnum - 1) then

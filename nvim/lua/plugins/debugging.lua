@@ -64,13 +64,13 @@ return {
 							{
 								description = "Enable pretty-printing for gdb",
 								text = "-enable-pretty-printing",
-								ignoreFailures = true
+								ignoreFailures = true,
 							},
 							{
 								description = "Set Disassembly Flavor to Intel",
 								text = "-gdb-set disassembly-flavor intel",
-								ignoreFailures = true
-							}
+								ignoreFailures = true,
+							},
 						},
 						preLaunchTask = "C/C++: g++ build active file",
 					},
@@ -107,10 +107,7 @@ return {
 			vim.keymap.set("n", "<F2>", dapui.toggle, { desc = "Toggle debugging ui" })
 
 			-- Format breakpoint symbol
-			vim.fn.sign_define(
-				"DapBreakpoint",
-				{ text = "*", texthl = "DapBreakpoint" }
-			)
+			vim.fn.sign_define("DapBreakpoint", { text = "*", texthl = "DapBreakpoint" })
 		end,
 	},
 }

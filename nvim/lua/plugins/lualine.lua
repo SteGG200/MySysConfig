@@ -8,7 +8,7 @@ return {
 			},
 			options = {
 				theme = "catppuccin-mocha",
-			}
+			},
 		})
 	end,
 }

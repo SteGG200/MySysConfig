@@ -21,7 +21,7 @@ return {
 				},
 				follow_current_file = {
 					enabled = true,
-				}
+				},
 			},
 		})
 		vim.keymap.set(

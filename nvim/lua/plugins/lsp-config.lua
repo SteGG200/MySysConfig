@@ -25,29 +25,29 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			capabilities.textDocument.foldingRange = {
 				dynamicRegistration = false,
-				lineFoldingOnly = true
+				lineFoldingOnly = true,
 			}
 
 			vim.lsp.enable({
-				'lua_ls',
-				'clangd',
-				'basedpyright',
-				'rust_analyzer',
-				'gopls',
-				'ts_ls',
-				'svelte',
-				'html',
-				'cssls',
-				'tailwindcss',
+				"lua_ls",
+				"clangd",
+				"basedpyright",
+				"rust_analyzer",
+				"gopls",
+				"ts_ls",
+				"svelte",
+				"html",
+				"cssls",
+				"tailwindcss",
 			})
 
-			vim.lsp.config('*', {
+			vim.lsp.config("*", {
 				capabilities = capabilities,
 				root_dir = vim.fn.getcwd(),
 			})
 
 			-- Lua
-			vim.lsp.config('lua_ls', {
+			vim.lsp.config("lua_ls", {
 				settings = {
 					Lua = {
 						runtime = {
@@ -75,8 +75,8 @@ return {
 			})
 
 			-- Rust
-			vim.lsp.config('rust_analyzer', {
-				on_attach = function (_, bufnr)
+			vim.lsp.config("rust_analyzer", {
+				on_attach = function(_, bufnr)
 					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 				end,
 				settings = {
@@ -93,15 +93,25 @@ return {
 							},
 						},
 						procMacro = {
-							enable = true
+							enable = true,
 						},
-					}
-				}
+					},
+				},
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show document" })
-			vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", { silent = true, desc = "[G]o to [D]efinition" })
-			vim.keymap.set("n", "grr", "<cmd>Telescope lsp_references<cr>", { silent = true, desc = "List all [R]eferences" })
+			vim.keymap.set(
+				"n",
+				"gd",
+				"<cmd>Telescope lsp_definitions<cr>",
+				{ silent = true, desc = "[G]o to [D]efinition" }
+			)
+			vim.keymap.set(
+				"n",
+				"grr",
+				"<cmd>Telescope lsp_references<cr>",
+				{ silent = true, desc = "List all [R]eferences" }
+			)
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
 			vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show [C]ode [D]iagnostics" })
 		end,

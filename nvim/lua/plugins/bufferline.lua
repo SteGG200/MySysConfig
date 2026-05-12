@@ -3,7 +3,7 @@ return {
 	version = "*",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
-		"catppuccin/nvim"
+		"catppuccin/nvim",
 	},
 	config = function()
 		vim.opt.termguicolors = true
@@ -19,22 +19,21 @@ return {
 							fg = mocha.sky,
 						},
 						duplicate_selected = {
-							fg = mocha.sapphire
+							fg = mocha.sapphire,
 						},
 						close_button_selected = {
 							fg = mocha.sky,
-						}
-					}
-				}
+						},
+					},
+				},
 			}),
 			options = {
 				separator_style = "slant",
 				hover = {
 					enabled = true,
-					reveal = { 'close' },
-				}
+					reveal = { "close" },
+				},
 			},
 		})
-
 	end,
 }

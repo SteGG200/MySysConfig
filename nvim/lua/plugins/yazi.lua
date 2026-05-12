@@ -12,7 +12,7 @@ return {
 			"<leader>f",
 			"<cmd>Yazi cwd<cr>",
 			desc = "Open [F]ile manager in nvim's working directory",
-		}
+		},
 	},
 	---@type YaziConfig | {}
 	opts = {

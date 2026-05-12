@@ -23,8 +23,8 @@ return {
 					keymap = {
 						accept_and_goto = "<M-w>",
 						dismiss = "<M-Esc>",
-					}
-				}
+					},
+				},
 			})
 		end,
 	},
@@ -35,7 +35,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 		},
-		config = function ()
+		config = function()
 			require("codecompanion").setup({
 				interactions = {
 					chat = {
@@ -48,26 +48,26 @@ return {
 								cmd = "opencode",
 								args = {},
 								description = "OpenCode CLI",
-								provider = "terminal"
-							}
+								provider = "terminal",
+							},
 						},
 						keymaps = {
 							back_to_code = {
 								modes = { t = "<C-H>" },
-								callback = function ()
+								callback = function()
 									vim.cmd("wincmd h")
 								end,
 								description = "Back to code window",
-							}
+							},
 						},
 						opts = {
 							auto_insert = true,
 							reload = true,
-						}
+						},
 					},
 					inline = {
 						adapter = "opencode",
-					}
+					},
 				},
 				display = {
 					cli = {
@@ -78,13 +78,18 @@ return {
 								number = false,
 								relativenumber = false,
 								foldcolumn = "0",
-							}
-						}
-					}
-				}
+							},
+						},
+					},
+				},
 			})
-			
-			vim.keymap.set({ "n", "t" }, "<F3>", require("codecompanion").toggle_cli, { desc = "Toggle Code Companion CLI", silent = true })
-		end
+
+			vim.keymap.set(
+				{ "n", "t" },
+				"<F3>",
+				require("codecompanion").toggle_cli,
+				{ desc = "Toggle Code Companion CLI", silent = true }
+			)
+		end,
 	},
 }

@@ -30,7 +30,7 @@ return {
 			{
 				icon = " ",
 				desc = "Find File",
-				action = function ()
+				action = function()
 					require("telescope.builtin").find_files()
 				end,
 				key = "p",
@@ -45,7 +45,7 @@ return {
 				icon = " ",
 				desc = "Quit",
 				action = "q",
-				key = "q"
+				key = "q",
 			},
 		}
 
@@ -66,7 +66,10 @@ return {
 				footer = function()
 					local stats = require("lazy").stats()
 					local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-					return { "", "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
+					return {
+						"",
+						"⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms",
+					}
 				end,
 				vertical_center = true,
 			},
