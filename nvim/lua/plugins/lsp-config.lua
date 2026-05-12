@@ -6,6 +6,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
+					"clangd",
 					"basedpyright",
 					"rust_analyzer",
 					"gopls",
