@@ -11,7 +11,6 @@ o.shiftwidth = TAB_WIDTH
 o.expandtab = false
 
 -- Turn off recommended style of vim
-g.python_recommended_style = 0
 g.markdown_recommended_style = 0
 g.rust_recommended_style = 0
 

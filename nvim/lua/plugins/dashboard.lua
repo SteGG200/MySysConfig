@@ -24,7 +24,7 @@ return {
 			{
 				icon = " ",
 				desc = "Open File Browser",
-				action = "Telescope file_browser",
+				action = "Yazi cwd",
 				key = "f",
 			},
 			{
