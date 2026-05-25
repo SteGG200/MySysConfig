@@ -1,7 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:/usr/bin/nvim
-SETUVAR --export FLYCTL_INSTALL:/home/stegg/\x2efly/
 SETUVAR --export --path GOPATH:/home/stegg/go
 SETUVAR __fish_initialized:4300
-SETUVAR fish_user_paths:/home/stegg/\x2elocal/bin\x1e/home/stegg/go/bin\x1e/home/stegg/\x2efly/bin\x1e/home/linuxbrew/\x2elinuxbrew/bin
+SETUVAR fish_user_paths:/home/stegg/\x2elocal/bin\x1e/home/stegg/go/bin
