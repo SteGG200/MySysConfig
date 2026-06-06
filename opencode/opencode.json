@@ -8,7 +8,11 @@
 	"lsp": true,
 	"permission": {
 		"edit": "ask",
-		"bash": "ask"
+		"bash": {
+			"*": "ask",
+			"grep *": "allow",
+			"mkdir *": "allow"
+		}
 	},
 	"mcp": {
 		"ida": {
