@@ -5,17 +5,17 @@ hash = "8714306b5cac6359edbacbf545fbd691"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "034efd6"
-hash = "77e20b071404f97c09d3f9afdb9482e0"
+rev = "598cdb6"
+hash = "e3260d0b1feded8c8e3ae3afa1169e30"
 
 [[plugin.deps]]
 use = "KKV9/compress"
-rev = "46a6b9f"
-hash = "771af2becc575a3f43d0542de823969d"
+rev = "e60e122"
+hash = "fbaf0adc8efc59555b748d36aab62d40"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:types"
-rev = "1db18bb"
+rev = "598cdb6"
 hash = "9105494e98299f392aee95340066da9f"
 
 [flavor]
