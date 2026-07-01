@@ -1,0 +1,16 @@
+wayle/**/schema.json
+wayle/runtime.toml
+wayle/tombi.toml
+
+
+fish/conf.d/secrets.fish
+
+yazi/vfs.toml
+yazi/plugins
+
+vesktop/Crashpad
+vesktop/sessionData
+vesktop/SingletonCookie
+vesktop/SingletonCookie
+vesktop/SingletonLock
+vesktop/SingletonSocket
