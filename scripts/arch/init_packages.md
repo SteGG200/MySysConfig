@@ -11,6 +11,7 @@
 - networkmanager
 - bluez
 - bluez-utils
+- usbutils
 - sudo
 - git
 - man
@@ -18,3 +19,13 @@
 - htop
 - fish
 - neovim
+
+## For bootloader
+
+- grub
+- efibootmgr
+- dosfstools
+- mtools
+- os-prober
+- ntfs-3g
+- btrfs-progs
