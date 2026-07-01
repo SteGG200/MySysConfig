@@ -1,27 +1,33 @@
+local ls_list = {
+	"lua_ls",
+	"clangd",
+	"basedpyright",
+	"rust_analyzer",
+	"gopls",
+	"ts_ls",
+	"jsonls",
+	"svelte",
+	"html",
+	"cssls",
+	"tailwindcss",
+}
+
 return {
 	{
 		"mason-org/mason-lspconfig.nvim",
 		version = "*",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"lua_ls",
-					"clangd",
-					"basedpyright",
-					"rust_analyzer",
-					"gopls",
-					"ts_ls",
-					"svelte",
-					"html",
-					"cssls",
-					"tailwindcss",
-				},
+				ensure_installed = ls_list,
 				automatic_enable = false,
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			"b0o/SchemaStore.nvim",
+		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			capabilities.textDocument.foldingRange = {
@@ -29,18 +35,7 @@ return {
 				lineFoldingOnly = true,
 			}
 
-			vim.lsp.enable({
-				"lua_ls",
-				"clangd",
-				"basedpyright",
-				"rust_analyzer",
-				"gopls",
-				"ts_ls",
-				"svelte",
-				"html",
-				"cssls",
-				"tailwindcss",
-			})
+			vim.lsp.enable(ls_list)
 
 			vim.lsp.config("*", {
 				capabilities = capabilities,
@@ -65,11 +60,10 @@ return {
 						},
 						workspace = {
 							-- Make the server aware of Neovim runtime files
-							library = {
-								vim.api.nvim_get_runtime_file("", true),
+							library = vim.list_extend(vim.api.nvim_get_runtime_file("", true), {
 								"~/.config/yazi/plugins/types.yazi/",
 								-- "/usr/share/hypr/stubs",
-							},
+							}),
 						},
 						telemetry = {
 							-- Do not send telemetry data containing a randomized but unique identifier
@@ -100,6 +94,16 @@ return {
 						procMacro = {
 							enable = true,
 						},
+					},
+				},
+			})
+
+			-- JSON
+			vim.lsp.config("jsonls", {
+				settings = {
+					json = {
+						schemas = require("schemastore").json.schemas(),
+						validate = { enable = true },
 					},
 				},
 			})

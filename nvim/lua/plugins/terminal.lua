@@ -16,6 +16,7 @@ return {
 
 			local terminal = require("toggleterm")
 			terminal.setup({
+				persist_mode = false,
 				float_opts = {
 					border = "curved",
 				},
@@ -46,12 +47,26 @@ return {
 				{ silent = true, desc = "[T]oggle terminal" }
 			)
 			vim.keymap.set(
-				"n",
+				{ "n", "t" },
 				"<C-T>",
 				"<cmd>ToggleTermToggleAll<cr>",
 				{ silent = true, desc = "[T]oggle all terminals" }
 			)
 			vim.keymap.set("t", "<C-\\><C-\\>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+		end,
+	},
+	{
+		"kremovtort/tabterm.nvim",
+		version = "*",
+		config = function()
+			require("tabterm").setup({
+				ui = {
+					float = {
+						width = 0.8,
+						height = 0.8,
+					},
+				},
+			})
 		end,
 	},
 }
