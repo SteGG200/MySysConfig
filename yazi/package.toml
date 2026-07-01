@@ -5,7 +5,7 @@ hash = "8714306b5cac6359edbacbf545fbd691"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "598cdb6"
+rev = "39aaf6d"
 hash = "e3260d0b1feded8c8e3ae3afa1169e30"
 
 [[plugin.deps]]
@@ -15,7 +15,7 @@ hash = "fbaf0adc8efc59555b748d36aab62d40"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:types"
-rev = "598cdb6"
+rev = "39aaf6d"
 hash = "9105494e98299f392aee95340066da9f"
 
 [flavor]

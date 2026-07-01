@@ -1,5 +1,8 @@
 [mgr]
 prepend_keymap = [
+	# Advanced Yank
+	{ on = "y", run = [ 'shell -- for path in %s; do echo "file://$path"; done | wl-copy -t text/uri-list', "yank" ] },
+
 	# Navigation
 	{ on = ["g", "d"], run = "cd ~/Documents", desc = "Go ~/Documents" },
 	{ on = ["g", "D"], run = "cd ~/Downloads", desc = "Go ~/Downloads" },
