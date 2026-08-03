@@ -18,12 +18,12 @@
 		"ida": {
 			"enabled": true,
 			"type": "local",
-			"command": ["uvx", "ida-pro-mcp"]
+			"command": ["uvx", "--with", "mcp<2", "ida-pro-mcp"]
 		},
 		"git": {
 			"enabled": true,
 			"type": "local",
-			"command": ["uvx", "mcp-server-git"]
+			"command": ["uvx", "--with", "mcp<2", "mcp-server-git"]
 		},
 		"context7": {
 			"type": "local",
