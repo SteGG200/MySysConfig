@@ -19,10 +19,10 @@ hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("wayle panel settings"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("wayle panel restart"))
 
 -- Menu
-hl.bind("ALT + Space", hl.dsp.exec_cmd(programs.menu .. "drun"))
-hl.bind(mainMod .. " + Period", hl.dsp.exec_cmd(programs.menu .. "emoji"))
+hl.bind("ALT + Space", hl.dsp.exec_cmd(programs.menu .. " drun"))
+hl.bind(mainMod .. " + Period", hl.dsp.exec_cmd(programs.menu .. " emoji"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd('cliphist list | rofi -dmenu -p "Clipboard" | cliphist decode | wl-copy'))
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(programs.menu .. "power-menu"))
+hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(programs.menu .. " power-menu"))
 
 -- Move focus
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
