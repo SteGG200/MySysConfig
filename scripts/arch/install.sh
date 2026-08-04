@@ -114,6 +114,7 @@ sudo systemctl enable --now tailscaled
 sudo systemctl enable --now systemd-timesyncd
 sudo systemctl enable --now bluetooth
 sudo systemctl enable --now avahi-daemon
+sudo systemctl enable --user --now hyprpolkitagent 
 
 # Link configuration files
 for config in "${DOT_CONFIGS[@]}"; do
