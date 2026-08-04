@@ -26,6 +26,8 @@
 - efibootmgr
 - dosfstools
 - mtools
+- fuse3
 - os-prober
+- sbctl
 - ntfs-3g
 - btrfs-progs

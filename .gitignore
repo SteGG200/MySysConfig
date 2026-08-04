@@ -5,6 +5,8 @@ wayle/tombi.toml
 
 fish/conf.d/secrets.fish
 
+opencode/opencode-notifier-state.json
+
 yazi/vfs.toml
 yazi/plugins
 

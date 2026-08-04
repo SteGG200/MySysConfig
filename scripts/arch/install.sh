@@ -111,6 +111,9 @@ install_packages "${THEMES[@]}"
 # Start custom services
 echo "Starting installed services..."
 sudo systemctl enable --now tailscaled
+sudo systemctl enable --now systemd-timesyncd
+sudo systemctl enable --now bluetooth
+sudo systemctl enable --now avahi-daemon
 
 # Link configuration files
 for config in "${DOT_CONFIGS[@]}"; do
