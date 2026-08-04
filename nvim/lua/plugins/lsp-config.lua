@@ -62,7 +62,7 @@ return {
 							-- Make the server aware of Neovim runtime files
 							library = vim.list_extend(vim.api.nvim_get_runtime_file("", true), {
 								"~/.config/yazi/plugins/types.yazi/",
-								-- "/usr/share/hypr/stubs",
+								"/usr/share/hypr/stubs",
 							}),
 						},
 						telemetry = {
