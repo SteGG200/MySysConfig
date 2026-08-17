@@ -3,7 +3,7 @@
 ---------------------
 
 local terminal = "kitty"
-local file_manager = terminal .. "-e yazi"
+local file_manager = terminal .. " -e yazi"
 local menu = "rofi -show"
 local browser = "firefox"
 
