@@ -50,7 +50,6 @@ source $PWD/scripts/arch/configurations.conf
 # Install packages by category
 echo "Installing system utilities..."
 install_packages "${SYSTEM_UTILS[@]}"
-install_aur_packages "${AUR_SYSTEM_UTILS[@]}"
 
 # Load cached selections
 cached_selections_file=~/.cache/MySysConfig/selections.conf
@@ -84,7 +83,6 @@ case $DESKTOP_ENVIRONMENT in
 	"GNOME")
 		echo "Installing GNOME utilities..."
 		install_packages "${GNOME_UTILS[@]}"
-		install_aur_packages "${AUR_GNOME_UTILS[@]}"
 		;;
 	"Others")
 		echo "Nothing to install!"
