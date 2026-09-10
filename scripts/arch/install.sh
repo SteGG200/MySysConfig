@@ -32,6 +32,7 @@ if ! command -v yay &> /dev/null; then
 	echo "Building yay..."
 	makepkg -si --noconfirm
 	cd ..
+	sudo pacman -Qdtq | sudo pacman -Rns -
 	rm -rf yay
 else
 	echo "yay is already installed"
@@ -107,6 +108,9 @@ install_packages "${FONTS[@]}"
 
 echo "Installing themes..."
 install_packages "${THEMES[@]}"
+
+echo "Pruning unnecessary packages..."
+sudo pacman -Qdtq | sudo pacman -Rns -
 
 # Start custom services
 echo "Starting installed services..."
