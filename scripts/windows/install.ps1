@@ -37,6 +37,7 @@ if (Get-Command scoop -ErrorAction SilentlyContinue) {
 if (! (Get-Command git -ErrorAction SilentlyContinue)) {
 	Write-Host "Installing git..."
 	scoop install main/git
+	scoop install extras/git-credential-manager
 }
 
 # Add needed buckets
