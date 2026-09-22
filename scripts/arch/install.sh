@@ -3,6 +3,25 @@
 # Exit on any error
 set -e
 
+update_system=true
+case "${1:-}" in
+	"")
+		;;
+	"--no-update")
+		update_system=false
+		;;
+	"--help"|"-h")
+		echo "Usage: $0 [--no-update]"
+		echo "  --no-update  Skip updating the system with pacman"
+		exit 0
+		;;
+	*)
+		echo "Unknown option: $1"
+		echo "Usage: $0 [--no-update]"
+		exit 1
+		;;
+esac
+
 # Clear screen and print logo
 clear
 cat << "EOF"
@@ -18,9 +37,13 @@ cat << "EOF"
 
 EOF
 
-# Update the system
-echo "Updating system..."
-sudo pacman -Syu
+# Update the system unless explicitly disabled
+if $update_system; then
+	echo "Updating system..."
+	sudo pacman -Syu
+else
+	echo "Skipping system update"
+fi
 
 # Install yay AUR helper if not present
 if ! command -v yay &> /dev/null; then
@@ -32,6 +55,7 @@ if ! command -v yay &> /dev/null; then
 	echo "Building yay..."
 	makepkg -si --noconfirm
 	cd ..
+	prune_packages
 	rm -rf yay
 else
 	echo "yay is already installed"
@@ -49,7 +73,6 @@ source $PWD/scripts/arch/configurations.conf
 # Install packages by category
 echo "Installing system utilities..."
 install_packages "${SYSTEM_UTILS[@]}"
-install_aur_packages "${AUR_SYSTEM_UTILS[@]}"
 
 # Load cached selections
 cached_selections_file=~/.cache/MySysConfig/selections.conf
@@ -83,7 +106,6 @@ case $DESKTOP_ENVIRONMENT in
 	"GNOME")
 		echo "Installing GNOME utilities..."
 		install_packages "${GNOME_UTILS[@]}"
-		install_aur_packages "${AUR_GNOME_UTILS[@]}"
 		;;
 	"Others")
 		echo "Nothing to install!"
@@ -108,13 +130,13 @@ install_packages "${FONTS[@]}"
 echo "Installing themes..."
 install_packages "${THEMES[@]}"
 
+echo "Pruning unnecessary packages..."
+prune_packages
+
 # Start custom services
-echo "Starting installed services..."
-sudo systemctl enable --now tailscaled
-sudo systemctl enable --now systemd-timesyncd
-sudo systemctl enable --now bluetooth
-sudo systemctl enable --now avahi-daemon
-sudo systemctl enable --user --now hyprpolkitagent 
+echo "Starting installed system services..."
+sudo systemctl enable --now "${SYSTEM_SERVICES[@]}"
+systemctl --user enable --now "${USER_SERVICES[@]}"
 
 # Link configuration files
 for config in "${DOT_CONFIGS[@]}"; do
@@ -129,5 +151,5 @@ done
 echo "Linking typst packages..."
 link_config $PWD/typst ~/.local/share/typst ~/.local/share/typst_bak
 
-# echo "Linking mimeapps"
-# link_config $PWD/mimeapps.list ~/.config/mimeapps.list ~/.config/mimeapps.list.bak
+echo "Linking mimeapps"
+link_config $PWD/xdg-terminals.list ~/.config/xdg-terminals.list ~/.config/xdg-terminals.list.bak

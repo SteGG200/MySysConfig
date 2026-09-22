@@ -18,7 +18,12 @@ $SYSTEM_UTILS = @(
 # Development tools
 $DEV_TOOLS = @(
 	'neovim'
-	'mingw-winlibs-llvm'
+	'mingw-winlibs-llvm-msvcrt'
+	'python'
+	'nodejs'
+	'pnpm'
+	'go'
+	'golangci-lint'
 )
 
 # Fonts
