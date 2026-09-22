@@ -5,7 +5,7 @@
 local uwsm = "uwsm app -- "
 local terminal = "kitty.desktop"
 local file_manager = "yazi.desktop"
-local menu = "rofi -show"
+local menu = "rofi -show "
 local browser = "firefox.desktop"
 
 local programs = {
