@@ -27,6 +27,16 @@ install_packages() {
 	fi
 }
 
+prune_packages() {
+	local to_prune=()
+	mapfile -t my_array < <(sudo pacman -Qdtq)
+
+	if [ ${#to_prune[@]} -ne 0 ]; then
+		echo "Packages to prune: ${to_prune[*]}"
+		yay -Rns "${to_prune[@]}"
+	fi
+}
+
 link_config() {
 	local src="$1"
 	local des="$2"

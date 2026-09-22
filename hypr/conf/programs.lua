@@ -2,14 +2,21 @@
 ---- MY PROGRAMS ----
 ---------------------
 
-local terminal = "kitty"
-local file_manager = terminal .. " -e yazi"
+local uwsm = "uwsm app -- "
+local terminal = "kitty.desktop"
+local file_manager = "yazi.desktop"
 local menu = "rofi -show"
-local browser = "firefox"
+local browser = "firefox.desktop"
 
-return {
+local programs = {
 	terminal = terminal,
 	file_manager = file_manager,
 	menu = menu,
 	browser = browser,
 }
+
+for program, command in pairs(programs) do
+	programs[program] = uwsm .. command
+end
+
+return programs

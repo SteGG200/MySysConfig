@@ -1,4 +1,3 @@
-local programs = require("conf.programs")
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
@@ -8,6 +7,6 @@ local programs = require("conf.programs")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("HYPRSHOT_DIR", os.getenv("HOME") .. "/Pictures/Screenshots")
-hl.env("TERMINAL", programs.terminal)
-hl.env("EDITOR", "/usr/bin/nvim")
+-- hl.env("TERMINAL", programs.terminal)
+-- hl.env("EDITOR", "/usr/bin/nvim")
 hl.env("CLIPHIST_MAX_ITEMS", 20)

@@ -3,6 +3,25 @@
 # Exit on any error
 set -e
 
+update_system=true
+case "${1:-}" in
+	"")
+		;;
+	"--no-update")
+		update_system=false
+		;;
+	"--help"|"-h")
+		echo "Usage: $0 [--no-update]"
+		echo "  --no-update  Skip updating the system with pacman"
+		exit 0
+		;;
+	*)
+		echo "Unknown option: $1"
+		echo "Usage: $0 [--no-update]"
+		exit 1
+		;;
+esac
+
 # Clear screen and print logo
 clear
 cat << "EOF"
@@ -18,9 +37,13 @@ cat << "EOF"
 
 EOF
 
-# Update the system
-echo "Updating system..."
-sudo pacman -Syu
+# Update the system unless explicitly disabled
+if $update_system; then
+	echo "Updating system..."
+	sudo pacman -Syu
+else
+	echo "Skipping system update"
+fi
 
 # Install yay AUR helper if not present
 if ! command -v yay &> /dev/null; then
@@ -32,7 +55,7 @@ if ! command -v yay &> /dev/null; then
 	echo "Building yay..."
 	makepkg -si --noconfirm
 	cd ..
-	sudo pacman -Qdtq | sudo pacman -Rns -
+	prune_packages
 	rm -rf yay
 else
 	echo "yay is already installed"
@@ -108,15 +131,12 @@ echo "Installing themes..."
 install_packages "${THEMES[@]}"
 
 echo "Pruning unnecessary packages..."
-sudo pacman -Qdtq | sudo pacman -Rns -
+prune_packages
 
 # Start custom services
-echo "Starting installed services..."
-sudo systemctl enable --now tailscaled
-sudo systemctl enable --now systemd-timesyncd
-sudo systemctl enable --now bluetooth
-sudo systemctl enable --now avahi-daemon
-sudo systemctl enable --user --now hyprpolkitagent 
+echo "Starting installed system services..."
+sudo systemctl enable --now "${SYSTEM_SERVICES[@]}"
+systemctl --user enable --now "${USER_SERVICES[@]}"
 
 # Link configuration files
 for config in "${DOT_CONFIGS[@]}"; do
