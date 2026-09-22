@@ -151,5 +151,5 @@ done
 echo "Linking typst packages..."
 link_config $PWD/typst ~/.local/share/typst ~/.local/share/typst_bak
 
-# echo "Linking mimeapps"
-# link_config $PWD/mimeapps.list ~/.config/mimeapps.list ~/.config/mimeapps.list.bak
+echo "Linking mimeapps"
+link_config $PWD/xdg-terminals.list ~/.config/xdg-terminals.list ~/.config/xdg-terminals.list.bak
