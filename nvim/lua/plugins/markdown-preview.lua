@@ -9,8 +9,15 @@ return {
 		ft = { "markdown" },
 	},
 	{
-		"OXY2DEV/markview.nvim",
-		lazy = false,
-		priority = 49,
-	}
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("render-markdown").setup({
+				file_types = { "markdown", "quarto", "codecompanion" },
+			})
+		end,
+	},
 }

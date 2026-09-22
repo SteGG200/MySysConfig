@@ -1,5 +1,5 @@
 configuration {
-	modes: "drun,window,run,emoji,power-menu:~/.config/hypr/rofi-power-menu.sh";
+	modes: "drun,window,run,emoji,power-menu:~/.local/bin/rofi-power-menu.sh";
 	icon-theme: "Papirus-Dark";
 	show-icons: true;
 	font: "JetBrainsMono Nerd Font Medium 12";

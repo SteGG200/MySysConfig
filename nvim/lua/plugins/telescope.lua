@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
+		version = "*",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			local telescope_builtin = require("telescope.builtin")
@@ -28,20 +28,20 @@ return {
 			require("telescope").load_extension("ui-select")
 		end,
 	},
-	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-		config = function()
-			require("telescope").setup({
-				extensions = {
-					file_browser = {
-						hijack_netrw = true,
-					},
-				},
-			})
-
-			require("telescope").load_extension("file_browser")
-			vim.keymap.set("n", "<leader>sf", "<cmd>Telescope file_browser<cr>", { silent = true ,desc = "[S]earch global [F]ile" })
-		end,
-	},
+	-- {
+	-- 	"nvim-telescope/telescope-file-browser.nvim",
+	-- 	dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	-- 	config = function()
+	-- 		require("telescope").setup({
+	-- 			extensions = {
+	-- 				file_browser = {
+	-- 					hijack_netrw = true,
+	-- 				},
+	-- 			},
+	-- 		})
+	--
+	-- 		require("telescope").load_extension("file_browser")
+	-- 		vim.keymap.set("n", "<leader>sf", "<cmd>Telescope file_browser<cr>", { silent = true ,desc = "[S]earch global [F]ile" })
+	-- 	end,
+	-- },
 }

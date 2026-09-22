@@ -6,7 +6,8 @@ return {
 			local user_functions = require("user-functions")
 			if user_functions.get_OS() == "Windows" then
 				vim.o.shell = ((vim.fn.executable("pwsh") == 1) and "pwsh.exe" or "powershell.exe")
-				vim.o.shellcmdflag = "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+				vim.o.shellcmdflag =
+					"-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
 				vim.o.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
 				vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
 				vim.o.shellquote = ""
@@ -15,17 +16,57 @@ return {
 
 			local terminal = require("toggleterm")
 			terminal.setup({
+				persist_mode = false,
 				float_opts = {
-					border = 'curved',
+					border = "curved",
 				},
 			})
 
-			vim.keymap.set("n", "tf", "<cmd>ToggleTerm direction=float<cr>", { silent = true, desc = "Open [F]loat terminal" })
-			vim.keymap.set("n", "tv", "<cmd>ToggleTerm direction=vertical size=70<cr>", { silent = true, desc = "Open [V]ertical terminal" })
-			vim.keymap.set("n", "th", "<cmd>ToggleTerm direction=horizontal<cr>", { silent = true, desc = "Open [H]orizontal terminal" })
-			vim.keymap.set("n", "tt", "<cmd>ToggleTerm<cr>", { silent = true, desc = "[T]oggle terminal" })
-			vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+			vim.keymap.set(
+				"n",
+				"tf",
+				'<cmd>exe v:count1 . "ToggleTerm name=terminal dir=$PWD direction=float"<cr>',
+				{ silent = true, desc = "Open [F]loat terminal" }
+			)
+			vim.keymap.set(
+				"n",
+				"tv",
+				'<cmd>exe v:count1 . "ToggleTerm name=terminal dir=$PWD direction=vertical size=70"<cr>',
+				{ silent = true, desc = "Open [V]ertical terminal" }
+			)
+			vim.keymap.set(
+				"n",
+				"th",
+				'<cmd>exe v:count1 . "ToggleTerm name=terminal dir=$PWD direction=horizontal"<cr>',
+				{ desc = "Open [H]orizontal terminal" }
+			)
+			vim.keymap.set(
+				"n",
+				"tt",
+				'<cmd>exe v:count1 . "ToggleTerm name=terminal"<cr>',
+				{ silent = true, desc = "[T]oggle terminal" }
+			)
+			vim.keymap.set(
+				{ "n", "t" },
+				"<C-T>",
+				"<cmd>ToggleTermToggleAll<cr>",
+				{ silent = true, desc = "[T]oggle all terminals" }
+			)
+			vim.keymap.set("t", "<C-\\><C-\\>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+		end,
+	},
+	{
+		"kremovtort/tabterm.nvim",
+		version = "*",
+		config = function()
+			require("tabterm").setup({
+				ui = {
+					float = {
+						width = 0.8,
+						height = 0.8,
+					},
+				},
+			})
 		end,
 	},
 }
-

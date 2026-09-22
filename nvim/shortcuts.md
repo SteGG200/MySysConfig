@@ -1,4 +1,4 @@
-# Preferences: All keyboard shortcuts
+# References: All keyboard shortcuts
 
 **Note**: 
 - `Leader` key is currently set to `Space`
@@ -11,20 +11,21 @@
 | Keybinding | Command |
 | ---------- | ------- |
 | `h/j/k/l` | Move cursor to the left/bottom/top/right |
+| `_` | Move cursor to the beginning of line (non-whitespace) |
+| `g_` | Move cursor to the end of line (non-whitespace) |
 | `gg` | Go to the top of file |
 | `Shift+g` | Go to the bottom of file |
-| `Ctrl+e` | Scroll up |
-| `Ctrl+y` | Scroll down |
+| `Ctrl+(e/u/b)` | Scroll up (line by line / half a page / entire page) |
+| `Ctrl+(y/d/f)` | Scroll down (line by line / half a page / entire page) |
 | `zz` | Move current line to center of screen |
 
 ### Tab (buffer) navigation
 
 | Keybinding | Command |
 | ---------- | ------- |
-| `fh` | Move to previous tab |
-| `fl` | Move to next tab |
-| `fc` | Close a tab |
-| `fac` | Close all tabs |
+| `Alt+h` | Move to previous tab |
+| `Alt+l` | Move to next tab |
+| `Alt+c` | Close a tab |
 | `Alt+[1 - 9]` | Open the 1 - 9 th tab |
 | `Alt+0` | Open the 10th tab |
 
@@ -102,7 +103,6 @@
 | `/<text>` | Search `<text>` in current window |
 | `*` | Search word under cursor in current window |
 | `Ctrl+p` | Search a file |
-| `Leader+sf` | Search a file globally |
 | `Leader+sw` | Search a text in current directory |
 | `Leader+sk` | Search a key binding |
 | `Leader+nh` | Stop highlighting |
@@ -117,7 +117,7 @@
 		- `g` is global
 		- `c` is confirmation
 		- `i` is toggling case insensitive
-- Search and replace in current workspace: Open `Telescope live_grep`, press `<C-q>` to enter `qflist` and use command `:cdo [range]s/<string-to-find>/<string-to-replace>/[flags]`
+- Search and replace in current workspace: Open `Telescope live_grep`, press `<C-q>` to enter `qflist` and use command `:cfdo [range]s/<string-to-find>/<string-to-replace>/[flags]`
 
 ### Folding
 
@@ -141,6 +141,14 @@
 | ---------- | ------- |
 | `Leader+e` | Open neotree with source is filesystem |
 | `Leader+b` | Close neotree |
+
+### File manager (Yazi)
+| Keybinding | Command |
+| ---------- | ------- |
+| `Leader+f` | Open file manager |
+| `F1` | Open default Yazi help |
+| `Shift+F1` | Toggle Yazi help in Neovim |
+| `q` | Close file manager |
 
 ### Task manager (Overseer)
 
@@ -178,7 +186,7 @@
 | `tv` | Open vertical terminal |
 | `th` | Open horizontal terminal |
 | `tt` | Toggle terminal |
-| `<Esc><Esc>` | Escape terminal mode |
+| `Ctrl+\ Ctrl+\` | Escape terminal mode |
 
 ### Coding Support
 
@@ -191,21 +199,30 @@
 | `Leader+ca` | Open code action popup |
 | `Leader+cd` | Show code diagnostics |
 | `Leader+rn` | Rename a variable/function/class/... name |
-| `gcc` | Comment current line |
+| `Ctrl+/` | Comment current line |
 | `gc(k/j)` | Comment current line and the line before/after |
 | `gx` | Access file / url under the cursor |
 | `~` | Toggle case of character under the cursor |
+| `.` | Repeat the previous action |
+
+### Copilot AI
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `<F3>` | Open Copilot Chat |
+| `Alt+w` | Accept NES and go to |
+| `Alt+Esc` | Dismiss NES |
 
 ### Debugging
 
 | Keybinding | Command |
 | ---------- | ------- |
+| `F2` | Toggle debugging windows |
 | `F5` | Start or continue debugging |
 | `F9` | Set breakpoint at current line |
 | `F10` | Step over |
 | `F11` | Step into |
 | `F12` | Escape debugging |
-| `Ctrl+d` | Toggle debugging windows |
 
 ## Insert mode
 
@@ -235,14 +252,27 @@
 | ---------- | ------- |
 | `Ctrl+h/j/k/l` | Move cursor to the left/bottom/top/right |
 
+### Copilot AI
+
+| Keybinding | Command |
+| ---------- | ------- |
+| `Alt+l` | Accept next word suggestion |
+| `Alt+j` | Accept next line suggestion |
+| `Alt+a` | Accept all suggestions |
+| `Alt+[` | Previous suggestion |
+| `Alt+]` | Next suggestion |
+| `Alt+Backspace` | Dismiss suggestions |
+
 ## Visual mode
 
 ### Basic:
 
 | Keybinding | Command |
 | ---------- | ------- |
-| `iw` | Select the word under the cursor |
+| `iw` | Select the words under the cursor |
 | `ip` | Select all code block that the cursor is currently in |
+| `i(surrounder)` | Select all the words inside that surrounder |
+| `a(surrounder)`| Select all the words inside that surrounder including itself |
 | `c` | Replace selected text |
 | `y` | Copy selected text |
 | `x` | Cut selected text |
@@ -257,7 +287,7 @@
 | Keybinding | Command |
 | ---------- | ------- |
 | `(Visual Block) Shift+i` | Edit multi-line where is selected by visual block (Escape to apply) |
-| `gc` | Comment selected code |
+| `Ctrl+/` | Comment selected code |
 | `*` | Search selected character in current window |
 | `zf` | Fold the selected block |
 <!--| `<leader>h` | Replace all input words in selected scope |-->

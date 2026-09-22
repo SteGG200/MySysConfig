@@ -1,31 +1,49 @@
+local ls_list = {
+	"lua_ls",
+	"clangd",
+	"basedpyright",
+	"rust_analyzer",
+	"gopls",
+	"ts_ls",
+	"jsonls",
+	"svelte",
+	"html",
+	"cssls",
+	"tailwindcss",
+}
+
 return {
 	{
 		"mason-org/mason-lspconfig.nvim",
 		version = "*",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"lua_ls",
-					"pyright",
-					"gopls",
-					"ts_ls",
-					"html",
-					"cssls",
-					"tailwindcss",
-				},
+				ensure_installed = ls_list,
 				automatic_enable = false,
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			"b0o/SchemaStore.nvim",
+		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			capabilities.textDocument.foldingRange = {
+				dynamicRegistration = false,
+				lineFoldingOnly = true,
+			}
+
+			vim.lsp.enable(ls_list)
+
+			vim.lsp.config("*", {
+				capabilities = capabilities,
+				root_dir = vim.fn.getcwd(),
+			})
 
 			-- Lua
-			vim.lsp.enable('lua_ls')
-			vim.lsp.config['lua_ls'] = {
-				capabilities = capabilities,
+			vim.lsp.config("lua_ls", {
 				settings = {
 					Lua = {
 						runtime = {
@@ -42,7 +60,9 @@ return {
 						},
 						workspace = {
 							-- Make the server aware of Neovim runtime files
-							library = vim.api.nvim_get_runtime_file("", true),
+							library = vim.list_extend(vim.api.nvim_get_runtime_file("", true), {
+								"/usr/share/hypr/stubs",
+							}),
 						},
 						telemetry = {
 							-- Do not send telemetry data containing a randomized but unique identifier
@@ -50,55 +70,58 @@ return {
 						},
 					},
 				},
-			}
+			})
 
-			-- C++
-			vim.lsp.enable('clangd')
-			vim.lsp.config['clangd'] = {
-				capabilities = capabilities,
-			}
+			-- Rust
+			vim.lsp.config("rust_analyzer", {
+				on_attach = function(_, bufnr)
+					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+				end,
+				settings = {
+					["rust-analyzer"] = {
+						imports = {
+							granularity = {
+								group = "module",
+							},
+							prefix = "self",
+						},
+						cargo = {
+							buildScripts = {
+								enable = true,
+							},
+						},
+						procMacro = {
+							enable = true,
+						},
+					},
+				},
+			})
 
-			-- Python
-			vim.lsp.enable('pyright')
-			vim.lsp.config['pyright'] = {
-				capabilities = capabilities,
-			}
-
-			-- Golang
-			vim.lsp.enable('gopls')
-			vim.lsp.config['gopls'] = {
-				capabilities = capabilities,
-			}
-
-			-- JavaScript/TypeScript
-			vim.lsp.enable('ts_ls')
-			vim.lsp.config['ts_ls'] = {
-				capabilities = capabilities,
-			}
-
-			-- HTML
-			vim.lsp.enable('html')
-			vim.lsp.config['html'] = {
-				capabilities = capabilities,
-			}
-
-			-- CSS
-			vim.lsp.enable('cssls')
-			vim.lsp.config['cssls'] = {
-				capabilities = capabilities,
-			}
-
-			vim.lsp.enable('tailwindcss')
-			vim.lsp.config['tailwindcss'] = {
-				capabilities = capabilities,
-			}
+			-- JSON
+			vim.lsp.config("jsonls", {
+				settings = {
+					json = {
+						schemas = require("schemastore").json.schemas(),
+						validate = { enable = true },
+					},
+				},
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show document" })
-			vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", { silent = true, desc = "[G]o to [D]efinition" })
-			vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { silent = true, desc = "List all [R]eferences" })
+			vim.keymap.set(
+				"n",
+				"gd",
+				"<cmd>Telescope lsp_definitions<cr>",
+				{ silent = true, desc = "[G]o to [D]efinition" }
+			)
+			vim.keymap.set(
+				"n",
+				"grr",
+				"<cmd>Telescope lsp_references<cr>",
+				{ silent = true, desc = "List all [R]eferences" }
+			)
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
 			vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show [C]ode [D]iagnostics" })
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]ename [N]ame" })
 		end,
 	},
 }

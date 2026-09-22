@@ -41,7 +41,14 @@ return {
 				},
 			},
 			spec = {
-				{ '<leader>s', group = '[S]earch' },
+				{ "<leader>s", group = "[S]earch" },
+				{ "t", group = "[T]erminal" },
+				{ "f", group = "[F]ile" },
+			},
+			triggers = {
+				{ "<auto>", mode = "nxso" },
+				{ "t", mode = "n" },
+				{ "f", mode = "n" },
 			},
 		},
 		keys = {
@@ -55,4 +62,3 @@ return {
 		},
 	},
 }
-

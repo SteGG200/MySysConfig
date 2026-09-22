@@ -5,8 +5,10 @@ return {
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
+				term_colors = true,
 				no_italic = true,
 				integrations = {
+					cmp = true,
 					neotree = true,
 					mason = true,
 					which_key = true,
@@ -18,7 +20,7 @@ return {
 						enabled = true,
 						color_mode = true,
 					},
-				}
+				},
 			})
 
 			vim.cmd.colorscheme("catppuccin-mocha")
