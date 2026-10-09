@@ -23,7 +23,19 @@ return {
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.black,
 					null_ls.builtins.formatting.clang_format.with({
-						extra_args = { "--style=file" },
+						extra_args = function(params)
+							local dir = vim.fs.dirname(params.bufname)
+							local found = vim.fs.find({ ".clang-format", "_clang-format" }, {
+								upward = true,
+								path = dir,
+							})[1]
+
+							if found then
+								return { "-style=file" }
+							end
+							local my_style = "{ BasedOnStyle: Google, IndentWidth: 2, TabWidth: 2, UseTab: Always }"
+							return { "-style=" .. my_style }
+						end,
 					}),
 					null_ls.builtins.formatting.prettier.with({
 						extra_args = { "--use-tabs" },
