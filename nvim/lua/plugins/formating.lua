@@ -17,7 +17,7 @@ return {
 		"nvimtools/none-ls.nvim",
 		config = function()
 			local null_ls = require("null-ls")
-			local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+			local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
 			null_ls.setup({
 				sources = {
 					null_ls.builtins.formatting.stylua,
@@ -33,8 +33,8 @@ return {
 							if found then
 								return { "-style=file" }
 							end
-							local my_style = "{ BasedOnStyle: Google, IndentWidth: 2, TabWidth: 2, UseTab: Always }"
-							return { "-style=" .. my_style }
+							-- local my_style = "{ BasedOnStyle: Google, IndentWidth: 2, TabWidth: 2, UseTab: Always }"
+							return { "-style=", "{ BasedOnStyle: Google, IndentWidth: 2, TabWidth: 2, UseTab: Always }" }
 						end,
 					}),
 					null_ls.builtins.formatting.prettier.with({
@@ -53,6 +53,7 @@ return {
 									async = false,
 									filter = function(formatting_client)
 										return formatting_client.name == "null-ls"
+											or formatting_client.name == "rust_analyzer"
 									end,
 								})
 							end,

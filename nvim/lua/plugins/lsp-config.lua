@@ -30,6 +30,7 @@ return {
 		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
 			capabilities.textDocument.foldingRange = {
 				dynamicRegistration = false,
 				lineFoldingOnly = true,
@@ -76,6 +77,14 @@ return {
 			vim.lsp.config("rust_analyzer", {
 				on_attach = function(_, bufnr)
 					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format({ bufnr = bufnr, name = "rust_analyzer" })
+						end,
+					})
 				end,
 				settings = {
 					["rust-analyzer"] = {
@@ -92,6 +101,9 @@ return {
 						},
 						procMacro = {
 							enable = true,
+						},
+						rustfmt = {
+							extraArgs = {},
 						},
 					},
 				},
