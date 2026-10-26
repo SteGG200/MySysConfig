@@ -4,11 +4,13 @@ return {
 	builder = function()
 		-- Full path to current file (see :help expand())
 		local file = vim.fn.expand("%:p")
-		local basename = vim.fn.expand("%:p:r")
+		local cwd = vim.fn.expand("%:p:h")
+		local name = vim.fn.expand("%:t:r")
+		local basename = cwd .. "/bin/" .. name
 		return {
 			name = "C/C++: g++ build active file",
 			cmd = { "g++" },
-			cwd = vim.fn.expand("%:p:h"),
+			cwd = cwd,
 			args = {
 				"-fdiagnostics-color=always",
 				"-g",

@@ -33,8 +33,8 @@ return {
 							if found then
 								return { "-style=file" }
 							end
-							-- local my_style = "{ BasedOnStyle: Google, IndentWidth: 2, TabWidth: 2, UseTab: Always }"
-							return { "-style=", "{ BasedOnStyle: Google, IndentWidth: 2, TabWidth: 2, UseTab: Always }" }
+							local my_style = "{ BasedOnStyle: Google, IndentWidth: 2, TabWidth: 2, UseTab: Always }"
+							return { "-style=" .. my_style }
 						end,
 					}),
 					null_ls.builtins.formatting.prettier.with({

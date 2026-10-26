@@ -57,7 +57,7 @@ return {
 						name = "C/C++: g++ debug active file",
 						type = "cppdbg",
 						request = "launch",
-						program = "${fileDirname}/${fileBasenameNoExtension}",
+						program = "${fileDirname}/bin/${fileBasenameNoExtension}",
 						cwd = "${fileDirname}",
 						stopAtEntry = false,
 						setupCommands = {
